@@ -1,9 +1,9 @@
-// ═══════════════════════════════════════════════════════════════════
+﻿// ═══════════════════════════════════════════════════════════════════
 // GERS — Telegram Integration (via secure proxy)
 // Tokens are hidden on the server (Cloudflare Worker)
 // ═══════════════════════════════════════════════════════════════════
 
-const GERS_API = 'https://gers-api.kronlead.workers.dev';
+const GERS_API = 'https://gers-api.masinxn21.workers.dev';
 
 // ── Send message via secure proxy ──
 function sendToTelegram(type, message) {
