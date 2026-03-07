@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Боты & Софт - GERS</title>
+    <meta name="description" content="Telegram-боты, CRM-системы, складской учёт, парсеры данных и бизнес-софт от GERS Agency.">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <meta property="og:title" content="Боты & Софт — GERS Agency">
+    <meta property="og:description" content="Telegram-боты, CRM-системы, складской учёт, парсеры данных и бизнес-софт.">
+    <meta property="og:image" content="https://gers.agency/assets/og-image.png">
+    <meta property="og:url" content="https://gers.agency/projects-bots-soft.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css?v=25">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body class="page-bots">
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="noise-overlay"></div>
+    <canvas id="webCanvas" class="web-bg"></canvas>
+    <div class="grid-bg"><canvas id="gridCanvas"></canvas></div>
+    <div class="tech-overlay">
+        <div class="corner-bracket top-left"></div>
+        <div class="corner-bracket top-right"></div>
+        <div class="corner-bracket bottom-left"></div>
+        <div class="corner-bracket bottom-right"></div>
+        <div class="scan-line"></div>
+    </div>
+
+    <header class="header header--projects">
+        <a href="index.html" class="logo">
+            <img src="assets/logo-white.png" alt="GERS" class="logo-img">
+        </a>
+        <div class="header-center-title">
+            <img src="assets/bots-title.png" alt="Боты & Софт" class="header-title-img">
+        </div>
+        <nav class="nav nav--right">
+            <a href="projects.html" class="nav-link" data-text="Проекты">Проекты</a>
+            <a href="services.html" class="nav-link" data-text="Услуги">Услуги</a>
+            <a href="calculator.html" class="nav-link" data-text="Узнать стоимость">Узнать стоимость</a>
+            <a href="contact.html" class="nav-link" data-text="Контакты">Контакты</a>
+        </nav>
+        <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </header>
+
+    <!-- Bento Grid Section -->
+    <section class="bento-section bento-section--sub" id="projects">
+        <!-- Background deco figures -->
+        <img loading="lazy" src="assets/deco/clock.png?v=3" alt="" class="deco-fig deco-fig--clock">
+        <img loading="lazy" src="assets/deco/rocket.png?v=3" alt="" class="deco-fig deco-fig--rocket">
+        <img loading="lazy" src="assets/deco/phone.png?v=3" alt="" class="deco-fig deco-fig--phone">
+        <img loading="lazy" src="assets/deco/chest.png?v=3" alt="" class="deco-fig deco-fig--chest">
+        <!-- Pink sparkle stars -->
+        <div class="deco-star deco-star--1">✦</div>
+        <div class="deco-star deco-star--2">✦</div>
+        <div class="deco-star deco-star--3">✧</div>
+        <div class="deco-star deco-star--4">✦</div>
+        <div class="deco-star deco-star--5">✧</div>
+        <div class="deco-star deco-star--6">✦</div>
+        <div class="deco-star deco-star--7">✧</div>
+        <div class="deco-star deco-star--8">✦</div>
+        <div class="deco-star deco-star--9">✧</div>
+        <div class="deco-star deco-star--10">✦</div>
+        <div class="deco-star deco-star--11">✦</div>
+        <div class="deco-star deco-star--12">✧</div>
+
+        <div class="bento-grid bento-grid--sites">
+
+            <!-- B1 - Складской учёт -->
+            <div class="tilt-wrap bento-item bento-s1 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="assets/projects/soft-warehouse/1.png,assets/projects/soft-warehouse/2.png,assets/projects/soft-warehouse/3.png,assets/projects/soft-warehouse/4.png,assets/projects/soft-warehouse/5.png,assets/projects/soft-warehouse/6.png"
+                   data-title="Складской учёт"
+                   data-desc="Приём и отгрузка товаров, инвентаризация со штрих-кодами, отчёты в реальном времени, интеграция с 1С"
+                   data-tags="React,Node.js,PostgreSQL,1C API,Barcode"
+                   data-year="2025"
+                   data-stat="-90% ручного учёта"
+                   data-category="Software,Warehouse"
+                   data-client="Торговая компания"
+                   data-sphere="Логистика / Склад"
+                   data-duration="14 дней"
+                   data-project-type="ПО для склада">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/projects/soft-warehouse/1.png" alt="" class="bento-card-bg" loading="lazy">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">SOFTWARE</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Складской учёт</span>
+                        <span class="bento-card-hover-desc">Приём, отгрузка, инвентаризация</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- B2 - Бот для салона красоты -->
+            <div class="tilt-wrap bento-item bento-s2 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-bot-preview="beauty"
+                   data-title="Бот для салона красоты"
+                   data-desc="Онлайн-запись к мастеру, автоматические напоминания о визите, программа лояльности"
+                   data-tags="Telegram,Python,aiogram,Google Calendar,CRM"
+                   data-year="2024"
+                   data-stat="-70% пропущенных"
+                   data-category="Telegram Bot,Beauty"
+                   data-client="Салон красоты"
+                   data-sphere="Бьюти-индустрия"
+                   data-duration="12 дней"
+                   data-project-type="Telegram-бот">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #0a0a1e 0%, #1a1040 40%, #FF2F8B18 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">BOT</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Бот салона красоты</span>
+                        <span class="bento-card-hover-desc">Запись, напоминания, лояльность</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- B3 - Бот для медицинской клиники -->
+            <div class="tilt-wrap bento-item bento-s3 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-bot-preview="clinic"
+                   data-title="Бот для медицинской клиники"
+                   data-desc="Запись к врачу, напоминания о приёме, получение результатов анализов прямо в чате"
+                   data-tags="WhatsApp,Python,Flask,PostgreSQL,API"
+                   data-year="2025"
+                   data-stat="2000+ записей/мес"
+                   data-category="WhatsApp Bot,Medicine"
+                   data-client="Медицинская клиника"
+                   data-sphere="Медицина"
+                   data-duration="14 дней"
+                   data-project-type="WhatsApp-бот">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #0e0a1a 0%, #1e0f35 40%, #FF2F8B1A 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">BOT</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Бот клиники</span>
+                        <span class="bento-card-hover-desc">Запись, анализы, напоминания</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- B4 - Цветочный магазин -->
+            <div class="tilt-wrap bento-item bento-s4 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-bot-preview="shop-flowers"
+                   data-title="Цветочный магазин в Telegram"
+                   data-desc="Каталог букетов, выбор доставки, онлайн-оплата - полноценный магазин в мессенджере"
+                   data-tags="Telegram,Mini App,Python,YooKassa,Redis"
+                   data-year="2025"
+                   data-stat="300+ заказов/мес"
+                   data-category="Mini App,E-commerce"
+                   data-client="Цветочный магазин"
+                   data-sphere="Флористика"
+                   data-duration="13 дней"
+                   data-project-type="Telegram-бот">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #0f0a1c 0%, #22103d 40%, #FF2F8B15 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">BOT</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Цветочный магазин</span>
+                        <span class="bento-card-hover-desc">Каталог, доставка, оплата</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- B5 - Магазин электроники -->
+            <div class="tilt-wrap bento-item bento-s5 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-bot-preview="shop-electronics"
+                   data-title="Магазин электроники"
+                   data-desc="Продажа гаджетов через Telegram Mini App - каталог, корзина, оплата"
+                   data-tags="Telegram,Mini App,React,Node.js,Stripe"
+                   data-year="2024"
+                   data-stat="800+ продаж/мес"
+                   data-category="Mini App,E-commerce"
+                   data-client="Магазин электроники"
+                   data-sphere="Электроника"
+                   data-duration="15 дней"
+                   data-project-type="Telegram-бот">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #0a0e1e 0%, #151535 40%, #FF2F8B18 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">BOT</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Магазин электроники</span>
+                        <span class="bento-card-hover-desc">Каталог, корзина, оплата</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- B6 - CRM для недвижимости -->
+            <div class="tilt-wrap bento-item bento-s6 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="assets/projects/soft-crm/1.png,assets/projects/soft-crm/2.png,assets/projects/soft-crm/3.png,assets/projects/soft-crm/4.png,assets/projects/soft-crm/5.png,assets/projects/soft-crm/6.png,assets/projects/soft-crm/7.png"
+                   data-title="CRM для агентства недвижимости"
+                   data-desc="Учёт клиентов, объектов и сделок. Автоматические напоминания, отчёты, аналитика продаж"
+                   data-tags="React,Node.js,PostgreSQL,Redis,Docker"
+                   data-year="2024"
+                   data-stat="+60% эффективности"
+                   data-category="CRM,Real Estate"
+                   data-client="Агентство недвижимости"
+                   data-sphere="Недвижимость"
+                   data-duration="18 дней"
+                   data-project-type="CRM-система">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/projects/soft-crm/1.png" alt="" class="bento-card-bg" loading="lazy">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">CRM</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">CRM недвижимости</span>
+                        <span class="bento-card-hover-desc">Клиенты, сделки, аналитика</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- B7 - Мониторинг цен (hidden) -->
+            <div class="tilt-wrap bento-item bento-s7 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-bot-preview="parser-prices"
+                   data-title="Мониторинг цен конкурентов"
+                   data-desc="Ежедневный сбор цен с 50+ сайтов конкурентов, отчёты в Excel и Telegram"
+                   data-tags="Python,Scrapy,PostgreSQL,Telegram API,Celery"
+                   data-year="2025"
+                   data-stat="50+ источников"
+                   data-category="Parser,Analytics"
+                   data-client="Ритейл-компания"
+                   data-sphere="Аналитика"
+                   data-duration="11 дней"
+                   data-project-type="Парсер">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #0a0f1a 0%, #0f1a30 40%, #FF2F8B14 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">PARSER</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Мониторинг цен</span>
+                        <span class="bento-card-hover-desc">50+ сайтов, отчёты</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- B8 - Парсер Avito (hidden) -->
+            <div class="tilt-wrap bento-item bento-s8 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-bot-preview="parser-avito"
+                   data-title="Парсер объявлений Avito"
+                   data-desc="Сбор новых объявлений по ключевым словам, уведомления в Telegram"
+                   data-tags="Python,Selenium,Telegram API,Redis,Cron"
+                   data-year="2024"
+                   data-stat="1000+ объявлений/день"
+                   data-category="Parser,Classifieds"
+                   data-client="Бизнес-клиент"
+                   data-sphere="Объявления"
+                   data-duration="10 дней"
+                   data-project-type="Парсер">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #0e0a12 0%, #1e1030 40%, #FF2F8B16 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">PARSER</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Парсер Avito</span>
+                        <span class="bento-card-hover-desc">Объявления, алерты</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- B9 - Сбор контактов (hidden) -->
+            <div class="tilt-wrap bento-item bento-s9 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-bot-preview="parser-contacts"
+                   data-title="Сбор контактов компаний"
+                   data-desc="Парсинг email и телефонов с каталогов компаний для отдела продаж"
+                   data-tags="Python,Scrapy,PostgreSQL,Excel,API"
+                   data-year="2024"
+                   data-stat="10K+ контактов"
+                   data-category="Parser,B2B"
+                   data-client="Отдел продаж"
+                   data-sphere="B2B-продажи"
+                   data-duration="10 дней"
+                   data-project-type="Парсер">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #0a0a14 0%, #15102a 40%, #FF2F8B12 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">PARSER</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Сбор контактов</span>
+                        <span class="bento-card-hover-desc">Email, телефоны, B2B</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Load More button -->
+        <div class="bento-load-more" id="bentoLoadMore">
+            <button class="bento-load-btn" id="loadMoreBtn">
+                Показать ещё
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+        </div>
+    </section>
+
+
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="footer-new-top">
+            <div class="footer-brand">
+                <span class="footer-logo-text">GERS AGENCY</span>
+                <a href="https://t.me/GERS_AGENCY" class="footer-tg" aria-label="Telegram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </a>
+                </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <span class="footer-col-title">О нас</span>
+                    <a href="index.html">Главная</a>
+                    <a href="projects.html">Проекты</a>
+                    <a href="services.html">Услуги</a>
+                    <a href="calculator.html">Стоимость</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Направления</span>
+                    <a href="projects-sites.html">Веб-разработка</a>
+                    <a href="projects-mobile.html">Мобильные приложения</a>
+                    <a href="projects-auto.html">AI & ML решения</a>
+                    <a href="projects-bots-soft.html">Боты & Автоматизация</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Контакты</span>
+                    <a href="https://t.me/GERS_AGENCY">@gers_agency</a>
+                    <a href="contact.html">Оставить заявку</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-new-bottom">
+            <span>&copy; 2026 GERS agency. Все права защищены.</span>
+            <span>Работаем удалённо по всему миру</span>
+        </div>
+    </footer>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle">
+            <svg class="chat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+            <span class="chat-badge">1</span>
+        </button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-status">
+                    <span class="status-indicator online"></span>
+                    <span class="status-text">Мы онлайн</span>
+                </div>
+                <span class="chat-title">Чат с GERS</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">G</div>
+                    <div class="message-content">
+                        <p>Привет! Я виртуальный ассистент GERS. Чем могу помочь?</p>
+                        <span class="message-time">Сейчас</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Введите сообщение...">
+                <button class="chat-send" id="chatSend">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="telegram.js"></script>
+    <script src="script.js"></script>
+    <script src="sites-ultra.js"></script>
+</body>
+</html>

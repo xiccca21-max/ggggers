@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайты - GERS</title>
+    <meta name="description" content="Проекты веб-разработки GERS Agency: корпоративные сайты, интернет-магазины, лендинги, маркетплейсы с адаптивной вёрсткой.">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <meta property="og:title" content="Сайты — GERS Agency">
+    <meta property="og:description" content="Корпоративные сайты, интернет-магазины, лендинги и маркетплейсы с адаптивной вёрсткой.">
+    <meta property="og:image" content="https://gers.agency/assets/og-image.png">
+    <meta property="og:url" content="https://gers.agency/projects-sites.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css?v=25">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body class="page-sites">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Web/Network Background -->
+    <canvas id="webCanvas" class="web-bg"></canvas>
+
+    <!-- Animated Grid Background -->
+    <div class="grid-bg">
+        <canvas id="gridCanvas"></canvas>
+    </div>
+
+    <!-- Tech Overlay Elements -->
+    <div class="tech-overlay">
+        <div class="corner-bracket top-left"></div>
+        <div class="corner-bracket top-right"></div>
+        <div class="corner-bracket bottom-left"></div>
+        <div class="corner-bracket bottom-right"></div>
+        <div class="scan-line"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header header--projects">
+        <a href="index.html" class="logo">
+            <img src="assets/logo-white.png" alt="GERS" class="logo-img">
+        </a>
+        <div class="header-center-title">
+            <img src="assets/sites-title.png" alt="Сайты" class="header-title-img">
+        </div>
+        <nav class="nav nav--right">
+            <a href="projects.html" class="nav-link" data-text="Проекты">Проекты</a>
+            <a href="services.html" class="nav-link" data-text="Услуги">Услуги</a>
+            <a href="calculator.html" class="nav-link" data-text="Узнать стоимость">Узнать стоимость</a>
+            <a href="contact.html" class="nav-link" data-text="Контакты">Контакты</a>
+        </nav>
+        <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </header>
+
+
+    <!-- Bento Grid Section -->
+    <section class="bento-section bento-section--sub" id="projects">
+        <!-- Background deco figures -->
+        <img loading="lazy" src="assets/deco/clock.png?v=3" alt="" class="deco-fig deco-fig--clock">
+        <img loading="lazy" src="assets/deco/rocket.png?v=3" alt="" class="deco-fig deco-fig--rocket">
+        <img loading="lazy" src="assets/deco/phone.png?v=3" alt="" class="deco-fig deco-fig--phone">
+        <img loading="lazy" src="assets/deco/chest.png?v=3" alt="" class="deco-fig deco-fig--chest">
+        <!-- Pink sparkle stars -->
+        <div class="deco-star deco-star--1">✦</div>
+        <div class="deco-star deco-star--2">✦</div>
+        <div class="deco-star deco-star--3">✧</div>
+        <div class="deco-star deco-star--4">✦</div>
+        <div class="deco-star deco-star--5">✧</div>
+        <div class="deco-star deco-star--6">✦</div>
+        <div class="deco-star deco-star--7">✧</div>
+        <div class="deco-star deco-star--8">✦</div>
+        <div class="deco-star deco-star--9">✧</div>
+        <div class="deco-star deco-star--10">✦</div>
+        <div class="deco-star deco-star--11">✦</div>
+        <div class="deco-star deco-star--12">✧</div>
+        <div class="bento-grid bento-grid--sites">
+
+            <!-- V1 - видео (большая) -->
+            <div class="tilt-wrap bento-item bento-v1 reveal-card">
+                <div class="bento-card bento-card--video">
+                    <div class="bento-card-glow"></div>
+                    <video class="bento-card-video" autoplay muted loop playsinline>
+                        <source src="assets/videos/video-1.mp4" type="video/mp4">
+                    </video>
+                    <div class="bento-card-overlay"></div>
+                </div>
+            </div>
+
+            <!-- V2 - видео -->
+            <div class="tilt-wrap bento-item bento-v2 reveal-card">
+                <div class="bento-card bento-card--video">
+                    <div class="bento-card-glow"></div>
+                    <video class="bento-card-video" autoplay muted loop playsinline>
+                        <source src="assets/videos/video-2.mp4" type="video/mp4">
+                    </video>
+                    <div class="bento-card-overlay"></div>
+                </div>
+            </div>
+
+            <!-- V3 - видео -->
+            <div class="tilt-wrap bento-item bento-v3 reveal-card">
+                <div class="bento-card bento-card--video">
+                    <div class="bento-card-glow"></div>
+                    <video class="bento-card-video" autoplay muted loop playsinline>
+                        <source src="assets/videos/video-3.mp4" type="video/mp4">
+                    </video>
+                    <div class="bento-card-overlay"></div>
+                </div>
+            </div>
+
+            <!-- V4 - фото -->
+            <div class="tilt-wrap bento-item bento-v4 reveal-card">
+                <div class="bento-card">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/videos/photo-1.jpg" alt="" class="bento-card-bg">
+                    <div class="bento-card-overlay"></div>
+                </div>
+            </div>
+
+            <!-- V5 - видео -->
+            <div class="tilt-wrap bento-item bento-v5 reveal-card">
+                <div class="bento-card bento-card--video">
+                    <div class="bento-card-glow"></div>
+                    <video class="bento-card-video" autoplay muted loop playsinline>
+                        <source src="assets/videos/video-4.mp4" type="video/mp4">
+                    </video>
+                    <div class="bento-card-overlay"></div>
+                </div>
+            </div>
+
+            <!-- S1 -->
+            <div class="tilt-wrap bento-item bento-s1 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="assets/projects/landing-course/1.png,assets/projects/landing-course/2.png,assets/projects/landing-course/3.png,assets/projects/landing-course/4.png,assets/projects/landing-course/5.png"
+                   data-title="Лендинг для онлайн-курса"
+                   data-desc="Продающая страница курса с формой записи, блоком отзывов и таймером ограниченного предложения"
+                   data-tags="HTML,CSS,JavaScript,GSAP,Адаптив"
+                   data-year="2025"
+                   data-stat="+200% заявок"
+                   data-category="Landing Page,Education"
+                   data-client="Онлайн-школа"
+                   data-sphere="Образование"
+                   data-duration="12 дней"
+                   data-project-type="Лендинг">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/projects/landing-course/1.png" alt="" class="bento-card-bg" loading="lazy">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">LANDING</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Лендинг для курса</span>
+                        <span class="bento-card-hover-desc">Продающая страница с формой записи</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- S2 -->
+            <div class="tilt-wrap bento-item bento-s2 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="assets/projects/analytics-marketing/1.png,assets/projects/analytics-marketing/2.png,assets/projects/analytics-marketing/3.png,assets/projects/analytics-marketing/4.png"
+                   data-title="Маркетинговая аналитика"
+                   data-desc="Дашборд аналитики маркетинговых кампаний с визуализацией данных, ROI-калькулятором и отчётами"
+                   data-tags="React,Node.js,Chart.js,PostgreSQL,API"
+                   data-year="2025"
+                   data-stat="+65% ROI"
+                   data-category="SaaS,Dashboard"
+                   data-client="Маркетинговое агентство"
+                   data-sphere="Маркетинг"
+                   data-duration="18 дней"
+                   data-project-type="Веб-приложение">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/projects/analytics-marketing/1.png" alt="" class="bento-card-bg" loading="lazy">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">DASHBOARD</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Маркетинговая аналитика</span>
+                        <span class="bento-card-hover-desc">Дашборд с визуализацией данных</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- S3 -->
+            <div class="tilt-wrap bento-item bento-s3 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="assets/projects/landing-event/1.png,assets/projects/landing-event/2.png,assets/projects/landing-event/3.png,assets/projects/landing-event/4.png,assets/projects/landing-event/5.png"
+                   data-title="Лендинг для мероприятия"
+                   data-desc="Сайт IT-конференции с программой, спикерами, онлайн-покупкой билетов и интеграцией с Google Maps"
+                   data-tags="HTML,CSS,JavaScript,Google Maps API,Tilda"
+                   data-year="2024"
+                   data-stat="500+ регистраций"
+                   data-category="Landing Page,Events"
+                   data-client="IT-конференция"
+                   data-sphere="Мероприятия"
+                   data-duration="10 дней"
+                   data-project-type="Лендинг">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/projects/landing-event/1.png" alt="" class="bento-card-bg" loading="lazy">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">LANDING</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Лендинг мероприятия</span>
+                        <span class="bento-card-hover-desc">IT-конференция с билетами онлайн</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- S4 (hidden by default) -->
+            <div class="tilt-wrap bento-item bento-s4 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="assets/projects/restaurant/1.png,assets/projects/restaurant/2.png,assets/projects/restaurant/3.png,assets/projects/restaurant/4.png"
+                   data-title="Сайт ресторана"
+                   data-desc="Интерактивное меню с фотографиями, онлайн-бронирование столиков, галерея интерьера и отзывы"
+                   data-tags="HTML,CSS,JavaScript,PHP,MySQL"
+                   data-year="2024"
+                   data-stat="+120% броней"
+                   data-category="Corporate,HoReCa"
+                   data-client="Ресторан"
+                   data-sphere="Общепит"
+                   data-duration="15 дней"
+                   data-project-type="Корпоративный сайт">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/projects/restaurant/1.png" alt="" class="bento-card-bg" loading="lazy">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">CORPORATE</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Сайт ресторана</span>
+                        <span class="bento-card-hover-desc">Меню, бронирование, галерея</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- S5 (hidden) -->
+            <div class="tilt-wrap bento-item bento-s5 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="assets/projects/landing-sale/1.png,assets/projects/landing-sale/2.png,assets/projects/landing-sale/3.png,assets/projects/landing-sale/4.png"
+                   data-title="Лендинг для акции"
+                   data-desc="Промо-страница Black Friday с таймером обратного отсчёта, карточками товаров и быстрым заказом"
+                   data-tags="HTML,CSS,JavaScript,GSAP,Анимации"
+                   data-year="2024"
+                   data-stat="+350% продаж"
+                   data-category="Landing Page,E-commerce"
+                   data-client="Интернет-магазин"
+                   data-sphere="Ритейл"
+                   data-duration="11 дней"
+                   data-project-type="Промо-лендинг">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/projects/landing-sale/1.png" alt="" class="bento-card-bg" loading="lazy">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">LANDING</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Лендинг для акции</span>
+                        <span class="bento-card-hover-desc">Black Friday с таймером</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- S6 (hidden) -->
+            <div class="tilt-wrap bento-item bento-s6 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="screenshots/marketplace/b2b/1.png,screenshots/marketplace/b2b/2.png,screenshots/marketplace/b2b/3.png,screenshots/marketplace/b2b/4.png,screenshots/marketplace/b2b/5.png,screenshots/marketplace/b2b/6.png"
+                   data-title="B2B Маркетплейс"
+                   data-desc="Платформа оптовых закупок с каталогом поставщиков, системой заказов и аналитикой продаж"
+                   data-tags="React,Node.js,MongoDB,Stripe,REST API"
+                   data-year="2025"
+                   data-stat="500+ продавцов"
+                   data-category="Marketplace,B2B"
+                   data-client="Оптовая компания"
+                   data-sphere="B2B-торговля"
+                   data-duration="20 дней"
+                   data-project-type="Маркетплейс">
+                    <div class="bento-card-glow"></div>
+                    <img src="screenshots/marketplace/b2b/1.png" alt="" class="bento-card-bg">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">MARKETPLACE</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">B2B Маркетплейс</span>
+                        <span class="bento-card-hover-desc">Платформа оптовых закупок</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- S7 (hidden) -->
+            <div class="tilt-wrap bento-item bento-s7 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="screenshots/marketplace/farmers/1.png,screenshots/marketplace/farmers/2.png,screenshots/marketplace/farmers/3.png,screenshots/marketplace/farmers/4.png,screenshots/marketplace/farmers/5.png,screenshots/marketplace/farmers/6.png"
+                   data-title="Фермерский маркетплейс"
+                   data-desc="Маркетплейс фермерских продуктов с доставкой, рейтингами и подпиской на регулярные заказы"
+                   data-tags="Next.js,PostgreSQL,YooKassa,Карты,SEO"
+                   data-year="2025"
+                   data-stat="1200+ заказов/мес"
+                   data-category="Marketplace,Food"
+                   data-client="Фермерский кооператив"
+                   data-sphere="Сельское хозяйство"
+                   data-duration="17 дней"
+                   data-project-type="Маркетплейс">
+                    <div class="bento-card-glow"></div>
+                    <img src="screenshots/marketplace/farmers/1.png" alt="" class="bento-card-bg">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">MARKETPLACE</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Фермерский маркетплейс</span>
+                        <span class="bento-card-hover-desc">Продукты с доставкой</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- S8 (hidden) -->
+            <div class="tilt-wrap bento-item bento-s8 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="assets/projects/stylebox/1.png,assets/projects/stylebox/2.png,assets/projects/stylebox/3.png,assets/projects/stylebox/4.png"
+                   data-title="Интернет-магазин одежды"
+                   data-desc="Каталог с фильтрами, корзина, онлайн-оплата, личный кабинет покупателя и система лояльности"
+                   data-tags="React,Node.js,Stripe,PostgreSQL,Redis"
+                   data-year="2024"
+                   data-stat="+45% продаж"
+                   data-category="E-commerce,Fashion"
+                   data-client="Бренд одежды"
+                   data-sphere="Мода и ритейл"
+                   data-duration="16 дней"
+                   data-project-type="Интернет-магазин">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/projects/stylebox/3.png" alt="" class="bento-card-bg" loading="lazy">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">E-COMMERCE</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Интернет-магазин</span>
+                        <span class="bento-card-hover-desc">Каталог, корзина, оплата</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- S9 (hidden) -->
+            <div class="tilt-wrap bento-item bento-s9 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="screenshots/marketplace/board/1.png,screenshots/marketplace/board/2.png,screenshots/marketplace/board/3.png,screenshots/marketplace/board/4.png"
+                   data-title="Доска объявлений"
+                   data-desc="Платформа объявлений с поиском, фильтрами, личными сообщениями и верификацией пользователей"
+                   data-tags="Vue.js,Laravel,MySQL,ElasticSearch,S3"
+                   data-year="2025"
+                   data-stat="10K+ объявлений"
+                   data-category="Marketplace,Classifieds"
+                   data-client="Стартап"
+                   data-sphere="Объявления"
+                   data-duration="14 дней"
+                   data-project-type="Веб-платформа">
+                    <div class="bento-card-glow"></div>
+                    <img src="screenshots/marketplace/board/2.png" alt="" class="bento-card-bg">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">MARKETPLACE</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Доска объявлений</span>
+                        <span class="bento-card-hover-desc">Поиск, фильтры, сообщения</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Load More button -->
+        <div class="bento-load-more" id="bentoLoadMore">
+            <button class="bento-load-btn" id="loadMoreBtn">
+                Показать ещё
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+        </div>
+    </section>
+
+
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="footer-new-top">
+            <div class="footer-brand">
+                <span class="footer-logo-text">GERS AGENCY</span>
+                <a href="https://t.me/GERS_AGENCY" class="footer-tg" aria-label="Telegram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <span class="footer-col-title">О нас</span>
+                    <a href="index.html">Главная</a>
+                    <a href="projects.html">Проекты</a>
+                    <a href="services.html">Услуги</a>
+                    <a href="calculator.html">Стоимость</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Направления</span>
+                    <a href="projects-sites.html">Веб-разработка</a>
+                    <a href="projects-mobile.html">Мобильные приложения</a>
+                    <a href="projects-auto.html">AI & ML решения</a>
+                    <a href="projects-bots-soft.html">Боты & Автоматизация</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Контакты</span>
+                    <a href="https://t.me/GERS_AGENCY">@gers_agency</a>
+                    <a href="contact.html">Оставить заявку</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-new-bottom">
+            <span>&copy; 2026 GERS agency. Все права защищены.</span>
+            <span>Работаем удалённо по всему миру</span>
+        </div>
+    </footer>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle">
+            <svg class="chat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+            <span class="chat-badge">1</span>
+        </button>
+        
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-status">
+                    <span class="status-indicator online"></span>
+                    <span class="status-text">Мы онлайн</span>
+                </div>
+                <span class="chat-title">Чат с GERS</span>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">G</div>
+                    <div class="message-content">
+                        <p>Привет! Я виртуальный ассистент GERS. Чем могу помочь?</p>
+                        <span class="message-time">Сейчас</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Введите сообщение...">
+                <button class="chat-send" id="chatSend">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="telegram.js"></script>
+    <script src="script.js"></script>
+    <script src="sites-ultra.js"></script>
+</body>
+</html>

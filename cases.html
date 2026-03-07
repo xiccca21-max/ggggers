@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейсы - GERS</title>
+    <meta name="description" content="Кейсы GERS Agency: реальные результаты проектов — рост продаж, автоматизация процессов, увеличение конверсии.">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <meta property="og:title" content="Кейсы — GERS Agency">
+    <meta property="og:description" content="Реальные результаты проектов — рост продаж, автоматизация процессов, увеличение конверсии.">
+    <meta property="og:image" content="https://gers.agency/assets/og-image.png">
+    <meta property="og:url" content="https://gers.agency/cases.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css?v=25">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Web/Network Background -->
+    <canvas id="webCanvas" class="web-bg"></canvas>
+
+    <!-- Animated Grid Background -->
+    <div class="grid-bg">
+        <canvas id="gridCanvas"></canvas>
+    </div>
+
+    <!-- Tech Overlay Elements -->
+    <div class="tech-overlay">
+        <div class="corner-bracket top-left"></div>
+        <div class="corner-bracket top-right"></div>
+        <div class="corner-bracket bottom-left"></div>
+        <div class="corner-bracket bottom-right"></div>
+        <div class="scan-line"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="GERS" class="logo-img">
+        </a>
+        <nav class="nav">
+            <a href="index.html" class="nav-link" data-text="Главная">Главная</a>
+            <a href="projects.html" class="nav-link" data-text="Проекты">Проекты</a>
+            <a href="services.html" class="nav-link" data-text="Услуги">Услуги</a>
+            <a href="calculator.html" class="nav-link" data-text="Узнать стоимость">Узнать стоимость</a>
+            <a href="contact.html" class="nav-link" data-text="Контакты">Контакты</a>
+        </nav>
+        <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span><span></span></button>
+        <div class="header-controls">
+            <button class="theme-toggle" id="themeToggle" title="Сменить тему">
+                <svg class="theme-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+                <svg class="theme-light" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+            </button>
+            <button class="sound-toggle" id="soundToggle" title="Звуковые эффекты">
+                <svg class="sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                </svg>
+                <svg class="sound-off" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                    <line x1="23" y1="9" x2="17" y2="15"/>
+                    <line x1="17" y1="9" x2="23" y2="15"/>
+                </svg>
+            </button>
+            <div class="header-meta">
+                <span class="meta-time" id="time">00:00:00</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <div class="page-tag">
+                <span class="tag-line"></span>
+                <span>Истории успеха</span>
+            </div>
+            <h1 class="page-title">КЕЙСЫ</h1>
+            <p class="page-subtitle">Как мы помогаем бизнесу расти с помощью технологий</p>
+        </div>
+    </section>
+
+    <!-- Cases Grid -->
+    <section class="cases-section">
+        <div class="cases-grid">
+            <!-- Case 1 -->
+            <article class="case-card featured">
+                <div class="case-badge">Топ-кейс</div>
+                <div class="case-header">
+                    <span class="case-category">E-commerce</span>
+                    <span class="case-date">2024</span>
+                </div>
+                <h2 class="case-title">TechStore: +45% конверсии за 3 месяца</h2>
+                <p class="case-excerpt">Комплексная переработка интернет-магазина электроники. Новый дизайн, улучшенный UX и интеграция AI-рекомендаций.</p>
+                <div class="case-metrics">
+                    <div class="metric">
+                        <span class="metric-value">+45%</span>
+                        <span class="metric-label">Конверсия</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">-30%</span>
+                        <span class="metric-label">Отказы</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">2.5x</span>
+                        <span class="metric-label">Скорость</span>
+                    </div>
+                </div>
+                <div class="case-tags">
+                    <span class="tag">React</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">AI</span>
+                </div>
+                <div class="case-footer">
+                    <span class="case-client">TechStore Inc.</span>
+                    <span class="case-link">Читать →</span>
+                </div>
+            </article>
+
+            <!-- Case 2 -->
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-category">Финтех</span>
+                    <span class="case-date">2024</span>
+                </div>
+                <h2 class="case-title">CryptoVault: 500K+ активных пользователей</h2>
+                <p class="case-excerpt">Разработка безопасной платформы для управления криптовалютными активами с мультиподписью.</p>
+                <div class="case-metrics">
+                    <div class="metric">
+                        <span class="metric-value">500K+</span>
+                        <span class="metric-label">Юзеров</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">0</span>
+                        <span class="metric-label">Утечек</span>
+                    </div>
+                </div>
+                <div class="case-tags">
+                    <span class="tag">Blockchain</span>
+                    <span class="tag">Security</span>
+                </div>
+                <div class="case-footer">
+                    <span class="case-client">CryptoVault</span>
+                    <span class="case-link">Читать →</span>
+                </div>
+            </article>
+
+            <!-- Case 3 -->
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-category">Логистика</span>
+                    <span class="case-date">2023</span>
+                </div>
+                <h2 class="case-title">LogiTrack: -30% расходов на доставку</h2>
+                <p class="case-excerpt">AI-система оптимизации маршрутов для логистической компании. Снижение расходов и выбросов CO2.</p>
+                <div class="case-metrics">
+                    <div class="metric">
+                        <span class="metric-value">-30%</span>
+                        <span class="metric-label">Расходы</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">-25%</span>
+                        <span class="metric-label">CO2</span>
+                    </div>
+                </div>
+                <div class="case-tags">
+                    <span class="tag">ML</span>
+                    <span class="tag">IoT</span>
+                </div>
+                <div class="case-footer">
+                    <span class="case-client">EcoLogistics</span>
+                    <span class="case-link">Читать →</span>
+                </div>
+            </article>
+
+            <!-- Case 4 -->
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-category">Здоровье</span>
+                    <span class="case-date">2024</span>
+                </div>
+                <h2 class="case-title">FitLife: 100K+ скачиваний за месяц</h2>
+                <p class="case-excerpt">Мобильное приложение для фитнес-тренировок с персональными планами и трекингом прогресса.</p>
+                <div class="case-metrics">
+                    <div class="metric">
+                        <span class="metric-value">100K+</span>
+                        <span class="metric-label">Скачиваний</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">4.8★</span>
+                        <span class="metric-label">Рейтинг</span>
+                    </div>
+                </div>
+                <div class="case-tags">
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Firebase</span>
+                </div>
+                <div class="case-footer">
+                    <span class="case-client">FitLife Studio</span>
+                    <span class="case-link">Читать →</span>
+                </div>
+            </article>
+
+            <!-- Case 5 -->
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-category">HR-Tech</span>
+                    <span class="case-date">2024</span>
+                </div>
+                <h2 class="case-title">DataFlow: +60% продуктивности команд</h2>
+                <p class="case-excerpt">Корпоративная CRM с AI-ассистентом для автоматизации рутинных задач и аналитики.</p>
+                <div class="case-metrics">
+                    <div class="metric">
+                        <span class="metric-value">+60%</span>
+                        <span class="metric-label">Продуктивность</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">-4ч</span>
+                        <span class="metric-label">В неделю</span>
+                    </div>
+                </div>
+                <div class="case-tags">
+                    <span class="tag">Vue.js</span>
+                    <span class="tag">GPT-4</span>
+                </div>
+                <div class="case-footer">
+                    <span class="case-client">DataFlow Corp</span>
+                    <span class="case-link">Читать →</span>
+                </div>
+            </article>
+
+            <!-- Case 6 -->
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-category">E-commerce</span>
+                    <span class="case-date">2023</span>
+                </div>
+                <h2 class="case-title">MetaCommerce: +120% продаж</h2>
+                <p class="case-excerpt">Маркетплейс нового поколения с AR-примеркой товаров и персонализированными рекомендациями.</p>
+                <div class="case-metrics">
+                    <div class="metric">
+                        <span class="metric-value">+120%</span>
+                        <span class="metric-label">Продажи</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">+80%</span>
+                        <span class="metric-label">Retention</span>
+                    </div>
+                </div>
+                <div class="case-tags">
+                    <span class="tag">Next.js</span>
+                    <span class="tag">AR</span>
+                </div>
+                <div class="case-footer">
+                    <span class="case-client">MetaCommerce</span>
+                    <span class="case-link">Читать →</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="blog-section">
+        <div class="section-header">
+            <h2 class="section-title">БЛОГ</h2>
+            <p class="section-subtitle">Делимся опытом и трендами в разработке</p>
+        </div>
+        
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-meta">
+                    <span class="blog-date">15 фев 2026</span>
+                    <span class="blog-read">5 мин</span>
+                </div>
+                <h3 class="blog-title">Как выбрать стек технологий для вашего проекта</h3>
+                <p class="blog-excerpt">Разбираем критерии выбора технологий для разных типов проектов: от простых лендингов до сложных платформ.</p>
+                <div class="blog-tags">
+                    <span class="tag">Разработка</span>
+                    <span class="tag">Советы</span>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-meta">
+                    <span class="blog-date">10 фев 2026</span>
+                    <span class="blog-read">7 мин</span>
+                </div>
+                <h3 class="blog-title">AI в бизнесе: реальные кейсы применения</h3>
+                <p class="blog-excerpt">Как малый и средний бизнес использует искусственный интеллект для автоматизации и роста продаж.</p>
+                <div class="blog-tags">
+                    <span class="tag">AI</span>
+                    <span class="tag">Бизнес</span>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-meta">
+                    <span class="blog-date">5 фев 2026</span>
+                    <span class="blog-read">4 мин</span>
+                </div>
+                <h3 class="blog-title">Почему мобильное приложение лучше мобильного сайта</h3>
+                <p class="blog-excerpt">Сравниваем PWA и нативные приложения: когда что выбрать и сколько это стоит.</p>
+                <div class="blog-tags">
+                    <span class="tag">Mobile</span>
+                    <span class="tag">PWA</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Хотите такой же результат?</h2>
+            <p class="cta-subtitle">Расскажите о вашем проекте - мы предложим решение</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="cta-button primary">Обсудить проект</a>
+                <a href="calculator.html" class="cta-button secondary">Рассчитать стоимость</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="footer-new-top">
+            <div class="footer-brand">
+                <span class="footer-logo-text">GERS AGENCY</span>
+                <a href="https://t.me/GERS_AGENCY" class="footer-tg" aria-label="Telegram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <span class="footer-col-title">О нас</span>
+                    <a href="index.html">Главная</a>
+                    <a href="projects.html">Проекты</a>
+                    <a href="services.html">Услуги</a>
+                    <a href="calculator.html">Стоимость</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Направления</span>
+                    <a href="projects-sites.html">Веб-разработка</a>
+                    <a href="projects-mobile.html">Мобильные приложения</a>
+                    <a href="projects-auto.html">AI & ML решения</a>
+                    <a href="projects-bots-soft.html">Боты & Автоматизация</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Контакты</span>
+                    <a href="https://t.me/GERS_AGENCY">@gers_agency</a>
+                    <a href="contact.html">Оставить заявку</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-new-bottom">
+            <span>&copy; 2026 GERS agency. Все права защищены.</span>
+            <span>Работаем удалённо по всему миру</span>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta" id="floatingCta">
+        <a href="contact.html" class="floating-cta-btn">
+            <span>Оставить заявку</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle">
+            <svg class="chat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+            <span class="chat-badge">1</span>
+        </button>
+        
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-status">
+                    <span class="status-indicator online"></span>
+                    <span class="status-text">Мы онлайн</span>
+                </div>
+                <span class="chat-title">Чат с GERS</span>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">G</div>
+                    <div class="message-content">
+                        <p>Привет! Я виртуальный ассистент GERS. Чем могу помочь?</p>
+                        <span class="message-time">Сейчас</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Введите сообщение...">
+                <button class="chat-send" id="chatSend">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="telegram.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

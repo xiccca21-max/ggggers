@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автоматизация - GERS</title>
+    <meta name="description" content="Автоматизация бизнеса от GERS Agency: интеграции с 1С, CRM, эквайринг, аналитические дашборды, AI-ассистенты и email-рассылки.">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <meta property="og:title" content="Автоматизация — GERS Agency">
+    <meta property="og:description" content="Интеграции с 1С, CRM, эквайринг, аналитические дашборды, AI-ассистенты и email-рассылки.">
+    <meta property="og:image" content="https://gers.agency/assets/og-image.png">
+    <meta property="og:url" content="https://gers.agency/projects-auto.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css?v=25">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body class="page-auto">
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="noise-overlay"></div>
+    <canvas id="webCanvas" class="web-bg"></canvas>
+    <div class="grid-bg"><canvas id="gridCanvas"></canvas></div>
+    <div class="tech-overlay">
+        <div class="corner-bracket top-left"></div>
+        <div class="corner-bracket top-right"></div>
+        <div class="corner-bracket bottom-left"></div>
+        <div class="corner-bracket bottom-right"></div>
+        <div class="scan-line"></div>
+    </div>
+
+    <header class="header header--subpage header--dark">
+        <a href="index.html" class="logo">
+            <img src="assets/logo-white.png" alt="GERS" class="logo-img">
+        </a>
+        <div class="header-center-title">
+            <img src="assets/auto-title.png" alt="Автоматизация" class="header-title-img">
+        </div>
+        <nav class="nav nav--right">
+            <a href="projects.html" class="nav-link" data-text="Проекты">Проекты</a>
+            <a href="services.html" class="nav-link" data-text="Услуги">Услуги</a>
+            <a href="calculator.html" class="nav-link" data-text="Узнать стоимость">Узнать стоимость</a>
+            <a href="contact.html" class="nav-link" data-text="Контакты">Контакты</a>
+        </nav>
+        <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </header>
+
+    <!-- Bento Grid Section -->
+    <section class="bento-section bento-section--sub" id="projects">
+        <img loading="lazy" src="assets/deco/clock.png?v=3" alt="" class="deco-fig deco-fig--clock">
+        <img loading="lazy" src="assets/deco/rocket.png?v=3" alt="" class="deco-fig deco-fig--rocket">
+        <img loading="lazy" src="assets/deco/phone.png?v=3" alt="" class="deco-fig deco-fig--phone">
+        <img loading="lazy" src="assets/deco/chest.png?v=3" alt="" class="deco-fig deco-fig--chest">
+        <div class="deco-star deco-star--1">✦</div>
+        <div class="deco-star deco-star--2">✦</div>
+        <div class="deco-star deco-star--3">✧</div>
+        <div class="deco-star deco-star--4">✦</div>
+        <div class="deco-star deco-star--5">✧</div>
+        <div class="deco-star deco-star--6">✦</div>
+        <div class="deco-star deco-star--7">✧</div>
+        <div class="deco-star deco-star--8">✦</div>
+        <div class="deco-star deco-star--9">✧</div>
+        <div class="deco-star deco-star--10">✦</div>
+        <div class="deco-star deco-star--11">✦</div>
+        <div class="deco-star deco-star--12">✧</div>
+
+        <div class="bento-grid bento-grid--sites">
+
+            <!-- A1 - Кабинет страховой -->
+            <div class="tilt-wrap bento-item bento-s1 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="assets/projects/cabinet-insurance/1.png,assets/projects/cabinet-insurance/2.png,assets/projects/cabinet-insurance/3.png,assets/projects/cabinet-insurance/4.png,assets/projects/cabinet-insurance/5.png,assets/projects/cabinet-insurance/6.png"
+                   data-title="Кабинет клиента страховой"
+                   data-desc="Полисы, история платежей, заявки на выплаты, чат с поддержкой"
+                   data-tags="React,Node.js,PostgreSQL,WebSocket,PDF"
+                   data-year="2025"
+                   data-stat="-50% звонков в КЦ"
+                   data-category="Dashboard,Insurance"
+                   data-client="Страховая компания"
+                   data-sphere="Страхование"
+                   data-duration="16 дней"
+                   data-project-type="Личный кабинет">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/projects/cabinet-insurance/1.png" alt="" class="bento-card-bg" loading="lazy">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">DASHBOARD</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Кабинет страховой</span>
+                        <span class="bento-card-hover-desc">Полисы, платежи, выплаты</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- A2 - HR-портал -->
+            <div class="tilt-wrap bento-item bento-s2 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="assets/projects/cabinet-hr/1.png,assets/projects/cabinet-hr/2.png,assets/projects/cabinet-hr/3.png,assets/projects/cabinet-hr/4.png,assets/projects/cabinet-hr/5.png,assets/projects/cabinet-hr/6.png"
+                   data-title="Портал для сотрудников"
+                   data-desc="Заявки на отпуск, расчётные листы, корпоративные новости, обучение"
+                   data-tags="React,Node.js,PostgreSQL,SSO,Push"
+                   data-year="2024"
+                   data-stat="500+ сотрудников"
+                   data-category="Dashboard,HR"
+                   data-client="Крупная компания"
+                   data-sphere="HR"
+                   data-duration="18 дней"
+                   data-project-type="HR-портал">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/projects/cabinet-hr/1.png" alt="" class="bento-card-bg" loading="lazy">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">HR</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">HR-портал</span>
+                        <span class="bento-card-hover-desc">Отпуск, расчётки, обучение</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- A3 - Автоматизация документов -->
+            <div class="tilt-wrap bento-item bento-s3 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-bot-preview="auto-docs"
+                   data-title="Автоматизация документов"
+                   data-desc="Генерация договоров, счетов, актов из шаблонов - подставляет данные клиента"
+                   data-tags="Python,docxtpl,PDF,API,PostgreSQL"
+                   data-year="2024"
+                   data-stat="-90% ручной работы"
+                   data-category="Automation,Documents"
+                   data-client="Юридическая фирма"
+                   data-sphere="Документооборот"
+                   data-duration="8 дней"
+                   data-project-type="Автоматизация">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #0e0a1a 0%, #1e0f35 40%, #FF2F8B16 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">DOCS</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Документы</span>
+                        <span class="bento-card-hover-desc">Генерация договоров и счетов</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- A4 - Интеграция с 1С -->
+            <div class="tilt-wrap bento-item bento-s4 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-web-preview="integration-1c"
+                   data-title="Интеграция с 1С"
+                   data-desc="Синхронизация товаров, цен, остатков между сайтом и 1С в реальном времени"
+                   data-tags="1C,REST API,Node.js,PostgreSQL,Webhooks"
+                   data-year="2025"
+                   data-stat="-95% ручного ввода"
+                   data-category="Integration,ERP"
+                   data-client="Торговая сеть"
+                   data-sphere="Ритейл"
+                   data-duration="14 дней"
+                   data-project-type="Интеграция">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #0f0a1c 0%, #22103d 40%, #FF2F8B12 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">1C</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Интеграция с 1С</span>
+                        <span class="bento-card-hover-desc">Товары, цены, остатки</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- A5 - Эквайринг -->
+            <div class="tilt-wrap bento-item bento-s5 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-web-preview="integration-acquiring"
+                   data-title="Подключение эквайринга"
+                   data-desc="Интеграция Stripe, ЮKassa, CloudPayments для приёма онлайн-платежей"
+                   data-tags="Stripe,YooKassa,CloudPayments,API,Webhooks"
+                   data-year="2024"
+                   data-stat="+25% конверсии"
+                   data-category="Integration,Payments"
+                   data-client="Интернет-магазин"
+                   data-sphere="Платежи"
+                   data-duration="7 дней"
+                   data-project-type="Интеграция">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #0a0e1e 0%, #151535 40%, #FF2F8B14 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">PAYMENTS</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Эквайринг</span>
+                        <span class="bento-card-hover-desc">Stripe, ЮKassa, СБП</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- A6 - CRM + сайт -->
+            <div class="tilt-wrap bento-item bento-s6 reveal-card">
+                <a href="#" class="bento-card project-card"
+                   data-web-preview="integration-crm"
+                   data-title="Интеграция CRM + сайт"
+                   data-desc="Заявки с сайта автоматически попадают в amoCRM, Bitrix24, HubSpot"
+                   data-tags="amoCRM,Bitrix24,HubSpot,Webhooks,API"
+                   data-year="2024"
+                   data-stat="0 потерянных заявок"
+                   data-category="Integration,CRM"
+                   data-client="Сервисная компания"
+                   data-sphere="Продажи"
+                   data-duration="6 дней"
+                   data-project-type="Интеграция">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #0a0f1a 0%, #0f1a30 40%, #FF2F8B18 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">CRM</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">CRM + сайт</span>
+                        <span class="bento-card-hover-desc">amoCRM, Bitrix24, HubSpot</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- A7 - Автопостинг (hidden) -->
+            <div class="tilt-wrap bento-item bento-s7 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-bot-preview="auto-posting"
+                   data-title="Автопостинг в соцсети"
+                   data-desc="Автоматическая публикация контента в Instagram, VK, Telegram по расписанию"
+                   data-tags="Python,Instagram API,VK API,Telegram,Celery"
+                   data-year="2025"
+                   data-stat="-80% времени SMM"
+                   data-category="Automation,SMM"
+                   data-client="SMM-агентство"
+                   data-sphere="Маркетинг"
+                   data-duration="12 дней"
+                   data-project-type="Автоматизация">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #1a0a1e 0%, #2d0f3e 40%, #FF2F8B1A 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">SMM</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Автопостинг</span>
+                        <span class="bento-card-hover-desc">Instagram, VK, Telegram</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- A8 - Email-рассылки (hidden) -->
+            <div class="tilt-wrap bento-item bento-s8 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-bot-preview="auto-email"
+                   data-title="Email-рассылки"
+                   data-desc="Автоматические цепочки писем для воронки продаж, триггерные рассылки"
+                   data-tags="Python,SendGrid,PostgreSQL,Celery,Redis"
+                   data-year="2024"
+                   data-stat="+35% конверсии"
+                   data-category="Automation,Email"
+                   data-client="E-commerce компания"
+                   data-sphere="Email-маркетинг"
+                   data-duration="10 дней"
+                   data-project-type="Автоматизация">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #0a0a1e 0%, #1a1040 40%, #FF2F8B14 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">EMAIL</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Email-рассылки</span>
+                        <span class="bento-card-hover-desc">Воронка, триггеры, автоматизация</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- A9 - Кабинет дилера (hidden) -->
+            <div class="tilt-wrap bento-item bento-s9 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="assets/projects/cabinet-dealer/1.png,assets/projects/cabinet-dealer/2.png,assets/projects/cabinet-dealer/3.png,assets/projects/cabinet-dealer/4.png,assets/projects/cabinet-dealer/5.png,assets/projects/cabinet-dealer/6.png,assets/projects/cabinet-dealer/7.png"
+                   data-title="Кабинет дилера"
+                   data-desc="Заказы, остатки на складе, цены, акции, документы для партнёров"
+                   data-tags="React,Node.js,PostgreSQL,REST API,Excel"
+                   data-year="2024"
+                   data-stat="+40% заказов"
+                   data-category="Dashboard,B2B"
+                   data-client="Производитель"
+                   data-sphere="B2B"
+                   data-duration="15 дней"
+                   data-project-type="Дилерский кабинет">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/projects/cabinet-dealer/1.png" alt="" class="bento-card-bg" loading="lazy">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">B2B</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Кабинет дилера</span>
+                        <span class="bento-card-hover-desc">Заказы, остатки, документы</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- A10 - Дашборд продаж (hidden) -->
+            <div class="tilt-wrap bento-item bento-s10 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="assets/projects/analytics-sales/1.png,assets/projects/analytics-sales/2.png,assets/projects/analytics-sales/3.png,assets/projects/analytics-sales/4.png"
+                   data-title="Дашборд для отдела продаж"
+                   data-desc="Выручка, воронка, конверсии, планы - всё на одном экране в реальном времени"
+                   data-tags="React,D3.js,Node.js,PostgreSQL,WebSocket"
+                   data-year="2025"
+                   data-stat="+20% к плану"
+                   data-category="Analytics,Sales"
+                   data-client="Компания"
+                   data-sphere="Продажи"
+                   data-duration="12 дней"
+                   data-project-type="Дашборд">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/projects/analytics-sales/1.png" alt="" class="bento-card-bg" loading="lazy">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">ANALYTICS</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Дашборд продаж</span>
+                        <span class="bento-card-hover-desc">Выручка, воронка, KPI</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- A11 - Маркетинговая аналитика (hidden) -->
+            <div class="tilt-wrap bento-item bento-s11 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="assets/projects/analytics-marketing/1.png,assets/projects/analytics-marketing/2.png,assets/projects/analytics-marketing/3.png,assets/projects/analytics-marketing/4.png"
+                   data-title="Аналитика маркетинга"
+                   data-desc="Объединение данных из Яндекс.Метрики, Google Ads, VK Ads в одном отчёте"
+                   data-tags="Python,Google Ads API,Метрика API,Grafana,PostgreSQL"
+                   data-year="2024"
+                   data-stat="-30% CPL"
+                   data-category="Analytics,Marketing"
+                   data-client="Маркетинговое агентство"
+                   data-sphere="Маркетинг"
+                   data-duration="11 дней"
+                   data-project-type="Аналитика">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/projects/analytics-marketing/1.png" alt="" class="bento-card-bg" loading="lazy">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">MARKETING</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Аналитика маркетинга</span>
+                        <span class="bento-card-hover-desc">ROI, каналы, CPL</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- A12 - Финансовые отчёты (hidden) -->
+            <div class="tilt-wrap bento-item bento-s12 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-screenshots="assets/projects/analytics-finance/1.png,assets/projects/analytics-finance/2.png,assets/projects/analytics-finance/3.png,assets/projects/analytics-finance/4.png"
+                   data-title="Финансовые отчёты"
+                   data-desc="Автоматические отчёты P&amp;L, cash flow, бюджеты с визуализацией и алертами"
+                   data-tags="React,D3.js,Node.js,PostgreSQL,PDF"
+                   data-year="2024"
+                   data-stat="-4 часа в неделю"
+                   data-category="Analytics,Finance"
+                   data-client="Финансовый директор"
+                   data-sphere="Финансы"
+                   data-duration="14 дней"
+                   data-project-type="Аналитика">
+                    <div class="bento-card-glow"></div>
+                    <img src="assets/projects/analytics-finance/1.png" alt="" class="bento-card-bg" loading="lazy">
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">FINANCE</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Финансовые отчёты</span>
+                        <span class="bento-card-hover-desc">P&amp;L, cash flow, бюджеты</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- A13 - Бронирование отеля (hidden) -->
+            <div class="tilt-wrap bento-item bento-s13 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-bot-preview="booking-hotel"
+                   data-title="Бронирование для отеля"
+                   data-desc="Выбор номера, даты, онлайн-оплата, подтверждение на email, управление бронями"
+                   data-tags="React,Node.js,Stripe,Google Calendar,Email"
+                   data-year="2025"
+                   data-stat="+60% онлайн-броней"
+                   data-category="Booking,Hotel"
+                   data-client="Отель"
+                   data-sphere="Гостиничный бизнес"
+                   data-duration="13 дней"
+                   data-project-type="Система бронирования">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #0a1a14 0%, #0f3528 40%, #FF2F8B14 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">BOOKING</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">Бронирование отеля</span>
+                        <span class="bento-card-hover-desc">Номера, даты, оплата</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- A14 - AI-ассистент (hidden) -->
+            <div class="tilt-wrap bento-item bento-s14 reveal-card bento-item--extra">
+                <a href="#" class="bento-card project-card"
+                   data-web-preview="ai-support"
+                   data-title="AI-ассистент для поддержки"
+                   data-desc="Чат-бот на базе ChatGPT, который отвечает на вопросы клиентов 24/7"
+                   data-tags="ChatGPT,Python,LangChain,Pinecone,API"
+                   data-year="2025"
+                   data-stat="-70% нагрузки КЦ"
+                   data-category="AI,Support"
+                   data-client="SaaS-компания"
+                   data-sphere="Поддержка"
+                   data-duration="10 дней"
+                   data-project-type="AI-ассистент">
+                    <div class="bento-card-glow"></div>
+                    <div class="bento-card-bg bento-card-bg--gradient" style="background: linear-gradient(135deg, #0a0a14 0%, #15102a 40%, #FF2F8B16 100%)"></div>
+                    <div class="bento-card-overlay"></div>
+                    <span class="bento-card-badge">AI</span>
+                    <div class="bento-card-hover">
+                        <span class="bento-card-hover-title">AI-поддержка</span>
+                        <span class="bento-card-hover-desc">ChatGPT, 24/7</span>
+                        <span class="bento-card-hover-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Load More button -->
+        <div class="bento-load-more" id="bentoLoadMore">
+            <button class="bento-load-btn" id="loadMoreBtn">
+                Показать ещё
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+        </div>
+    </section>
+
+
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <footer class="footer-new">
+        <div class="footer-new-top">
+            <div class="footer-brand">
+                <span class="footer-logo-text">GERS AGENCY</span>
+                <a href="https://t.me/GERS_AGENCY" class="footer-tg" aria-label="Telegram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <span class="footer-col-title">О нас</span>
+                    <a href="index.html">Главная</a>
+                    <a href="projects.html">Проекты</a>
+                    <a href="services.html">Услуги</a>
+                    <a href="calculator.html">Стоимость</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Направления</span>
+                    <a href="projects-sites.html">Веб-разработка</a>
+                    <a href="projects-mobile.html">Мобильные приложения</a>
+                    <a href="projects-auto.html">AI & ML решения</a>
+                    <a href="projects-bots-soft.html">Боты & Автоматизация</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Контакты</span>
+                    <a href="https://t.me/GERS_AGENCY">@gers_agency</a>
+                    <a href="contact.html">Оставить заявку</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-new-bottom">
+            <span>&copy; 2026 GERS agency. Все права защищены.</span>
+            <span>Работаем удалённо по всему миру</span>
+        </div>
+    </footer>
+
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle">
+            <svg class="chat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span class="chat-badge">1</span>
+        </button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-status"><span class="status-indicator online"></span><span class="status-text">Мы онлайн</span></div>
+                <span class="chat-title">Чат с GERS</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">G</div>
+                    <div class="message-content"><p>Привет! Я виртуальный ассистент GERS. Чем могу помочь?</p><span class="message-time">Сейчас</span></div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Введите сообщение...">
+                <button class="chat-send" id="chatSend"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="telegram.js"></script>
+    <script src="script.js"></script>
+    <script src="sites-ultra.js"></script>
+</body>
+</html>

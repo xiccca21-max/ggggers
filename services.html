@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги - GERS</title>
+    <meta name="description" content="Услуги GERS Agency: веб-разработка, мобильные приложения, AI-решения, Telegram-боты, автоматизация, UI/UX дизайн.">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <meta property="og:title" content="Услуги — GERS Agency">
+    <meta property="og:description" content="Веб-разработка, мобильные приложения, AI-решения, Telegram-боты, автоматизация, UI/UX дизайн.">
+    <meta property="og:image" content="https://gers.agency/assets/og-image.png">
+    <meta property="og:url" content="https://gers.agency/services.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css?v=25">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Web/Network Background -->
+    <canvas id="webCanvas" class="web-bg"></canvas>
+
+    <!-- Animated Grid Background -->
+    <div class="grid-bg">
+        <canvas id="gridCanvas"></canvas>
+    </div>
+
+    <!-- Tech Overlay Elements -->
+    <div class="tech-overlay">
+        <div class="corner-bracket top-left"></div>
+        <div class="corner-bracket top-right"></div>
+        <div class="corner-bracket bottom-left"></div>
+        <div class="corner-bracket bottom-right"></div>
+        <div class="scan-line"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header header--subpage">
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="GERS" class="logo-img">
+        </a>
+        <div class="header-center-title">
+            <img src="assets/services-title.png" alt="Услуги" class="header-title-img">
+        </div>
+        <nav class="nav nav--right">
+            <a href="projects.html" class="nav-link" data-text="Проекты">Проекты</a>
+            <a href="calculator.html" class="nav-link" data-text="Узнать стоимость">Узнать стоимость</a>
+            <a href="contact.html" class="nav-link" data-text="Контакты">Контакты</a>
+        </nav>
+        <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </header>
+
+
+    <!-- Services Carousel -->
+    <section class="svc-carousel-section" id="services">
+        <div class="svc-carousel-wrap">
+            <div class="svc-carousel-track" id="svcTrack">
+
+                <!-- 01 - Веб-разработка -->
+                <div class="svc-slide" data-num="01">
+                    <div class="svc-slide-glow"></div>
+                    <div class="svc-slide-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/>
+                            <line x1="12" y1="22" x2="12" y2="15.5"/>
+                            <polyline points="22,8.5 12,15.5 2,8.5"/>
+                        </svg>
+                    </div>
+                    <span class="svc-slide-num">01</span>
+                    <h3 class="svc-slide-title">Веб-разработка</h3>
+                    <p class="svc-slide-desc">Корпоративные сайты, интернет-магазины, лендинги, маркетплейсы, форумы и видеоплатформы. Адаптивная вёрстка, SEO-оптимизация, интеграция с CRM и платёжными системами.</p>
+                    <div class="svc-slide-tag">+50% продаж</div>
+                </div>
+
+                <!-- 02 - Мобильные приложения -->
+                <div class="svc-slide" data-num="02">
+                    <div class="svc-slide-glow"></div>
+                    <div class="svc-slide-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="5" y="2" width="14" height="20" rx="2"/>
+                            <line x1="12" y1="18" x2="12" y2="18"/>
+                        </svg>
+                    </div>
+                    <span class="svc-slide-num">02</span>
+                    <h3 class="svc-slide-title">Мобильные приложения</h3>
+                    <p class="svc-slide-desc">Нативные и кроссплатформенные приложения для iOS и Android. Push-уведомления, геолокация, офлайн-режим, интеграция с Apple Pay и Google Pay.</p>
+                    <div class="svc-slide-tag">iOS & Android</div>
+                </div>
+
+                <!-- 03 - AI & ML -->
+                <div class="svc-slide" data-num="03">
+                    <div class="svc-slide-glow"></div>
+                    <div class="svc-slide-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12,1 A11,11 0 0,1 23,12"/>
+                            <path d="M12,1 A11,11 0 0,0 1,12"/>
+                            <path d="M12,23 A11,11 0 0,1 1,12"/>
+                            <path d="M12,23 A11,11 0 0,0 23,12"/>
+                        </svg>
+                    </div>
+                    <span class="svc-slide-num">03</span>
+                    <h3 class="svc-slide-title">AI & ML решения</h3>
+                    <p class="svc-slide-desc">Чат-боты на GPT, рекомендательные системы, компьютерное зрение, предиктивная аналитика. Внедряем нейросети в любые бизнес-процессы.</p>
+                    <div class="svc-slide-tag">80% автоматизации</div>
+                </div>
+
+                <!-- 04 - Боты & Парсеры -->
+                <div class="svc-slide" data-num="04">
+                    <div class="svc-slide-glow"></div>
+                    <div class="svc-slide-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <span class="svc-slide-num">04</span>
+                    <h3 class="svc-slide-title">Боты & Парсеры</h3>
+                    <p class="svc-slide-desc">Telegram-боты, Discord-боты, парсеры данных, автоматический сбор информации с любых сайтов. Telegram-магазины с оплатой и каталогом.</p>
+                    <div class="svc-slide-tag">24/7 работа</div>
+                </div>
+
+                <!-- 05 - Автоматизация -->
+                <div class="svc-slide" data-num="05">
+                    <div class="svc-slide-glow"></div>
+                    <div class="svc-slide-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                    </div>
+                    <span class="svc-slide-num">05</span>
+                    <h3 class="svc-slide-title">Автоматизация</h3>
+                    <p class="svc-slide-desc">Интеграции API, CRM-системы, личные кабинеты, аналитические дашборды, системы бронирования, LMS-платформы. Убираем рутину из вашего бизнеса.</p>
+                    <div class="svc-slide-tag">−70% рутины</div>
+                </div>
+
+                <!-- 06 - UI/UX дизайн -->
+                <div class="svc-slide" data-num="06">
+                    <div class="svc-slide-glow"></div>
+                    <div class="svc-slide-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <line x1="3" y1="9" x2="21" y2="9"/>
+                            <line x1="9" y1="21" x2="9" y2="9"/>
+                        </svg>
+                    </div>
+                    <span class="svc-slide-num">06</span>
+                    <h3 class="svc-slide-title">UI/UX дизайн</h3>
+                    <p class="svc-slide-desc">Прототипирование, дизайн-системы, анимации, редизайн существующих продуктов. Figma, After Effects. Увеличиваем конверсию через удобство.</p>
+                    <div class="svc-slide-tag">+35% конверсия</div>
+                </div>
+
+                <!-- 07 - Серверная инфраструктура -->
+                <div class="svc-slide" data-num="07">
+                    <div class="svc-slide-glow"></div>
+                    <div class="svc-slide-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21,16V8a2,2 0,0,0-1-1.73l-7-4a2,2 0,0,0-2,0l-7,4A2,2 0,0,0,3,8v8a2,2 0,0,0,1,1.73l7,4a2,2 0,0,0,2,0l7-4A2,2 0,0,0,21,16z"/>
+                            <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <span class="svc-slide-num">07</span>
+                    <h3 class="svc-slide-title">Серверы & DevOps</h3>
+                    <p class="svc-slide-desc">Настройка серверов, Docker, CI/CD, мониторинг, балансировка нагрузки. AWS, DigitalOcean, VPS. Ваш проект работает без перебоев 24/7.</p>
+                    <div class="svc-slide-tag">99.9% uptime</div>
+                </div>
+
+                <!-- 08 - Кибербезопасность -->
+                <div class="svc-slide" data-num="08">
+                    <div class="svc-slide-glow"></div>
+                    <div class="svc-slide-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <span class="svc-slide-num">08</span>
+                    <h3 class="svc-slide-title">Кибербезопасность</h3>
+                    <p class="svc-slide-desc">Аудит безопасности, шифрование, защита от DDoS, пентестинг, мониторинг уязвимостей. SSL, двухфакторная авторизация, бэкапы.</p>
+                    <div class="svc-slide-tag">0 утечек</div>
+                </div>
+
+                <!-- 09 - E-commerce -->
+                <div class="svc-slide" data-num="09">
+                    <div class="svc-slide-glow"></div>
+                    <div class="svc-slide-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                    </div>
+                    <span class="svc-slide-num">09</span>
+                    <h3 class="svc-slide-title">E-commerce решения</h3>
+                    <p class="svc-slide-desc">Интернет-магазины под ключ, маркетплейсы, корзины, каталоги. Интеграция с Stripe, ЮKassa, СДЭК, Boxberry. Любая сложность.</p>
+                    <div class="svc-slide-tag">Под ключ</div>
+                </div>
+
+                <!-- 10 - CRM & ERP -->
+                <div class="svc-slide" data-num="10">
+                    <div class="svc-slide-glow"></div>
+                    <div class="svc-slide-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <span class="svc-slide-num">10</span>
+                    <h3 class="svc-slide-title">CRM & ERP системы</h3>
+                    <p class="svc-slide-desc">Разработка и кастомизация CRM, ERP, HRM-систем. Управление клиентами, сотрудниками, складом, финансами - всё в одном месте.</p>
+                    <div class="svc-slide-tag">Всё под контролем</div>
+                </div>
+
+                <!-- 11 - Брендинг -->
+                <div class="svc-slide" data-num="11">
+                    <div class="svc-slide-glow"></div>
+                    <div class="svc-slide-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                            <path d="M2 2l7.586 7.586"/>
+                            <circle cx="11" cy="11" r="2"/>
+                        </svg>
+                    </div>
+                    <span class="svc-slide-num">11</span>
+                    <h3 class="svc-slide-title">Брендинг & Айдентика</h3>
+                    <p class="svc-slide-desc">Логотипы, фирменный стиль, брендбук, упаковка, презентации. Создаём визуальный язык, который запоминается и продаёт.</p>
+                    <div class="svc-slide-tag">Узнаваемость</div>
+                </div>
+
+                <!-- 12 - Техподдержка -->
+                <div class="svc-slide" data-num="12">
+                    <div class="svc-slide-glow"></div>
+                    <div class="svc-slide-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+                            <line x1="4" y1="22" x2="4" y2="15"/>
+                        </svg>
+                    </div>
+                    <span class="svc-slide-num">12</span>
+                    <h3 class="svc-slide-title">Поддержка & Развитие</h3>
+                    <p class="svc-slide-desc">Техподдержка 24/7, обновления, мониторинг, масштабирование. Берём на поддержку чужие проекты. Быстрое исправление багов и доработки.</p>
+                    <div class="svc-slide-tag">24/7 онлайн</div>
+                </div>
+
+            </div>
+
+            <!-- Navigation -->
+            <button class="svc-carousel-btn svc-carousel-prev" id="svcPrev" aria-label="Назад">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="svc-carousel-btn svc-carousel-next" id="svcNext" aria-label="Вперёд">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+
+            <!-- Dots -->
+            <div class="svc-carousel-dots" id="svcDots"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about about--dark" id="about">
+        <div class="section-header">
+            <h2 class="section-title">О нас</h2>
+        </div>
+
+        <div class="about-content">
+            <div class="about-text">
+                <p class="about-lead">
+                    <span class="gers-highlight">GERS</span> - это команда дизайнеров и разработчиков, создающих 
+                    цифровые продукты на стыке технологий и эстетики.
+                </p>
+                <button class="about-more-btn" id="aboutMoreBtn">Подробнее <span class="about-more-arrow">↓</span></button>
+                <div class="about-more-content" id="aboutMoreContent">
+                    <p class="about-body">
+                        Мы берёмся за проекты любой сложности: от лендингов и интернет-магазинов 
+                        до корпоративных платформ, мобильных приложений и AI-решений. 
+                        Не важно, стартап вы или крупный бизнес - мы погружаемся в задачу 
+                        и строим продукт, который реально работает на результат.
+                    </p>
+                    <p class="about-body">
+                        Каждый проект - это баланс функциональности, производительности 
+                        и визуального совершенства. Мы продумываем архитектуру так, 
+                        чтобы продукт рос вместе с вашим бизнесом, а не требовал 
+                        переписывания через полгода. Прозрачный процесс, еженедельные 
+                        демо и 6 месяцев бесплатной поддержки после запуска - стандарт 
+                        для каждого клиента.
+                    </p>
+                </div>
+            </div>
+            <div class="about-metrics-wrap">
+                <img src="assets/graffiti-about.jpg" alt="" class="about-graffiti">
+            <div class="about-metrics">
+                <div class="metric">
+                    <div class="metric-visual">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="metric-bg" cx="50" cy="50" r="45"/>
+                            <circle class="metric-progress" cx="50" cy="50" r="45" data-percent="98"/>
+                        </svg>
+                            <span class="metric-value" data-target="98">0%</span>
+                    </div>
+                    <span class="metric-label">Довольных клиентов</span>
+                </div>
+                <div class="metric">
+                    <div class="metric-visual">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="metric-bg" cx="50" cy="50" r="45"/>
+                            <circle class="metric-progress" cx="50" cy="50" r="45" data-percent="100"/>
+                        </svg>
+                            <span class="metric-value" data-target="100">0%</span>
+                    </div>
+                    <span class="metric-label">В срок</span>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header">
+            <h2 class="section-title">Отзывы клиентов</h2>
+        </div>
+        
+        <div class="testimonials-slider">
+          <div class="testimonials-track" id="testimonialsTrack">
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">GERS полностью переделал наш интернет-магазин - скорость выросла в 3 раза, конверсия +45%. Лучшая команда, с которой работали!</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/stylebox/1.png" alt=""><img loading="lazy" src="assets/projects/stylebox/2.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">АИ</div><div class="author-info"><span class="author-name">Андрей Иванов</span><span class="author-company">CEO, NovaTech Solutions</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Ребята сделали приложение точно как мы хотели, и даже лучше. Профессионалы, которые быстро вникают в задачу.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/landing-course/1.png" alt=""><img loading="lazy" src="assets/projects/landing-course/2.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ОС</div><div class="author-info"><span class="author-name">Ольга Соколова</span><span class="author-company">Founder, VitaFlex</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Работаем с GERS уже 3 года. Надёжные ребята, всегда на связи и помогут решить любую техническую задачу.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/soft-crm/1.png" alt=""><img loading="lazy" src="assets/projects/soft-crm/2.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ДК</div><div class="author-info"><span class="author-name">Дмитрий Ковалёв</span><span class="author-company">CTO, PixelWave Digital</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Заказали CRM-систему под наши процессы. Всё продумано до мелочей, сотрудники освоили за день. Поддержка отличная!</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/soft-crm/3.png" alt=""><img loading="lazy" src="assets/projects/soft-crm/4.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ЕМ</div><div class="author-info"><span class="author-name">Екатерина Морозова</span><span class="author-company">Директор, ДрайвМоторс</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Сделали лендинг для нашего мероприятия за 5 дней. Красиво, быстро и с адаптивом под все устройства. Регистрации пошли сразу!</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/landing-event/1.png" alt=""><img loading="lazy" src="assets/projects/landing-event/3.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">МЛ</div><div class="author-info"><span class="author-name">Максим Лебедев</span><span class="author-company">Организатор, SkyEvent Group</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Парсер цен конкурентов - это просто находка. Экономим часы работы аналитиков каждую неделю. GERS настроили всё под ключ.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/parser-prices/1.png" alt=""><img loading="lazy" src="assets/projects/parser-prices/3.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ИШ</div><div class="author-info"><span class="author-name">Ирина Шевченко</span><span class="author-company">CMO, MarketPulse</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Разработали складской софт, который интегрировали с 1С. Работает без сбоев уже полгода, склад в полном порядке.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/soft-warehouse/1.png" alt=""><img loading="lazy" src="assets/projects/soft-warehouse/2.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ВН</div><div class="author-info"><span class="author-name">Виктор Новиков</span><span class="author-company">Логист, CargoLine</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Наш автосалон получил сайт мечты. Удобный каталог, фильтры, онлайн-запись на тест-драйв - клиенты в восторге.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/autosalon/1.png" alt=""><img loading="lazy" src="assets/projects/autosalon/2.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">АГ</div><div class="author-info"><span class="author-name">Алексей Громов</span><span class="author-company">Владелец, PremiumDrive</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Аналитический дашборд для отдела маркетинга - теперь все метрики в одном месте. Наглядно, быстро, удобно.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/analytics-marketing/1.png" alt=""><img loading="lazy" src="assets/projects/analytics-marketing/2.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">НФ</div><div class="author-info"><span class="author-name">Наталья Фёдорова</span><span class="author-company">Head of Marketing, BrightMedia</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Личный кабинет для наших дилеров - всё автоматизировано: заказы, остатки, документы. Экономим 20 часов в неделю.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/cabinet-dealer/1.png" alt=""><img loading="lazy" src="assets/projects/cabinet-dealer/3.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">РБ</div><div class="author-info"><span class="author-name">Руслан Борисов</span><span class="author-company">Коммерческий директор, AlphaDistribution</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">HR-платформу сделали быстро и качественно. Рекрутинг, онбординг, аналитика по сотрудникам - всё в одном месте.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/cabinet-hr/1.png" alt=""><img loading="lazy" src="assets/projects/cabinet-hr/2.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ТС</div><div class="author-info"><span class="author-name">Татьяна Сидорова</span><span class="author-company">HR-директор, TalentBridge</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Страховой кабинет для клиентов и агентов. Полисы, расчёты, продления - всё онлайн. Клиенты довольны!</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/cabinet-insurance/1.png" alt=""><img loading="lazy" src="assets/projects/cabinet-insurance/3.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ПВ</div><div class="author-info"><span class="author-name">Павел Васильев</span><span class="author-company">Директор, ЩитПолис</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Лендинг для распродажи сделали за 3 дня. Конверсия 12% - рекорд для нашей ниши. Обязательно закажем ещё!</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/landing-sale/1.png" alt=""><img loading="lazy" src="assets/projects/landing-sale/2.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">АК</div><div class="author-info"><span class="author-name">Анна Кузнецова</span><span class="author-company">Маркетолог, VelvetShop</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Финансовая аналитика - теперь видим все потоки в реальном времени. Решения принимаем быстрее и точнее.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/analytics-finance/1.png" alt=""><img loading="lazy" src="assets/projects/analytics-finance/2.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">СП</div><div class="author-info"><span class="author-name">Сергей Попов</span><span class="author-company">CFO, ZenithCapital</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Сайт для ресторана с онлайн-бронированием и меню. Гости бронируют столики прямо с телефона, очень удобно!</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/restaurant/1.png" alt=""><img loading="lazy" src="assets/projects/restaurant/2.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ЛД</div><div class="author-info"><span class="author-name">Людмила Дмитриева</span><span class="author-company">Управляющая, Café Lumière</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Аналитика продаж - наконец-то понимаем, какие товары приносят прибыль. Дашборд обновляется в реальном времени.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/analytics-sales/1.png" alt=""><img loading="lazy" src="assets/projects/analytics-sales/3.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">КЗ</div><div class="author-info"><span class="author-name">Константин Зайцев</span><span class="author-company">Директор, OmniSell</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Онлайн-курсы запустили на лендинге от GERS. Дизайн цепляет, формы работают идеально, продажи пошли с первого дня.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/landing-course/3.png" alt=""><img loading="lazy" src="assets/projects/landing-course/4.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ЮМ</div><div class="author-info"><span class="author-name">Юлия Миронова</span><span class="author-company">Основатель, SmartClass</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Складскую систему интегрировали с маркетплейсами. Остатки синхронизируются автоматически - больше никаких ошибок.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/soft-warehouse/3.png" alt=""><img loading="lazy" src="assets/projects/soft-warehouse/5.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ГТ</div><div class="author-info"><span class="author-name">Георгий Тихонов</span><span class="author-company">Владелец, StockVault</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Telegram-бот для приёма заявок - менеджеры получают лиды моментально. Настроили воронку и автоответы. Огонь!</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/parser-prices/2.png" alt=""><img loading="lazy" src="assets/projects/parser-prices/4.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ДС</div><div class="author-info"><span class="author-name">Денис Смирнов</span><span class="author-company">Руководитель продаж, FunnelMax</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Мобильное приложение для фитнес-клуба. Расписание, абонементы, push-уведомления - клиенты ходят чаще!</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/stylebox/3.png" alt=""><img loading="lazy" src="assets/projects/stylebox/4.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ВК</div><div class="author-info"><span class="author-name">Валерия Королёва</span><span class="author-company">Владелица, IronPulse Gym</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">ERP-систему развернули за 2 месяца. Финансы, HR, проекты - всё под контролем. Рекомендую без раздумий!</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/soft-crm/5.png" alt=""><img loading="lazy" src="assets/projects/soft-crm/6.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ОЯ</div><div class="author-info"><span class="author-name">Олег Яковлев</span><span class="author-company">CEO, CoreBuild</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+                    </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Сделали корпоративный портал для 500 сотрудников. Новости, документы, заявки - всё в одном окне. Супер!</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/cabinet-hr/4.png" alt=""><img loading="lazy" src="assets/projects/cabinet-hr/5.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">МР</div><div class="author-info"><span class="author-name">Марина Романова</span><span class="author-company">HR, VertexGroup</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Автоматизация документооборота - договоры генерируются за секунды. Юристы счастливы, бухгалтерия тоже.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/cabinet-insurance/4.png" alt=""><img loading="lazy" src="assets/projects/cabinet-insurance/5.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ИБ</div><div class="author-info"><span class="author-name">Игорь Белов</span><span class="author-company">Юрист, PravoStar</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+                    </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Интернет-магазин одежды с примеркой по фото. Инновационный подход, клиенты в восторге от UX. Возвраты упали на 30%.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/stylebox/1.png" alt=""><img loading="lazy" src="assets/projects/stylebox/3.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">ЕВ</div><div class="author-info"><span class="author-name">Елена Власова</span><span class="author-company">Founder, ModeHaus</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Дилерский кабинет с аналитикой продаж и заказов. Дилеры сами всё видят - нагрузка на менеджеров снизилась вдвое.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/cabinet-dealer/4.png" alt=""><img loading="lazy" src="assets/projects/cabinet-dealer/6.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">АЧ</div><div class="author-info"><span class="author-name">Артём Чернов</span><span class="author-company">Директор по развитию, DriveLink</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+                    </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Лендинг для конференции собрал 800 регистраций за неделю. Дизайн выше всяких похвал. Спасибо GERS!</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/landing-event/2.png" alt=""><img loading="lazy" src="assets/projects/landing-event/4.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">СА</div><div class="author-info"><span class="author-name">Светлана Александрова</span><span class="author-company">PR-директор, SparkSummit</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Парсер для мониторинга Avito - находим лучшие предложения раньше конкурентов. Окупился за первую неделю.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/parser-prices/1.png" alt=""><img loading="lazy" src="assets/projects/parser-prices/5.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">НК</div><div class="author-info"><span class="author-name">Николай Крылов</span><span class="author-company">Владелец, QuickFind</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+        </div>
+        
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Финансовый дашборд для инвесторов - графики, прогнозы, KPI. Инвесторы оценили прозрачность. Сделка закрылась!</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/analytics-finance/3.png" alt=""><img loading="lazy" src="assets/projects/analytics-finance/4.png" alt=""></div>
+            </div>
+                <div class="testimonial-author"><div class="author-avatar">ВО</div><div class="author-info"><span class="author-name">Владимир Орлов</span><span class="author-company">CEO, SummitFund</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+        </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Сайт ресторана с доставкой и программой лояльности. Заказы через сайт выросли на 60%. Красиво и функционально!</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/restaurant/3.png" alt=""><img loading="lazy" src="assets/projects/restaurant/4.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">АП</div><div class="author-info"><span class="author-name">Алина Полякова</span><span class="author-company">Шеф-повар, Amaro Kitchen</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+                </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">CRM для отдела продаж - воронка, задачи, аналитика. Менеджеры стали закрывать на 25% больше сделок в месяц.</p>
+                    <div class="testimonial-thumbs"><img loading="lazy" src="assets/projects/soft-crm/1.png" alt=""><img loading="lazy" src="assets/projects/soft-crm/7.png" alt=""></div>
+                </div>
+                <div class="testimonial-author"><div class="author-avatar">РГ</div><div class="author-info"><span class="author-name">Роман Григорьев</span><span class="author-company">Руководитель ОП, DealForce</span></div></div>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+          </div><!-- /testimonials-track -->
+
+          <!-- Navigation arrows -->
+          <button class="testimonial-btn prev" id="prevTestimonial">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="testimonial-btn next" id="nextTestimonial">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+
+          <!-- Dots -->
+          <div class="testimonials-dots" id="testimonialsDots"></div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Готовы обсудить ваш проект?</h2>
+            <div class="cta-buttons">
+                <a href="contact.html" class="cta-button primary">Оставить заявку</a>
+                <a href="calculator.html" class="cta-button secondary">Узнать стоимость</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="footer-new-top">
+            <div class="footer-brand">
+                <span class="footer-logo-text">GERS AGENCY</span>
+                <a href="https://t.me/GERS_AGENCY" class="footer-tg" aria-label="Telegram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <span class="footer-col-title">О нас</span>
+                    <a href="index.html">Главная</a>
+                    <a href="projects.html">Проекты</a>
+                    <a href="services.html">Услуги</a>
+                    <a href="calculator.html">Стоимость</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Направления</span>
+                    <a href="projects-sites.html">Веб-разработка</a>
+                    <a href="projects-mobile.html">Мобильные приложения</a>
+                    <a href="projects-auto.html">AI & ML решения</a>
+                    <a href="projects-bots-soft.html">Боты & Автоматизация</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Контакты</span>
+                    <a href="https://t.me/GERS_AGENCY">@gers_agency</a>
+                    <a href="contact.html">Оставить заявку</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-new-bottom">
+            <span>&copy; 2026 GERS agency. Все права защищены.</span>
+            <span>Работаем удалённо по всему миру</span>
+        </div>
+    </footer>
+
+    <script src="telegram.js"></script>
+    <script src="script.js"></script>
+    <script>
+    /* ═══════════════════════════════════════════════════════════
+       Services 3D Carousel
+       ═══════════════════════════════════════════════════════════ */
+    (function() {
+        const slides = Array.from(document.querySelectorAll('.svc-slide'));
+        const dotsWrap = document.getElementById('svcDots');
+        const btnPrev = document.getElementById('svcPrev');
+        const btnNext = document.getElementById('svcNext');
+        if (!slides.length) return;
+
+        const total = slides.length;
+        let current = 0;
+        let isAnimating = false;
+        const ANIM_DURATION = 700; // match CSS transition
+
+        // Create dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'svc-carousel-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+            dot.addEventListener('click', () => goTo(i));
+            dotsWrap.appendChild(dot);
+        });
+        const dots = Array.from(dotsWrap.children);
+
+        function updatePositions() {
+            slides.forEach((slide, i) => {
+                // Remove all position classes
+                slide.className = 'svc-slide';
+
+                const diff = i - current;
+
+                if (diff === 0) {
+                    slide.classList.add('active');
+                } else if (diff === 1 || (diff === -(total - 1))) {
+                    slide.classList.add('pos-right-1');
+                } else if (diff === -1 || (diff === (total - 1))) {
+                    slide.classList.add('pos-left-1');
+                } else if (diff === 2 || (diff === -(total - 2))) {
+                    slide.classList.add('pos-right-2');
+                } else if (diff === -2 || (diff === (total - 2))) {
+                    slide.classList.add('pos-left-2');
+                } else {
+                    slide.classList.add('hidden');
+                }
+            });
+
+            dots.forEach((d, i) => {
+                d.classList.toggle('active', i === current);
+            });
+        }
+
+        function goTo(index) {
+            if (isAnimating || index === current) return;
+            isAnimating = true;
+            current = ((index % total) + total) % total;
+            updatePositions();
+            setTimeout(() => { isAnimating = false; }, ANIM_DURATION);
+        }
+
+        function next() { goTo(current + 1); }
+        function prev() { goTo(current - 1); }
+
+        btnNext.addEventListener('click', next);
+        btnPrev.addEventListener('click', prev);
+
+        // Click on side cards to select them
+        slides.forEach((slide, i) => {
+            slide.addEventListener('click', () => {
+                if (i !== current) goTo(i);
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') next();
+            if (e.key === 'ArrowLeft') prev();
+        });
+
+        // Touch / Drag support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let isDragging = false;
+
+        const track = document.getElementById('svcTrack');
+
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            isDragging = true;
+        }, { passive: true });
+
+        track.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+            isDragging = false;
+        }, { passive: true });
+
+        // Mouse drag
+        track.addEventListener('mousedown', (e) => {
+            touchStartX = e.screenX;
+            isDragging = true;
+            track.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            // visual feedback could go here
+        });
+
+        document.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+            touchEndX = e.screenX;
+            handleSwipe();
+            isDragging = false;
+            track.style.cursor = '';
+        });
+
+        function handleSwipe() {
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) next();
+                else prev();
+            }
+        }
+
+        // Mouse wheel horizontal scroll
+        track.addEventListener('wheel', (e) => {
+            if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+                e.preventDefault();
+                if (e.deltaX > 30) next();
+                else if (e.deltaX < -30) prev();
+            } else if (Math.abs(e.deltaY) > 30) {
+                e.preventDefault();
+                if (e.deltaY > 0) next();
+                else prev();
+            }
+        }, { passive: false });
+
+        // Cursor glow on active card
+        slides.forEach(slide => {
+            slide.addEventListener('mousemove', (e) => {
+                const rect = slide.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                slide.style.setProperty('--mx', x + '%');
+                slide.style.setProperty('--my', y + '%');
+            });
+            slide.addEventListener('mouseleave', () => {
+                slide.style.setProperty('--mx', '50%');
+                slide.style.setProperty('--my', '50%');
+            });
+        });
+
+        // Initialize
+        updatePositions();
+    })();
+
+    /* ═══════════════════════════════════════════════════════════
+       Testimonials 3D Carousel (mirrors Services carousel)
+       ═══════════════════════════════════════════════════════════ */
+    (function() {
+        const cards = Array.from(document.querySelectorAll('.testimonial-card'));
+        const dotsWrap = document.getElementById('testimonialsDots');
+        const btnPrev = document.getElementById('prevTestimonial');
+        const btnNext = document.getElementById('nextTestimonial');
+        if (!cards.length) return;
+
+        const total = cards.length;
+        let current = 0;
+        let isAnimating = false;
+        const ANIM_DURATION = 700;
+
+        // Create dots
+        cards.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'testimonials-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Отзыв ' + (i + 1));
+            dot.addEventListener('click', () => goTo(i));
+            dotsWrap.appendChild(dot);
+        });
+        const dots = Array.from(dotsWrap.children);
+
+        function updatePositions() {
+            cards.forEach((card, i) => {
+                card.className = 'testimonial-card';
+                const diff = i - current;
+                if (diff === 0) {
+                    card.classList.add('active');
+                } else if (diff === 1 || diff === -(total - 1)) {
+                    card.classList.add('pos-right-1');
+                } else if (diff === -1 || diff === (total - 1)) {
+                    card.classList.add('pos-left-1');
+                } else if (diff === 2 || diff === -(total - 2)) {
+                    card.classList.add('pos-right-2');
+                } else if (diff === -2 || diff === (total - 2)) {
+                    card.classList.add('pos-left-2');
+                }
+                // else stays hidden (opacity:0 by default)
+            });
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        }
+
+        function goTo(index) {
+            if (isAnimating || index === current) return;
+            isAnimating = true;
+            current = ((index % total) + total) % total;
+            updatePositions();
+            setTimeout(() => { isAnimating = false; }, ANIM_DURATION);
+        }
+
+        function next() { goTo(current + 1); }
+        function prev() { goTo(current - 1); }
+
+        btnNext.addEventListener('click', next);
+        btnPrev.addEventListener('click', prev);
+
+        // Click side cards to navigate
+        cards.forEach((card, i) => {
+            card.addEventListener('click', () => { if (i !== current) goTo(i); });
+        });
+
+        // Touch / drag
+        let touchStartX = 0, isDragging = false;
+        const track = document.getElementById('testimonialsTrack');
+
+        track.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; isDragging = true; }, { passive: true });
+        track.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            const diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
+            isDragging = false;
+        }, { passive: true });
+
+        track.addEventListener('mousedown', (e) => { touchStartX = e.screenX; isDragging = true; track.style.cursor = 'grabbing'; });
+        document.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+            const diff = touchStartX - e.screenX;
+            if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
+            isDragging = false; track.style.cursor = '';
+        });
+
+        // Auto-play
+        let autoPlay = setInterval(next, 6000);
+        track.addEventListener('mouseenter', () => clearInterval(autoPlay));
+        track.addEventListener('mouseleave', () => { autoPlay = setInterval(next, 6000); });
+
+        // Init
+        updatePositions();
+    })();
+    </script>
+</body>
+</html>

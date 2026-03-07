@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мобильные приложения - GERS</title>
+    <meta name="description" content="Мобильные приложения от GERS Agency: нативная и кроссплатформенная разработка для iOS и Android на React Native и Flutter.">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <meta property="og:title" content="Мобильные приложения — GERS Agency">
+    <meta property="og:description" content="Нативная и кроссплатформенная разработка для iOS и Android на React Native и Flutter.">
+    <meta property="og:image" content="https://gers.agency/assets/og-image.png">
+    <meta property="og:url" content="https://gers.agency/projects-mobile.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css?v=25">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body class="page-mobile">
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="noise-overlay"></div>
+    <canvas id="webCanvas" class="web-bg"></canvas>
+    <div class="grid-bg"><canvas id="gridCanvas"></canvas></div>
+    <div class="tech-overlay">
+        <div class="corner-bracket top-left"></div>
+        <div class="corner-bracket top-right"></div>
+        <div class="corner-bracket bottom-left"></div>
+        <div class="corner-bracket bottom-right"></div>
+        <div class="scan-line"></div>
+    </div>
+
+    <header class="header header--projects">
+        <a href="index.html" class="logo">
+            <img src="assets/logo-white.png" alt="GERS" class="logo-img">
+        </a>
+        <div class="header-center-title">
+            <img src="assets/projects-title.png" alt="Проекты" class="header-title-img">
+        </div>
+        <nav class="nav nav--right">
+            <a href="projects.html" class="nav-link" data-text="Проекты">Проекты</a>
+            <a href="services.html" class="nav-link" data-text="Услуги">Услуги</a>
+            <a href="calculator.html" class="nav-link" data-text="Узнать стоимость">Узнать стоимость</a>
+            <a href="contact.html" class="nav-link" data-text="Контакты">Контакты</a>
+        </nav>
+        <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </header>
+
+    <!-- Bento Grid Section -->
+    <section class="bento-section bento-section--sub" id="projects">
+        <img loading="lazy" src="assets/deco/clock.png?v=3" alt="" class="deco-fig deco-fig--clock">
+        <img loading="lazy" src="assets/deco/rocket.png?v=3" alt="" class="deco-fig deco-fig--rocket">
+        <img loading="lazy" src="assets/deco/phone.png?v=3" alt="" class="deco-fig deco-fig--phone">
+        <img loading="lazy" src="assets/deco/chest.png?v=3" alt="" class="deco-fig deco-fig--chest">
+        <div class="deco-star deco-star--1">✦</div>
+        <div class="deco-star deco-star--2">✦</div>
+        <div class="deco-star deco-star--3">✧</div>
+        <div class="deco-star deco-star--4">✦</div>
+        <div class="deco-star deco-star--5">✧</div>
+        <div class="deco-star deco-star--6">✦</div>
+        <div class="deco-star deco-star--7">✧</div>
+        <div class="deco-star deco-star--8">✦</div>
+        <div class="deco-star deco-star--9">✧</div>
+        <div class="deco-star deco-star--10">✦</div>
+        <div class="deco-star deco-star--11">✦</div>
+        <div class="deco-star deco-star--12">✧</div>
+
+        <div class="bento-grid--phones">
+
+            <!-- M1 - Simpler (изучение английского) -->
+            <div class="tilt-wrap bento-item bento-s1 reveal-card">
+                <a href="#" class="bento-card bento-card--phone project-card"
+                   data-video="assets/projects/simpler/demo.mp4"
+                   data-title="Приложение для изучения английского"
+                   data-desc="Мобильное приложение для изучения английского языка. Грамматика объясняется коротко и просто. Словарь ~5000 слов с карточками и ассоциациями. Аудио от носителей языка. Упражнения и тесты после каждой темы. Детективные истории для обучения через сюжет. Ежедневные цели для регулярных занятий. Уроки по 5-10 минут без перегрузки."
+                   data-tags="React Native,iOS,Android,Firebase,Audio API,Gamification"
+                   data-year="2025"
+                   data-stat="50K+ скачиваний"
+                   data-category="Mobile App,Education"
+                   data-client="EdTech-стартап"
+                   data-sphere="Образование / Языки"
+                   data-duration="24 дня"
+                   data-project-type="Мобильное приложение">
+                    <div class="phone-card-frame">
+                        <div class="phone-card-notch"></div>
+                        <div class="phone-card-screen">
+                            <video class="phone-card-video" autoplay muted loop playsinline>
+                                <source src="assets/projects/simpler/demo.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="phone-card-home"></div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- M2 - 7 Minute Workout (фитнес) -->
+            <div class="tilt-wrap bento-item bento-s2 reveal-card">
+                <a href="#" class="bento-card bento-card--phone project-card"
+                   data-video="assets/projects/fitness/demo.mp4"
+                   data-title="Фитнес-приложение"
+                   data-desc="Фитнес-приложение с короткими 7-минутными тренировками. Упражнения без оборудования - занимайся где угодно. Программы для разных целей: пресс, похудение, выносливость. Система стрик-дней и достижений мотивирует тренироваться каждый день. Идея - каждый день по чуть-чуть, без перегрузки."
+                   data-tags="React Native,iOS,Android,HealthKit,Animations,Push Notifications"
+                   data-year="2025"
+                   data-stat="120K+ скачиваний"
+                   data-category="Mobile App,Fitness"
+                   data-client="Фитнес-стартап"
+                   data-sphere="Здоровье / Фитнес"
+                   data-duration="30 дней"
+                   data-project-type="Мобильное приложение">
+                    <div class="phone-card-frame">
+                        <div class="phone-card-notch"></div>
+                        <div class="phone-card-screen">
+                            <video class="phone-card-video" autoplay muted loop playsinline>
+                                <source src="assets/projects/fitness/demo.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="phone-card-home"></div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- M3 - Bazaart (фоторедактор) -->
+            <div class="tilt-wrap bento-item bento-s3 reveal-card">
+                <a href="#" class="bento-card bento-card--phone project-card"
+                   data-video="assets/projects/bazaart/demo.mp4"
+                   data-title="Фоторедактор и дизайн"
+                   data-desc="Приложение для редактирования фото и создания дизайна на телефоне. Удаление фона на фото, вырезание объектов и людей, создание коллажей. Посты для соцсетей, баннеры, логотипы, постеры - всё в одном приложении. AI-инструменты для редактирования фото. Интуитивный интерфейс для быстрой работы."
+                   data-tags="Swift,iOS,Android,CoreML,AI,Image Processing,Canvas API"
+                   data-year="2025"
+                   data-stat="200K+ скачиваний"
+                   data-category="Mobile App,Design"
+                   data-client="Creative-студия"
+                   data-sphere="Дизайн / Фото"
+                   data-duration="35 дней"
+                   data-project-type="Мобильное приложение">
+                    <div class="phone-card-frame">
+                        <div class="phone-card-notch"></div>
+                        <div class="phone-card-screen">
+                            <video class="phone-card-video" autoplay muted loop playsinline>
+                                <source src="assets/projects/bazaart/demo.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="phone-card-home"></div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <footer class="footer-new">
+        <div class="footer-new-top">
+            <div class="footer-brand">
+                <span class="footer-logo-text">GERS AGENCY</span>
+                <a href="https://t.me/GERS_AGENCY" class="footer-tg" aria-label="Telegram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <span class="footer-col-title">О нас</span>
+                    <a href="index.html">Главная</a>
+                    <a href="projects.html">Проекты</a>
+                    <a href="services.html">Услуги</a>
+                    <a href="calculator.html">Стоимость</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Направления</span>
+                    <a href="projects-sites.html">Веб-разработка</a>
+                    <a href="projects-mobile.html">Мобильные приложения</a>
+                    <a href="projects-auto.html">AI & ML решения</a>
+                    <a href="projects-bots-soft.html">Боты & Автоматизация</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Контакты</span>
+                    <a href="https://t.me/GERS_AGENCY">@gers_agency</a>
+                    <a href="contact.html">Оставить заявку</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-new-bottom">
+            <span>&copy; 2026 GERS agency. Все права защищены.</span>
+            <span>Работаем удалённо по всему миру</span>
+        </div>
+    </footer>
+
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle">
+            <svg class="chat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span class="chat-badge">1</span>
+        </button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-status"><span class="status-indicator online"></span><span class="status-text">Мы онлайн</span></div>
+                <span class="chat-title">Чат с GERS</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">G</div>
+                    <div class="message-content"><p>Привет! Я виртуальный ассистент GERS. Чем могу помочь?</p><span class="message-time">Сейчас</span></div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Введите сообщение...">
+                <button class="chat-send" id="chatSend"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="telegram.js"></script>
+    <script src="script.js"></script>
+    <script src="sites-ultra.js"></script>
+</body>
+</html>

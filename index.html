@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GERS - Технологичные Онлайн Продукты</title>
+    <meta name="description" content="GERS Agency — разработка сайтов, мобильных приложений, Telegram-ботов, CRM-систем и автоматизация бизнес-процессов. Полный цикл: от идеи до поддержки.">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <meta property="og:title" content="GERS Agency — Технологичные Онлайн Продукты">
+    <meta property="og:description" content="Разработка сайтов, мобильных приложений, Telegram-ботов, CRM-систем и автоматизация бизнес-процессов.">
+    <meta property="og:image" content="https://gers.agency/assets/og-image.png">
+    <meta property="og:url" content="https://gers.agency/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="GERS Agency">
+    <link rel="stylesheet" href="styles.css?v=25">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Web/Network Background -->
+    <canvas id="webCanvas" class="web-bg"></canvas>
+
+    <!-- Animated Grid Background -->
+    <div class="grid-bg">
+        <canvas id="gridCanvas"></canvas>
+    </div>
+
+    <!-- Tech Overlay Elements -->
+    <div class="tech-overlay">
+        <div class="corner-bracket top-left"></div>
+        <div class="corner-bracket top-right"></div>
+        <div class="corner-bracket bottom-left"></div>
+        <div class="corner-bracket bottom-right"></div>
+        <div class="scan-line"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="GERS" class="logo-img">
+        </a>
+        <nav class="nav">
+            <a href="projects.html" class="nav-link" data-text="Проекты">ПРОЕКТЫ</a>
+            <a href="services.html" class="nav-link" data-text="Услуги">УСЛУГИ</a>
+            <a href="calculator.html" class="nav-link" data-text="Стоимость">СТОИМОСТЬ</a>
+            <a href="contact.html" class="nav-link" data-text="Контакты">КОНТАКТЫ</a>
+        </nav>
+        <div class="header-tagline">
+            <span class="header-tagline-text">ТЕХНОЛОГИЧНЫЕ<br>ОНЛАЙН-ПРОДУКТЫ</span>
+        </div>
+        <button class="nav-burger" id="navBurger" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-visual">
+            <img src="assets/hero-logo.png" alt="GERS" class="hero-logo-img">
+            <div class="marquee-container hero-marquee">
+                <div class="marquee-track">
+                    <span class="marquee-item">WEB-РАЗРАБОТКА</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">AI & ML</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">TELEGRAM БОТЫ</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">АНАЛИТИКА</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">ИНТЕГРАЦИИ</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">CRM & ERP</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">АВТОМАТИЗАЦИЯ</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">WEB-РАЗРАБОТКА</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">AI & ML</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">TELEGRAM БОТЫ</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">АНАЛИТИКА</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">ИНТЕГРАЦИИ</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">CRM & ERP</span>
+                    <span class="marquee-dot">◆</span>
+                    <span class="marquee-item">АВТОМАТИЗАЦИЯ</span>
+                    <span class="marquee-dot">◆</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-text-block">
+            <div class="hero-cta">
+                <a href="contact.html" class="btn btn--primary">Обсудить проект</a>
+                <a href="projects.html" class="btn btn--secondary">Наши проекты</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="s-about-dark reveal-section" id="about">
+        <div class="s-about-dark-inner">
+            <div class="s-about-dark-left">
+                <h2 class="s-about-dark-title">Почему выбирают именно нас</h2>
+            </div>
+            <div class="s-about-dark-right">
+                <div class="s-about-dark-item">
+                    <span class="s-about-dark-num">1</span>
+                    <span class="s-about-dark-dots"><span class="dot">•</span><span class="dot">•</span><span class="dot">•</span></span>
+                    <p class="s-about-dark-text">Погружаемся в задачу клиента - не делаем шаблонно. Каждый продукт строится под конкретный бизнес и его аудиторию.</p>
+                </div>
+                <div class="s-about-dark-item">
+                    <span class="s-about-dark-num">2</span>
+                    <span class="s-about-dark-dots"><span class="dot">•</span><span class="dot">•</span><span class="dot">•</span></span>
+                    <p class="s-about-dark-text">Закрываем весь цикл: от веб-сайтов и мобильных приложений до AI-решений, ботов и сложных интеграций.</p>
+                </div>
+                <div class="s-about-dark-item">
+                    <span class="s-about-dark-num">3</span>
+                    <span class="s-about-dark-dots"><span class="dot">•</span><span class="dot">•</span><span class="dot">•</span></span>
+                    <p class="s-about-dark-text">Продумываем архитектуру так, чтобы продукт рос вместе с бизнесом - без переписывания с нуля через полгода.</p>
+                </div>
+                <div class="s-about-dark-item">
+                    <span class="s-about-dark-num">4</span>
+                    <span class="s-about-dark-dots"><span class="dot">•</span><span class="dot">•</span><span class="dot">•</span></span>
+                    <p class="s-about-dark-text">Автоматизируем рутину: CRM, ERP, Telegram-боты, аналитика - всё, что экономит время и деньги.</p>
+                </div>
+                <div class="s-about-dark-item">
+                    <span class="s-about-dark-num">5</span>
+                    <span class="s-about-dark-dots"><span class="dot">•</span><span class="dot">•</span><span class="dot">•</span></span>
+                    <p class="s-about-dark-text">Показываем результат каждую неделю. Никаких сюрпризов - только прозрачный процесс и понятные сроки.</p>
+                </div>
+                <div class="s-about-dark-item">
+                    <span class="s-about-dark-num">6</span>
+                    <span class="s-about-dark-dots"><span class="dot">•</span><span class="dot">•</span><span class="dot">•</span></span>
+                    <p class="s-about-dark-text">Поддерживаем после запуска: 6 месяцев бесплатной поддержки и оперативное решение любых вопросов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section class="s-howwork reveal-section">
+        <div class="s-howwork-inner">
+            <h2 class="s-howwork-title">Как мы работаем</h2>
+            <div class="hw-flow">
+                <div class="hw-flow-step">
+                    <span class="hw-flow-num">01</span>
+                    <h3 class="hw-flow-name">Заявка</h3>
+                    <p class="hw-flow-desc">Описываете идею - мы перезвоним в тот же день</p>
+                </div>
+                <div class="hw-flow-step">
+                    <span class="hw-flow-num">02</span>
+                    <h3 class="hw-flow-name">Анализ</h3>
+                    <p class="hw-flow-desc">Предлагаем решение, называем сроки и стоимость</p>
+                </div>
+                <div class="hw-flow-step">
+                    <span class="hw-flow-num">03</span>
+                    <h3 class="hw-flow-name">Разработка</h3>
+                    <p class="hw-flow-desc">Создаём продукт, показываем результат каждую неделю</p>
+                </div>
+                <div class="hw-flow-step">
+                    <span class="hw-flow-num">04</span>
+                    <h3 class="hw-flow-name">Тестирование</h3>
+                    <p class="hw-flow-desc">Проверяем вместе с вами и исправляем до идеала</p>
+                </div>
+                <div class="hw-flow-step">
+                    <span class="hw-flow-num">05</span>
+                    <h3 class="hw-flow-name">Запуск</h3>
+                    <p class="hw-flow-desc">Запускаем и поддерживаем 6 месяцев бесплатно</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="s-services reveal-section" id="services">
+        <div class="s-services-inner">
+            <h2 class="s-services-title">Что мы делаем</h2>
+            <div class="s-services-grid">
+                <a href="projects-sites.html" class="svc-card">
+                    <span class="svc-num">01</span>
+                    <h3 class="svc-name">Веб-разработка</h3>
+                    <p class="svc-desc">Сайты, лендинги, интернет-магазины, корпоративные порталы</p>
+                    <span class="svc-arrow">&rarr;</span>
+                </a>
+                <a href="projects-mobile.html" class="svc-card">
+                    <span class="svc-num">02</span>
+                    <h3 class="svc-name">Мобильные приложения</h3>
+                    <p class="svc-desc">Нативные и кроссплатформенные приложения для iOS & Android</p>
+                    <span class="svc-arrow">&rarr;</span>
+                </a>
+                <a href="projects-auto.html" class="svc-card">
+                    <span class="svc-num">03</span>
+                    <h3 class="svc-name">AI & ML решения</h3>
+                    <p class="svc-desc">Умные чат-боты, распознавание, генерация контента</p>
+                    <span class="svc-arrow">&rarr;</span>
+                </a>
+                <a href="projects-bots-soft.html" class="svc-card">
+                    <span class="svc-num">04</span>
+                    <h3 class="svc-name">Боты & Автоматизация</h3>
+                    <p class="svc-desc">Telegram, WhatsApp, бизнес-процессы на автопилоте</p>
+                    <span class="svc-arrow">&rarr;</span>
+                </a>
+                <a href="projects-auto.html" class="svc-card">
+                    <span class="svc-num">05</span>
+                    <h3 class="svc-name">Интеграции</h3>
+                    <p class="svc-desc">Подключение платёжных систем, CRM, 1С, эквайринг</p>
+                    <span class="svc-arrow">&rarr;</span>
+                </a>
+                <a href="projects-auto.html" class="svc-card">
+                    <span class="svc-num">06</span>
+                    <h3 class="svc-name">Аналитика</h3>
+                    <p class="svc-desc">Дашборды, графики, визуализация данных для бизнеса</p>
+                    <span class="svc-arrow">&rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantees Section -->
+    <section class="s-guarantees reveal-section">
+        <div class="s-guarantees-inner">
+            <div class="s-guarantees-head">
+                <h2 class="s-guarantees-title">Гарантии</h2>
+            </div>
+            <div class="s-guarantees-grid">
+                <div class="guar-item">
+                    <h3 class="guar-title">Гарантия качества</h3>
+                    <p class="guar-desc">Исправляем любые баги бесплатно в течение 12 месяцев после запуска</p>
+                </div>
+                <div class="guar-item">
+                    <h3 class="guar-title">Возврат денег</h3>
+                    <p class="guar-desc">100% возврат предоплаты, если результат не соответствует договору</p>
+                </div>
+                <div class="guar-item">
+                    <h3 class="guar-title">Точные сроки</h3>
+                    <p class="guar-desc">Скидка 10% за каждую неделю задержки по нашей вине</p>
+                </div>
+                <div class="guar-item">
+                    <h3 class="guar-title">Поддержка 24/7</h3>
+                    <p class="guar-desc">Отвечаем на вопросы в любое время, решаем срочные проблемы за 2 часа</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="footer-new-top">
+            <div class="footer-brand">
+                <span class="footer-logo-text">GERS AGENCY</span>
+                <a href="https://t.me/GERS_AGENCY" class="footer-tg" aria-label="Telegram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <span class="footer-col-title">О нас</span>
+                    <a href="index.html">Главная</a>
+                    <a href="projects.html">Проекты</a>
+                    <a href="services.html">Услуги</a>
+                    <a href="calculator.html">Стоимость</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Направления</span>
+                    <a href="projects-sites.html">Веб-разработка</a>
+                    <a href="projects-mobile.html">Мобильные приложения</a>
+                    <a href="projects-auto.html">AI & ML решения</a>
+                    <a href="projects-bots-soft.html">Боты & Автоматизация</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Контакты</span>
+                    <a href="https://t.me/GERS_AGENCY">@gers_agency</a>
+                    <a href="contact.html">Оставить заявку</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-new-bottom">
+            <span>&copy; 2026 GERS agency. Все права защищены.</span>
+            <span>Работаем удалённо по всему миру</span>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle" aria-label="Чат">
+            <svg class="chat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+            <span class="chat-badge">1</span>
+        </button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-status">
+                    <span class="status-indicator online"></span>
+                    <span class="status-text">Мы онлайн</span>
+                </div>
+                <span class="chat-title">Чат с GERS</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">G</div>
+                    <div class="message-content">
+                        <p>Привет! Я виртуальный ассистент GERS. Чем могу помочь?</p>
+                        <span class="message-time">Сейчас</span>
+                    </div>
+                </div>
+                <div class="quick-replies">
+                    <button class="quick-reply" data-reply="Хочу узнать стоимость проекта">Узнать стоимость</button>
+                    <button class="quick-reply" data-reply="Расскажите о сроках разработки">Сроки разработки</button>
+                    <button class="quick-reply" data-reply="Хочу связаться с менеджером">Связаться</button>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Введите сообщение...">
+                <button class="chat-send" id="chatSend">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="telegram.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

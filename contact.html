@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - GERS</title>
+    <meta name="description" content="Свяжитесь с GERS Agency: оставьте заявку на разработку или напишите нам в Telegram @gers_agency. Ответим в течение часа.">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <meta property="og:title" content="Контакты — GERS Agency">
+    <meta property="og:description" content="Оставьте заявку на разработку или напишите нам в Telegram @gers_agency.">
+    <meta property="og:image" content="https://gers.agency/assets/og-image.png">
+    <meta property="og:url" content="https://gers.agency/contact.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css?v=25">
+    <link rel="stylesheet" href="contact-brutal.css?v=3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Header -->
+    <header class="header header--subpage">
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="GERS" class="logo-img">
+        </a>
+        <div class="header-center-title">
+            <img src="assets/contact-title.png" alt="Контакты" class="header-title-img">
+        </div>
+        <nav class="nav nav--right">
+            <a href="projects.html" class="nav-link" data-text="Проекты">Проекты</a>
+            <a href="services.html" class="nav-link" data-text="Услуги">Услуги</a>
+            <a href="calculator.html" class="nav-link" data-text="Узнать стоимость">Узнать стоимость</a>
+        </nav>
+        <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </header>
+
+    <!-- Floating decorations -->
+    <div class="cb-deco cb-deco-circle"></div>
+    <div class="cb-deco cb-deco-circle-2"></div>
+    <div class="cb-deco cb-deco-cross">+</div>
+
+    <!-- ═══════════ ONLINE STATUS BAR ═══════════ -->
+    <div class="cb-status-bar">
+        <div class="cb-status-inner">
+            <span class="cb-pulse"></span>
+            <span class="cb-status-text">Мы онлайн</span>
+            <span class="cb-status-sep">·</span>
+            <span class="cb-status-sub">Ответим в течение часа</span>
+        </div>
+    </div>
+
+    <!-- ═══════════ MAIN CONTACT SECTION ═══════════ -->
+    <section class="cb-section">
+        <div class="cb-grid">
+
+            <!-- LEFT: Big Heading -->
+            <div class="cb-left" data-anim="fade-right">
+                <h1 class="cb-heading">
+                    Расскажите<br>о <span class="cb-accent">проекте</span>
+                </h1>
+                <p class="cb-subtext">
+                    Опишите задачу - мы предложим решение и оценим сроки. Бесплатная консультация для каждого проекта.
+                </p>
+                <div class="cb-trust">
+                    <div class="cb-trust-item">
+                        <span class="cb-trust-num">150+</span>
+                        <span class="cb-trust-label">проектов</span>
+                    </div>
+                    <div class="cb-trust-item">
+                        <span class="cb-trust-num">98%</span>
+                        <span class="cb-trust-label">клиентов довольны</span>
+                    </div>
+                    <div class="cb-trust-item">
+                        <span class="cb-trust-num">1 час</span>
+                        <span class="cb-trust-label">среднее время ответа</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Form -->
+            <div class="cb-right" data-anim="fade-left">
+                <form class="cb-form" id="contactForm">
+                    <div class="cb-form-row">
+                        <div class="cb-field" data-anim="stagger">
+                            <label class="cb-label">Имя</label>
+                            <input type="text" class="cb-input" id="formName" placeholder="Ваше имя" required>
+                            <div class="cb-field-line"></div>
+                        </div>
+                        <div class="cb-field" data-anim="stagger">
+                            <label class="cb-label">Email</label>
+                            <input type="email" class="cb-input" id="formEmail" placeholder="email@example.com" required>
+                            <div class="cb-field-line"></div>
+                        </div>
+                    </div>
+                    <div class="cb-form-row">
+                        <div class="cb-field" data-anim="stagger">
+                            <label class="cb-label">Telegram</label>
+                            <input type="text" class="cb-input" id="formTelegram" placeholder="@username">
+                            <div class="cb-field-line"></div>
+                        </div>
+                        <div class="cb-field" data-anim="stagger">
+                            <label class="cb-label">Тип проекта</label>
+                            <select class="cb-input cb-select" id="formProject" required>
+                                <option value="">Выберите тип</option>
+                                <option value="site">Сайт</option>
+                                <option value="webapp">Веб-приложение</option>
+                                <option value="mobile">Мобильное приложение</option>
+                                <option value="platform">Комплексная платформа</option>
+                                <option value="other">Другое</option>
+                            </select>
+                            <div class="cb-field-line"></div>
+                        </div>
+                    </div>
+                    <div class="cb-field cb-field--full" data-anim="stagger">
+                        <label class="cb-label">Бюджет</label>
+                        <select class="cb-input cb-select" id="formBudget">
+                            <option value="">Примерный бюджет</option>
+                            <option value="30">До 50 000 ₽</option>
+                            <option value="50">50 000 - 100 000 ₽</option>
+                            <option value="100">100 000 - 300 000 ₽</option>
+                            <option value="300">300 000+ ₽</option>
+                        </select>
+                        <div class="cb-field-line"></div>
+                    </div>
+                    <div class="cb-field cb-field--full" data-anim="stagger">
+                        <label class="cb-label">Подробности</label>
+                        <textarea class="cb-input cb-textarea" id="formDesc" placeholder="Опишите вашу идею, задачу или проблему" rows="4"></textarea>
+                        <div class="cb-field-line"></div>
+                    </div>
+                    <button type="submit" class="cb-submit" data-anim="stagger">
+                        <span class="cb-submit-text">Отправить заявку</span>
+                        <span class="cb-submit-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                        <span class="cb-submit-glow"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ CONTACT CHANNELS ═══════════ -->
+    <section class="cb-channels">
+        <div class="cb-channels-grid">
+            <a href="https://t.me/gers_agency" target="_blank" class="cb-channel" data-anim="stagger">
+                <div class="cb-channel-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M22 2L11 13"/>
+                        <path d="M22 2L15 22l-4-9-9-4z"/>
+                    </svg>
+                </div>
+                <div class="cb-channel-label">Telegram</div>
+                <div class="cb-channel-value">@gers_agency</div>
+                <div class="cb-channel-hover"></div>
+            </a>
+            <div class="cb-channel cb-channel--info" data-anim="stagger">
+                <div class="cb-channel-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <div class="cb-channel-label">Часы работы</div>
+                <div class="cb-channel-value">Пн-Вс · 10:00 - 22:00</div>
+                <div class="cb-channel-hover"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="footer-new-top">
+            <div class="footer-brand">
+                <span class="footer-logo-text">GERS AGENCY</span>
+                <a href="https://t.me/GERS_AGENCY" class="footer-tg" aria-label="Telegram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <span class="footer-col-title">О нас</span>
+                    <a href="index.html">Главная</a>
+                    <a href="projects.html">Проекты</a>
+                    <a href="services.html">Услуги</a>
+                    <a href="calculator.html">Стоимость</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Направления</span>
+                    <a href="projects-sites.html">Веб-разработка</a>
+                    <a href="projects-mobile.html">Мобильные приложения</a>
+                    <a href="projects-auto.html">AI & ML решения</a>
+                    <a href="projects-bots-soft.html">Боты & Автоматизация</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Контакты</span>
+                    <a href="https://t.me/GERS_AGENCY">@gers_agency</a>
+                    <a href="contact.html">Оставить заявку</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-new-bottom">
+            <span>&copy; 2026 GERS agency. Все права защищены.</span>
+            <span>Работаем удалённо по всему миру</span>
+        </div>
+    </footer>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle">
+            <svg class="chat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+            <span class="chat-badge">1</span>
+        </button>
+        
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-status">
+                    <span class="status-indicator online"></span>
+                    <span class="status-text">Мы онлайн</span>
+                </div>
+                <span class="chat-title">Чат с GERS</span>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">G</div>
+                    <div class="message-content">
+                        <p>Привет! Я виртуальный ассистент GERS. Чем могу помочь?</p>
+                        <span class="message-time">Сейчас</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Введите сообщение...">
+                <button class="chat-send" id="chatSend">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="telegram.js"></script>
+    <script src="script.js"></script>
+    <script src="contact-brutal.js"></script>
+</body>
+</html>

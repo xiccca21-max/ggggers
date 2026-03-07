@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Узнать стоимость - GERS</title>
+    <meta name="description" content="Рассчитайте стоимость разработки сайта, приложения или бота онлайн. Калькулятор проектов GERS Agency.">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <meta property="og:title" content="Калькулятор — GERS Agency">
+    <meta property="og:description" content="Рассчитайте стоимость разработки сайта, приложения или бота онлайн.">
+    <meta property="og:image" content="https://gers.agency/assets/og-image.png">
+    <meta property="og:url" content="https://gers.agency/calculator.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css?v=25">
+    <link rel="stylesheet" href="calc-ultra.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body class="page-dark">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Particle canvas background -->
+    <canvas id="calcParticles" class="calc-particles"></canvas>
+
+    <!-- Subtle grid overlay -->
+    <div class="calc-grid-overlay"></div>
+
+    <!-- Header -->
+    <header class="header header--subpage header--dark">
+        <a href="index.html" class="logo">
+            <img src="assets/logo-white.png" alt="GERS" class="logo-img">
+        </a>
+        <div class="header-center-title">
+            <img src="assets/calculator-title.png" alt="Калькулятор" class="header-title-img">
+        </div>
+        <nav class="nav nav--right">
+            <a href="projects.html" class="nav-link" data-text="Проекты">Проекты</a>
+            <a href="services.html" class="nav-link" data-text="Услуги">Услуги</a>
+            <a href="contact.html" class="nav-link" data-text="Контакты">Контакты</a>
+        </nav>
+        <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </header>
+
+    <!-- ═══════════════ ULTRA CALCULATOR ═══════════════ -->
+    <section class="ucalc" id="calculator">
+
+        <!-- Progress bar -->
+        <div class="ucalc-progress">
+            <div class="ucalc-progress-track">
+                <div class="ucalc-progress-fill" id="ucalcFill"></div>
+            </div>
+            <div class="ucalc-steps-indicator">
+                <button class="ucalc-step-dot active" data-step="0"><span>01</span> Тип</button>
+                <button class="ucalc-step-dot" data-step="1"><span>02</span> Дизайн</button>
+                <button class="ucalc-step-dot" data-step="2"><span>03</span> Опции</button>
+                <button class="ucalc-step-dot" data-step="3"><span>04</span> Сроки</button>
+            </div>
+            <div class="ucalc-status" id="ucalcStatus">Выберите тип проекта</div>
+        </div>
+
+        <!-- Steps viewport -->
+        <div class="ucalc-viewport">
+            <div class="ucalc-track" id="ucalcTrack">
+
+                <!-- ── Step 1: Project Type ── -->
+                <div class="ucalc-step" data-step="0">
+                    <div class="ucalc-step-watermark">01</div>
+                    <div class="ucalc-step-header">
+                        <h2 class="ucalc-step-title">Тип проекта</h2>
+                        <p class="ucalc-step-sub">Выберите, что вам нужно - мы подберём лучшее решение</p>
+                    </div>
+                    <div class="ucalc-cards-grid">
+                        <button class="ucalc-card active" data-type="project" data-value="30000" data-tooltip="Идеально для старта бизнеса: от лендинга до многостраничного корпоративного сайта">
+                            <span class="ucalc-badge">Популярное</span>
+                            <div class="ucalc-card-glow"></div>
+                            <div class="ucalc-card-border"></div>
+                            <div class="ucalc-card-inner">
+                                <div class="ucalc-card-icon">
+                                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <rect x="4" y="6" width="40" height="28" rx="3"/>
+                                        <line x1="24" y1="34" x2="24" y2="40"/>
+                                        <line x1="16" y1="42" x2="32" y2="42"/>
+                                        <line x1="4" y1="28" x2="44" y2="28"/>
+                                    </svg>
+                                </div>
+                                <div class="ucalc-card-title">Сайт</div>
+                                <div class="ucalc-card-desc">Лендинг, визитка, корпоративный сайт</div>
+                                <div class="ucalc-card-price">от 30 000 ₽</div>
+                            </div>
+                        </button>
+
+                        <button class="ucalc-card" data-type="project" data-value="60000" data-tooltip="CRM-системы, личные кабинеты, SaaS-платформы - сложные решения для бизнеса">
+                            <div class="ucalc-card-glow"></div>
+                            <div class="ucalc-card-border"></div>
+                            <div class="ucalc-card-inner">
+                                <div class="ucalc-card-icon">
+                                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <rect x="6" y="4" width="36" height="40" rx="3"/>
+                                        <line x1="6" y1="12" x2="42" y2="12"/>
+                                        <circle cx="12" cy="8" r="1.5" fill="currentColor"/>
+                                        <circle cx="18" cy="8" r="1.5" fill="currentColor"/>
+                                        <circle cx="24" cy="8" r="1.5" fill="currentColor"/>
+                                        <rect x="12" y="18" width="24" height="4" rx="1"/>
+                                        <rect x="12" y="26" width="16" height="4" rx="1"/>
+                                        <rect x="12" y="34" width="20" height="4" rx="1"/>
+                                    </svg>
+                                </div>
+                                <div class="ucalc-card-title">Веб-приложение</div>
+                                <div class="ucalc-card-desc">CRM, личный кабинет, SaaS</div>
+                                <div class="ucalc-card-price">от 60 000 ₽</div>
+                            </div>
+                        </button>
+
+                        <button class="ucalc-card" data-type="project" data-value="90000" data-tooltip="Нативные приложения для iOS и Android с максимальной производительностью">
+                            <div class="ucalc-card-glow"></div>
+                            <div class="ucalc-card-border"></div>
+                            <div class="ucalc-card-inner">
+                                <div class="ucalc-card-icon">
+                                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <rect x="12" y="2" width="24" height="44" rx="5"/>
+                                        <line x1="20" y1="6" x2="28" y2="6"/>
+                                        <circle cx="24" cy="40" r="2"/>
+                                        <rect x="16" y="12" width="16" height="22" rx="1"/>
+                                    </svg>
+                                </div>
+                                <div class="ucalc-card-title">Мобильное приложение</div>
+                                <div class="ucalc-card-desc">iOS / Android</div>
+                                <div class="ucalc-card-price">от 90 000 ₽</div>
+                            </div>
+                        </button>
+
+                        <button class="ucalc-card" data-type="project" data-value="140000" data-tooltip="Полноценные экосистемы, маркетплейсы и системы автоматизации бизнеса">
+                            <div class="ucalc-card-glow"></div>
+                            <div class="ucalc-card-border"></div>
+                            <div class="ucalc-card-inner">
+                                <div class="ucalc-card-icon">
+                                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <circle cx="24" cy="24" r="6"/>
+                                        <circle cx="10" cy="10" r="4"/>
+                                        <circle cx="38" cy="10" r="4"/>
+                                        <circle cx="10" cy="38" r="4"/>
+                                        <circle cx="38" cy="38" r="4"/>
+                                        <line x1="18" y1="20" x2="13" y2="13"/>
+                                        <line x1="30" y1="20" x2="35" y2="13"/>
+                                        <line x1="18" y1="28" x2="13" y2="35"/>
+                                        <line x1="30" y1="28" x2="35" y2="35"/>
+                                    </svg>
+                                </div>
+                                <div class="ucalc-card-title">Комплексная платформа</div>
+                                <div class="ucalc-card-desc">Маркетплейс, автоматизация, экосистемы</div>
+                                <div class="ucalc-card-price">от 140 000 ₽</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="ucalc-step-nav">
+                        <div></div>
+                        <button class="ucalc-nav-btn next" id="nextStep0">
+                            Далее
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ── Step 2: Design ── -->
+                <div class="ucalc-step" data-step="1">
+                    <div class="ucalc-step-watermark">02</div>
+                    <div class="ucalc-step-header">
+                        <h2 class="ucalc-step-title">Уровень дизайна</h2>
+                        <p class="ucalc-step-sub">Каким должен быть визуал вашего проекта?</p>
+                    </div>
+                    <div class="ucalc-cards-grid ucalc-cards-3">
+                        <button class="ucalc-card active" data-type="design" data-value="0">
+                            <div class="ucalc-card-glow"></div>
+                            <div class="ucalc-card-border"></div>
+                            <div class="ucalc-card-inner">
+                                <div class="ucalc-card-icon">
+                                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <rect x="6" y="6" width="36" height="36" rx="2"/>
+                                        <line x1="6" y1="16" x2="42" y2="16"/>
+                                        <line x1="18" y1="16" x2="18" y2="42"/>
+                                    </svg>
+                                </div>
+                                <div class="ucalc-card-title">Базовый</div>
+                                <div class="ucalc-card-desc">Чистый и аккуратный, проверенные решения</div>
+                                <div class="ucalc-card-price">+ 0 ₽</div>
+                            </div>
+                        </button>
+
+                        <button class="ucalc-card" data-type="design" data-value="30000">
+                            <span class="ucalc-badge">Популярное</span>
+                            <div class="ucalc-card-glow"></div>
+                            <div class="ucalc-card-border"></div>
+                            <div class="ucalc-card-inner">
+                                <div class="ucalc-card-icon">
+                                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M8 40l8-16 6 8 8-20 10 28"/>
+                                        <circle cx="36" cy="12" r="4"/>
+                                    </svg>
+                                </div>
+                                <div class="ucalc-card-title">Индивидуальный</div>
+                                <div class="ucalc-card-desc">Уникальный стиль, фирменная айдентика</div>
+                                <div class="ucalc-card-price">+ 30 000 ₽</div>
+                            </div>
+                        </button>
+
+                        <button class="ucalc-card" data-type="design" data-value="60000">
+                            <div class="ucalc-card-glow"></div>
+                            <div class="ucalc-card-border"></div>
+                            <div class="ucalc-card-inner">
+                                <div class="ucalc-card-icon">
+                                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M24 4l6 12 14 2-10 10 2 14-12-6-12 6 2-14L4 18l14-2z"/>
+                                    </svg>
+                                </div>
+                                <div class="ucalc-card-title">Premium</div>
+                                <div class="ucalc-card-desc">WOW-эффект, анимации, движение, 3D</div>
+                                <div class="ucalc-card-price">+ 60 000 ₽</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="ucalc-step-nav">
+                        <button class="ucalc-nav-btn prev" id="prevStep1">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                            Назад
+                        </button>
+                        <button class="ucalc-nav-btn next" id="nextStep1">
+                            Далее
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ── Step 3: Extras ── -->
+                <div class="ucalc-step" data-step="2">
+                    <div class="ucalc-step-watermark">03</div>
+                    <div class="ucalc-step-header">
+                        <h2 class="ucalc-step-title">Дополнительные опции</h2>
+                        <p class="ucalc-step-sub">Включите то, что нужно вашему проекту</p>
+                    </div>
+                    <div class="ucalc-toggles-grid">
+                        <label class="ucalc-toggle" data-value="15000">
+                            <input type="checkbox" data-value="15000">
+                            <div class="ucalc-toggle-card">
+                                <div class="ucalc-toggle-glow"></div>
+                                <div class="ucalc-toggle-inner">
+                                    <div class="ucalc-toggle-top">
+                                        <div class="ucalc-toggle-icon">
+                                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <circle cx="16" cy="10" r="6"/>
+                                                <path d="M6 28c0-5.523 4.477-10 10-10s10 4.477 10 10"/>
+                                            </svg>
+                                        </div>
+                                        <div class="ucalc-toggle-info">
+                                            <div class="ucalc-toggle-name">Личный кабинет</div>
+                                            <div class="ucalc-toggle-desc">Авторизация, профиль, история</div>
+                                        </div>
+                                    </div>
+                                    <div class="ucalc-toggle-bottom">
+                                        <span class="ucalc-toggle-price">+15 000 ₽</span>
+                                        <div class="ucalc-switch">
+                                            <div class="ucalc-switch-track">
+                                                <div class="ucalc-switch-thumb"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="ucalc-toggle" data-value="20000">
+                            <input type="checkbox" data-value="20000">
+                            <div class="ucalc-toggle-card">
+                                <div class="ucalc-toggle-glow"></div>
+                                <div class="ucalc-toggle-inner">
+                                    <div class="ucalc-toggle-top">
+                                        <div class="ucalc-toggle-icon">
+                                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <rect x="4" y="8" width="24" height="16" rx="2"/>
+                                                <line x1="4" y1="14" x2="28" y2="14"/>
+                                                <line x1="8" y1="20" x2="16" y2="20"/>
+                                            </svg>
+                                        </div>
+                                        <div class="ucalc-toggle-info">
+                                            <div class="ucalc-toggle-name">Платёжная система</div>
+                                            <div class="ucalc-toggle-desc">Stripe, ЮKassa, Apple/Google Pay</div>
+                                        </div>
+                                    </div>
+                                    <div class="ucalc-toggle-bottom">
+                                        <span class="ucalc-toggle-price">+20 000 ₽</span>
+                                        <div class="ucalc-switch">
+                                            <div class="ucalc-switch-track">
+                                                <div class="ucalc-switch-thumb"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="ucalc-toggle" data-value="25000">
+                            <input type="checkbox" data-value="25000">
+                            <div class="ucalc-toggle-card">
+                                <div class="ucalc-toggle-glow"></div>
+                                <div class="ucalc-toggle-inner">
+                                    <div class="ucalc-toggle-top">
+                                        <div class="ucalc-toggle-icon">
+                                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <rect x="4" y="4" width="24" height="24" rx="2"/>
+                                                <line x1="4" y1="12" x2="28" y2="12"/>
+                                                <line x1="12" y1="12" x2="12" y2="28"/>
+                                                <path d="M18 18h6M18 24h4"/>
+                                            </svg>
+                                        </div>
+                                        <div class="ucalc-toggle-info">
+                                            <div class="ucalc-toggle-name">Админ-панель</div>
+                                            <div class="ucalc-toggle-desc">Управление контентом и данными</div>
+                                        </div>
+                                    </div>
+                                    <div class="ucalc-toggle-bottom">
+                                        <span class="ucalc-toggle-price">+25 000 ₽</span>
+                                        <div class="ucalc-switch">
+                                            <div class="ucalc-switch-track">
+                                                <div class="ucalc-switch-thumb"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="ucalc-toggle" data-value="40000">
+                            <input type="checkbox" data-value="40000">
+                            <div class="ucalc-toggle-card">
+                                <div class="ucalc-toggle-glow"></div>
+                                <div class="ucalc-toggle-inner">
+                                    <div class="ucalc-toggle-top">
+                                        <div class="ucalc-toggle-icon">
+                                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <circle cx="16" cy="16" r="10"/>
+                                                <path d="M12 16c0-4 2-6 4-6s4 2 4 6-2 6-4 6-4-2-4-6"/>
+                                                <line x1="6" y1="16" x2="26" y2="16"/>
+                                            </svg>
+                                        </div>
+                                        <div class="ucalc-toggle-info">
+                                            <div class="ucalc-toggle-name">AI-функции</div>
+                                            <div class="ucalc-toggle-desc">Чат-бот, рекомендации, автоматизация</div>
+                                        </div>
+                                    </div>
+                                    <div class="ucalc-toggle-bottom">
+                                        <span class="ucalc-toggle-price">+40 000 ₽</span>
+                                        <div class="ucalc-switch">
+                                            <div class="ucalc-switch-track">
+                                                <div class="ucalc-switch-thumb"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="ucalc-step-nav">
+                        <button class="ucalc-nav-btn prev" id="prevStep2">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                            Назад
+                        </button>
+                        <button class="ucalc-nav-btn next" id="nextStep2">
+                            Далее
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ── Step 4: Timeline ── -->
+                <div class="ucalc-step" data-step="3">
+                    <div class="ucalc-step-watermark">04</div>
+                    <div class="ucalc-step-header">
+                        <h2 class="ucalc-step-title">Сроки реализации</h2>
+                        <p class="ucalc-step-sub">Как быстро вам нужен результат?</p>
+                    </div>
+                    <div class="ucalc-timeline-grid">
+                        <button class="ucalc-timeline-card active" data-multiplier="1" data-speed="standard">
+                            <div class="ucalc-timeline-glow"></div>
+                            <div class="ucalc-timeline-inner">
+                                <div class="ucalc-timeline-icon">
+                                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <circle cx="24" cy="24" r="18"/>
+                                        <polyline points="24,12 24,24 32,28"/>
+                                    </svg>
+                                </div>
+                                <div class="ucalc-timeline-title">Стандартный</div>
+                                <div class="ucalc-timeline-period" data-speed="standard">10 - 15 дней</div>
+                                <div class="ucalc-timeline-desc">Оптимальный темп, максимальное качество</div>
+                                <div class="ucalc-timeline-mult">× 1.0</div>
+                            </div>
+                        </button>
+
+                        <button class="ucalc-timeline-card" data-multiplier="1.2" data-speed="fast">
+                            <div class="ucalc-timeline-glow"></div>
+                            <div class="ucalc-timeline-inner">
+                                <div class="ucalc-timeline-icon">
+                                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <circle cx="24" cy="24" r="18"/>
+                                        <polyline points="24,12 24,24 32,20"/>
+                                        <path d="M36 12l-4 4 4 4" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
+                                <div class="ucalc-timeline-title">Ускоренный</div>
+                                <div class="ucalc-timeline-period" data-speed="fast">7 - 10 дней</div>
+                                <div class="ucalc-timeline-desc">Расширенная команда, быстрый результат</div>
+                                <div class="ucalc-timeline-mult">× 1.2</div>
+                            </div>
+                        </button>
+
+                        <button class="ucalc-timeline-card" data-multiplier="1.4" data-speed="urgent">
+                            <div class="ucalc-timeline-glow"></div>
+                            <div class="ucalc-timeline-inner">
+                                <div class="ucalc-timeline-icon">
+                                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <circle cx="24" cy="24" r="18"/>
+                                        <polyline points="24,12 24,24 30,18"/>
+                                        <path d="M10 14l6-2M38 14l-6-2" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="ucalc-timeline-title">Срочный</div>
+                                <div class="ucalc-timeline-period" data-speed="urgent">5 - 7 дней</div>
+                                <div class="ucalc-timeline-desc">Приоритет №1, параллельная работа</div>
+                                <div class="ucalc-timeline-mult">× 1.4</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="ucalc-step-nav">
+                        <button class="ucalc-nav-btn prev" id="prevStep3">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                            Назад
+                        </button>
+                        <button class="ucalc-nav-btn next ucalc-nav-btn--summary" id="showSummary">
+                            Итого
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Hidden elements for JS compatibility -->
+        <div id="ucalcResult" style="display:none">
+            <div id="ucalcAura"></div>
+            <div id="ucalcRing"></div>
+            <div id="ucalcDigits" style="--digit-h:2.4"></div>
+            <div id="ucalcHandle"></div>
+        </div>
+
+    </section>
+
+    <!-- ═══════ Summary Modal ═══════ -->
+    <div class="ucalc-modal-overlay" id="ucalcModal">
+        <div class="ucalc-modal">
+            <button class="ucalc-modal-close" id="ucalcModalClose">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="ucalc-modal-content">
+                <div class="ucalc-modal-watermark"></div>
+                <h2 class="ucalc-modal-title">Ваш проект</h2>
+                <div class="ucalc-modal-rows" id="ucalcModalRows">
+                    <!-- filled by JS -->
+                </div>
+                <div class="ucalc-modal-divider"></div>
+                <div class="ucalc-modal-total">
+                    <span class="ucalc-modal-total-label">Итого от</span>
+                    <span class="ucalc-modal-total-value" id="ucalcModalTotal">30 000 ₽</span>
+                </div>
+                <div class="ucalc-modal-discount" id="ucalcModalDiscount" style="display:none">
+                    <span>🎉 Скидка 5% применена!</span>
+                </div>
+                <a href="contact.html" class="ucalc-modal-cta">
+                    <span>Обсудить проект</span>
+                </a>
+                <p class="ucalc-modal-note">Финальная стоимость уточняется после обсуждения деталей</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Discount Toast -->
+    <div class="ucalc-toast" id="ucalcToast">
+        <span class="ucalc-toast-icon">💰</span>
+        <span class="ucalc-toast-text">Вы нашли секретную скидку -5%!</span>
+    </div>
+
+    <!-- Tooltip -->
+    <div class="ucalc-tooltip" id="ucalcTooltip"></div>
+
+    <!-- FAQ Section -->
+    <section class="faq faq--ultra" id="faq">
+        <div class="section-header">
+            <h2 class="section-title">Частые вопросы</h2>
+            <p class="section-subtitle">Ответы на популярные вопросы наших клиентов</p>
+        </div>
+        
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Сколько стоит разработка сайта/приложения?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Стоимость зависит от сложности проекта. Простой сайт - от 30 000 ₽, веб-приложение - от 60 000 ₽, мобильное приложение - от 90 000 ₽, комплексная платформа - от 140 000 ₽. Индивидуальный расчёт предоставляем при обсуждении вашего ТЗ или проектной задачи.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Сколько времени занимает разработка?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Сроки зависят от масштаба проекта. Простой сайт - 2-4 недели, веб-приложение - 1-3 месяца, мобильное приложение - 2-4 месяца. Мы всегда называем точные сроки после анализа задачи.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Как происходит рабочий процесс?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>1) Вы оставляете заявку. 2) Мы обсуждаем задачу и составляем проект. 3) После согласования начинаем работу. 4) Каждый этап - промежуточный результат. 5) Тестируем и запускаем. 6) Предоставляем 6 месяцев поддержки.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Что если результат мне не понравится?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Мы утверждаем каждый этап по вашему согласию, так что вы всегда в курсе происходящего. Если на каком-то этапе результат не устраивает - вносим правки бесплатно. Наша задача - гарантировать качество и стопроцентную удовлетворённость.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Работаете ли вы с зарубежными/удалёнными клиентами?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Да! Мы работаем удалённо с клиентами по всему миру. Для коммуникации есть Zoom, мессенджеры и удобный проектный портал. При этом всегда на связи по московскому времени.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Какие технологии вы используете?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Мы используем современные стеки: React, Next.js, Node.js, Python, Flutter для мобильных приложений. Подбираем технологию исходя из задач и целей проекта для быстрой, надёжной и легко масштабируемой работы.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section cta-section--dark">
+        <div class="cta-content">
+            <h2 class="cta-title">Обсудим проект?</h2>
+            <div class="cta-buttons">
+                <a href="contact.html" class="cta-button primary">Оставить заявку</a>
+                <a href="projects.html" class="cta-button secondary">Смотреть проекты</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle">
+            <svg class="chat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+            <span class="chat-badge">1</span>
+        </button>
+        
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-status">
+                    <span class="status-indicator online"></span>
+                    <span class="status-text">Мы онлайн</span>
+                </div>
+                <span class="chat-title">Чат с GERS</span>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">G</div>
+                    <div class="message-content">
+                        <p>Привет! Я виртуальный ассистент GERS. Чем могу помочь?</p>
+                        <span class="message-time">Сейчас</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Введите сообщение...">
+                <button class="chat-send" id="chatSend">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="telegram.js"></script>
+    <script src="script.js"></script>
+    <script src="calc-ultra.js"></script>
+</body>
+</html>
