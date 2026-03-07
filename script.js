@@ -1879,7 +1879,7 @@ class ProjectModal {
             </div>
             
             <div class="project-modal-cta">
-                <a href="contact.html" class="project-modal-cta-btn">Хочу такой же проект</a>
+                <a href="/contact" class="project-modal-cta-btn">Хочу такой же проект</a>
                 <button class="project-modal-cta-btn secondary" onclick="document.getElementById('projectModal').classList.remove('visible'); document.body.style.overflow = '';">Закрыть</button>
             </div>
         `;
@@ -4279,7 +4279,7 @@ document.addEventListener('DOMContentLoaded', () => {
             /* -- Add logo at top -- */
             if (!navMenu.querySelector('.mob-nav-logo')) {
                 navMenu.insertAdjacentHTML('afterbegin',
-                    `<div class="mob-nav-logo"><a href="index.html"><img src="assets/gers-logo-pink.png" alt="GERS"></a></div>`);
+                    `<div class="mob-nav-logo"><a href="/"><img src="assets/gers-logo-pink.png" alt="GERS"></a></div>`);
             }
 
             /* -- Add bottom section (Telegram) -- */
