@@ -3,6 +3,38 @@
  * Interactive animations and effects
  */
 
+// #region agent log
+(function debugCheckResources(){
+    const page = location.pathname;
+    const errors = [];
+    // Check all images
+    document.querySelectorAll('img').forEach(img => {
+        if (img.complete && img.naturalWidth === 0 && img.src) {
+            errors.push({src: img.src, tag: img.className || img.alt || 'unknown'});
+        }
+        img.addEventListener('error', function() {
+            fetch('http://127.0.0.1:7243/ingest/0fce60b2-d7d9-4ae1-8035-f57d9bde2a1c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:H1-img-error',message:'Image load error',data:{page:page,src:this.src,cls:this.className},timestamp:Date.now()})}).catch(()=>{});
+        });
+    });
+    // Check CSS loaded
+    const cssLoaded = document.styleSheets.length > 0;
+    // Check JS files
+    const scripts = Array.from(document.querySelectorAll('script[src]')).map(s=>s.src);
+    // Report initial state
+    fetch('http://127.0.0.1:7243/ingest/0fce60b2-d7d9-4ae1-8035-f57d9bde2a1c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:H1-init',message:'Page load check',data:{page:page,brokenImagesOnLoad:errors,cssLoaded:cssLoaded,scripts:scripts,totalImages:document.querySelectorAll('img').length},timestamp:Date.now()})}).catch(()=>{});
+    // After full load, check again
+    window.addEventListener('load', function(){
+        const brokenAfterLoad = [];
+        document.querySelectorAll('img').forEach(img => {
+            if (img.complete && img.naturalWidth === 0 && img.src && !img.src.includes('data:')) {
+                brokenAfterLoad.push({src: img.src, cls: img.className});
+            }
+        });
+        fetch('http://127.0.0.1:7243/ingest/0fce60b2-d7d9-4ae1-8035-f57d9bde2a1c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:H1-loaded',message:'After full load',data:{page:page,brokenImages:brokenAfterLoad,totalImages:document.querySelectorAll('img').length},timestamp:Date.now()})}).catch(()=>{});
+    });
+})();
+// #endregion
+
 // ═══════════════════════════════════════════════════════════════════
 // PRELOADER
 // ═══════════════════════════════════════════════════════════════════
@@ -1793,6 +1825,9 @@ class ProjectModal {
         const videoSrc = card.dataset.video || '';
         const screenshotsData = card.dataset.screenshots || '';
         const screenshots = screenshotsData ? screenshotsData.split(',') : [];
+        // #region agent log
+        fetch('http://127.0.0.1:7243/ingest/0fce60b2-d7d9-4ae1-8035-f57d9bde2a1c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:H2-modal',message:'Modal opened',data:{page:location.pathname,title:title,screenshotsCount:screenshots.length,screenshots:screenshots.slice(0,3),botPreview:botPreview,webPreview:webPreview,videoSrc:videoSrc},timestamp:Date.now()})}).catch(()=>{});
+        // #endregion
         
         if (botPreview) {
             this.showBotPreview(botPreview, title);
