@@ -88,6 +88,10 @@
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
+            // Honeypot anti-spam check
+            const honeypot = document.getElementById('honeypot');
+            if (honeypot && honeypot.value) return; // Bot detected — silently reject
+
             const btn = form.querySelector('.cb-submit');
             const textEl = btn.querySelector('.cb-submit-text');
             const arrowEl = btn.querySelector('.cb-submit-arrow');

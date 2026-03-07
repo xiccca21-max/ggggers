@@ -1,31 +1,16 @@
 // ═══════════════════════════════════════════════════════════════════
-// GERS — Telegram Integration (Orders + Analytics)
+// GERS — Telegram Integration (via secure proxy)
+// Tokens are hidden on the server (Cloudflare Worker)
 // ═══════════════════════════════════════════════════════════════════
 
-const GERS_TG = {
-    // Bot 1 — Orders
-    orders: {
-        token: '8634895672:AAGQrtgbfj6K2yza-26Z9-53pjDqr8w8f-0',
-        chatId: '-1003707995958'
-    },
-    // Bot 2 — Analytics
-    analytics: {
-        token: '8752359181:AAGI18WNi1uircMR47A2O76utmZBgNM8Hnw',
-        chatId: '-1003839451185'
-    }
-};
+const GERS_API = 'https://gers-api.kronlead.workers.dev';
 
-// ── Send message to Telegram ──
-function sendToTelegram(botToken, chatId, text) {
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-    return fetch(url, {
+// ── Send message via secure proxy ──
+function sendToTelegram(type, message) {
+    return fetch(GERS_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            chat_id: chatId,
-            text: text,
-            parse_mode: 'HTML'
-        })
+        body: JSON.stringify({ type, message })
     }).catch(() => {});
 }
 
@@ -69,7 +54,7 @@ function sendOrderToTelegram(data) {
 🕐 ${dateStr}, ${timeStr}
 🌐 Страница: ${location.pathname}`;
 
-    return sendToTelegram(GERS_TG.orders.token, GERS_TG.orders.chatId, msg);
+    return sendToTelegram('orders', msg);
 }
 
 // ═══════════════════════════════════════════════════════════════════
@@ -128,7 +113,7 @@ ${device}, ${os}
 🔒 <b>IP:</b> ${data.ip}
 🕐 ${dateStr}, ${timeStr}`;
 
-            sendToTelegram(GERS_TG.analytics.token, GERS_TG.analytics.chatId, msg);
+            sendToTelegram('analytics', msg);
         })
         .catch(() => {
             // If IP API fails, send without IP
@@ -141,6 +126,6 @@ ${device}, ${os}
 🌐 <b>Браузер:</b> ${browser}
 🕐 ${dateStr}, ${timeStr}`;
 
-            sendToTelegram(GERS_TG.analytics.token, GERS_TG.analytics.chatId, msg);
+            sendToTelegram('analytics', msg);
         });
 })();

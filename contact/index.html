@@ -2,6 +2,10 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://gers-api.kronlead.workers.dev https://api.ipify.org; media-src 'self';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты - GERS</title>
     <meta name="description" content="Свяжитесь с GERS Agency: оставьте заявку на разработку или напишите нам в Telegram @gers_agency. Ответим в течение часа.">
@@ -86,6 +90,8 @@
             <!-- RIGHT: Form -->
             <div class="cb-right" data-anim="fade-left">
                 <form class="cb-form" id="contactForm">
+                    <!-- Honeypot anti-spam (hidden from real users) -->
+                    <input type="text" name="website" id="honeypot" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" tabindex="-1" autocomplete="off">
                     <div class="cb-form-row">
                         <div class="cb-field" data-anim="stagger">
                             <label class="cb-label">Имя</label>
