@@ -4279,7 +4279,7 @@ document.addEventListener('DOMContentLoaded', () => {
             /* -- Add logo at top -- */
             if (!navMenu.querySelector('.mob-nav-logo')) {
                 navMenu.insertAdjacentHTML('afterbegin',
-                    `<div class="mob-nav-logo"><a href="/"><img src="assets/gers-logo-pink.png" alt="GERS"></a></div>`);
+                    `<div class="mob-nav-logo"><a href="/"><img src="/assets/gers-logo-pink.png" alt="GERS"></a></div>`);
             }
 
             /* -- Add bottom section (Telegram) -- */
