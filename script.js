@@ -1027,20 +1027,20 @@ class CardTilt {
         const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotateX = (y - centerY) / 20;
-        const rotateY = (centerX - x) / 20;
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+        const rotateX = (y - centerY) / 60;
+        const rotateY = (centerX - x) / 60;
+        card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
     }
     reset(card) {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+        card.style.transform = 'perspective(1200px) rotateX(0) rotateY(0) translateY(0)';
     }
 
     /* ---------- NEW tech cat-card 3D tilt ---------- */
     bindCat() {
         this.catCards.forEach(card => {
-            const MAX_TILT = 15;         // max degrees
-            const PERSPECTIVE = 1200;    // px
-            const SCALE_HOVER = 1.03;
+            const MAX_TILT = 4;          // max degrees (subtle)
+            const PERSPECTIVE = 1400;    // px
+            const SCALE_HOVER = 1.01;
             let raf = null;
             let currentRX = 0, currentRY = 0, targetRX = 0, targetRY = 0;
             let mouseX = 0.5, mouseY = 0.5;
@@ -1049,8 +1049,8 @@ class CardTilt {
 
             /* smooth loop - gives buttery animation */
             const animate = () => {
-                currentRX = lerp(currentRX, targetRX, 0.08);
-                currentRY = lerp(currentRY, targetRY, 0.08);
+                currentRX = lerp(currentRX, targetRX, 0.05);
+                currentRY = lerp(currentRY, targetRY, 0.05);
                 card.style.transform =
                     `perspective(${PERSPECTIVE}px) rotateX(${currentRX}deg) rotateY(${currentRY}deg) scale3d(${SCALE_HOVER},${SCALE_HOVER},${SCALE_HOVER})`;
 
@@ -1084,8 +1084,8 @@ class CardTilt {
                 if (!raf) raf = requestAnimationFrame(animate);
                 /* smoothly return transform to identity */
                 const settle = () => {
-                    currentRX = lerp(currentRX, 0, 0.06);
-                    currentRY = lerp(currentRY, 0, 0.06);
+                    currentRX = lerp(currentRX, 0, 0.04);
+                    currentRY = lerp(currentRY, 0, 0.04);
                     card.style.transform =
                         `perspective(${PERSPECTIVE}px) rotateX(${currentRX}deg) rotateY(${currentRY}deg) scale3d(1,1,1)`;
                     if (Math.abs(currentRX) > 0.05 || Math.abs(currentRY) > 0.05) {

@@ -311,7 +311,7 @@
     // 3D TILT ON CARDS
     // ═══════════════════════════════════════
     const tiltables = document.querySelectorAll('.ucalc-card, .ucalc-toggle-card, .ucalc-timeline-card');
-    const MAX_TILT = 8;
+    const MAX_TILT = 3;
 
     tiltables.forEach(el => {
         el.addEventListener('mousemove', (e) => {
@@ -320,7 +320,7 @@
             const y = (e.clientY - rect.top) / rect.height;
             const rotateY = (x - 0.5) * MAX_TILT * 2;
             const rotateX = (0.5 - y) * MAX_TILT * 2;
-            el.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+            el.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
         });
 
         el.addEventListener('mouseleave', () => {
