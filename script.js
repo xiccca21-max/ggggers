@@ -2537,7 +2537,11 @@ class ProjectModal {
         };
         
         const chat = botChats[previewType] || botChats.pizza;
-        const isAnimated = chat.animated === true;
+        const isAnimated = false; // Always show all messages immediately
+        
+        // Add mobile layout class for phone-left, info-right layout
+        const modalContent = this.modal.querySelector('.project-modal-content');
+        modalContent.classList.add('modal-mobile-layout');
         
         // Incremental time generator
         let _msgMinute = 30;

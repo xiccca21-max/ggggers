@@ -5246,13 +5246,23 @@ a.info-value:hover { color: var(--text); }
     color: rgba(255,255,255,0.35);
 }
 
+/* Bot phone inside mobile layout */
+.modal-mobile-layout .bot-phone-frame {
+    max-width: 300px;
+    max-height: 75vh;
+}
+.modal-mobile-layout .bot-chat-messages {
+    max-height: 55vh;
+}
+
 @media (max-width: 1100px) {
     .modal-mobile-layout .project-modal-gallery {
         flex: 0 0 300px;
         width: 300px;
         min-width: 300px;
     }
-    .modal-mobile-layout .video-phone-frame {
+    .modal-mobile-layout .video-phone-frame,
+    .modal-mobile-layout .bot-phone-frame {
         max-width: 270px;
     }
 }
@@ -5267,7 +5277,8 @@ a.info-value:hover { color: var(--text); }
         min-width: unset;
         align-self: center;
     }
-    .modal-mobile-layout .video-phone-frame {
+    .modal-mobile-layout .video-phone-frame,
+    .modal-mobile-layout .bot-phone-frame {
         max-width: 260px;
     }
     .modal-mobile-layout .project-modal-title {
