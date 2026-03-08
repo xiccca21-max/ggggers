@@ -1656,12 +1656,16 @@ body.page-bots .bento-s6, body.page-mobile .bento-s6, body.page-auto .bento-s6 {
 body.page-bots .bento-s7, body.page-mobile .bento-s7, body.page-auto .bento-s7 { grid-column: 1 / 2; grid-row: 4 / 5; }
 body.page-bots .bento-s8, body.page-mobile .bento-s8, body.page-auto .bento-s8 { grid-column: 2 / 3; grid-row: 4 / 5; }
 body.page-bots .bento-s9, body.page-mobile .bento-s9, body.page-auto .bento-s9 { grid-column: 3 / 5; grid-row: 4 / 5; }
-/* Auto page extra cards (A10-A14) */
+/* Auto page extra cards (A10-A15) */
 body.page-auto .bento-s10 { grid-column: 1 / 3; grid-row: 5 / 6; }
 body.page-auto .bento-s11 { grid-column: 3 / 5; grid-row: 5 / 6; }
 body.page-auto .bento-s12 { grid-column: 1 / 2; grid-row: 6 / 7; }
 body.page-auto .bento-s13 { grid-column: 2 / 3; grid-row: 6 / 7; }
 body.page-auto .bento-s14 { grid-column: 3 / 5; grid-row: 6 / 7; }
+body.page-auto .bento-s15 { grid-column: 1 / 3; grid-row: 7 / 8; }
+/* Sites page extra cards (S10-S11) */
+body.page-sites .bento-s10 { grid-column: 1 / 3; grid-row: 10 / 11; }
+body.page-sites .bento-s11 { grid-column: 3 / 5; grid-row: 10 / 11; }
 .bento-s1 .bento-card { min-height: 480px; }
 
 /* ── Video card styles ── */
@@ -1797,6 +1801,10 @@ body.page-auto .bento-video-badge {
     body.page-auto .bento-s12 { grid-column: 2 / 3; grid-row: 8 / 9; }
     body.page-auto .bento-s13 { grid-column: 1 / 2; grid-row: 9 / 10; }
     body.page-auto .bento-s14 { grid-column: 2 / 3; grid-row: 9 / 10; }
+    body.page-auto .bento-s15 { grid-column: 1 / 3; grid-row: 10 / 11; }
+    /* Sites page extra cards tablet */
+    body.page-sites .bento-s10 { grid-column: 1 / 2; grid-row: 10 / 11; }
+    body.page-sites .bento-s11 { grid-column: 2 / 3; grid-row: 10 / 11; }
 }
 /* ── Responsive: mobile ── */
 @media (max-width: 600px) {
@@ -1820,10 +1828,11 @@ body.page-auto .bento-video-badge {
     body.page-auto .bento-s4, body.page-auto .bento-s5, body.page-auto .bento-s6,
     body.page-auto .bento-s7, body.page-auto .bento-s8, body.page-auto .bento-s9,
     body.page-auto .bento-s10, body.page-auto .bento-s11, body.page-auto .bento-s12,
-    body.page-auto .bento-s13, body.page-auto .bento-s14,
+    body.page-auto .bento-s13, body.page-auto .bento-s14, body.page-auto .bento-s15,
     body.page-sites .bento-s1, body.page-sites .bento-s2, body.page-sites .bento-s3,
     body.page-sites .bento-s4, body.page-sites .bento-s5, body.page-sites .bento-s6,
-    body.page-sites .bento-s7, body.page-sites .bento-s8, body.page-sites .bento-s9 {
+    body.page-sites .bento-s7, body.page-sites .bento-s8, body.page-sites .bento-s9,
+    body.page-sites .bento-s10, body.page-sites .bento-s11 {
         grid-column: 1 / -1 !important;
         grid-row: auto !important;
     }
