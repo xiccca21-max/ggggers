@@ -1921,6 +1921,13 @@ body.page-auto .bento-video-badge {
 .phone-card-video {
     width: 100%; display: block;
 }
+/* Crop top of video (removes status bar / screen-recording indicator) */
+.phone-card-screen--crop {
+    max-height: 560px;
+}
+.phone-card-screen--crop .phone-card-video {
+    margin-top: -7%;
+}
 .phone-card-home {
     display: none;
 }
@@ -1931,6 +1938,7 @@ body.page-auto .bento-video-badge {
         width: 240px; border-radius: 32px;
     }
     .phone-card-screen { border-radius: 0; }
+    .phone-card-screen--crop { max-height: 480px; }
 }
 
 /* ═══════════ Page-sites: black bg, pink geometric accents ═══════════ */
