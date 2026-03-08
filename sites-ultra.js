@@ -80,6 +80,32 @@
         }, { passive: true });
     }
 
+    /* ── 3b. Lazy video loading — play only when visible ── */
+    const lazyVideos = document.querySelectorAll('video[data-lazy]');
+    if (lazyVideos.length) {
+        const videoObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    // Start loading & playing
+                    if (!video.src && video.querySelector('source')) {
+                        const source = video.querySelector('source');
+                        if (source.dataset.src) {
+                            source.src = source.dataset.src;
+                            video.load();
+                        }
+                    }
+                    video.play().catch(() => {});
+                } else {
+                    // Pause when off-screen to save resources
+                    video.pause();
+                }
+            });
+        }, { rootMargin: '200px' }); // start loading 200px before visible
+
+        lazyVideos.forEach(v => videoObs.observe(v));
+    }
+
     /* ── 4. Load more button ── */
     const loadMoreBtn = document.getElementById('loadMoreBtn');
     const extraItems = document.querySelectorAll('.bento-item--extra');

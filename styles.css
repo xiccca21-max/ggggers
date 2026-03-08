@@ -1672,7 +1672,11 @@ body.page-sites .bento-s11 { grid-column: 3 / 5; }
 .bento-s1 .bento-card { min-height: 480px; }
 
 /* ── Video card styles ── */
-.bento-card--video { overflow: hidden; }
+.bento-card--video { overflow: hidden; background: #0a0a0a; }
+/* Loading state for lazy videos */
+.bento-card-video[data-lazy] {
+    background: #111;
+}
 .bento-card-video {
     position: absolute;
     inset: 0;
