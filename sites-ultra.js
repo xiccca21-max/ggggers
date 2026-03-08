@@ -4,9 +4,13 @@
 (function () {
     'use strict';
 
-    /* ── 1. Cursor glow following mouse ── */
+    /* ── 1. Cursor glow following mouse (desktop only) ── */
+    const _isMobile = window.matchMedia('(max-width: 768px)').matches
+                   || 'ontouchstart' in window
+                   || navigator.maxTouchPoints > 0;
+
     const cursorGlow = document.getElementById('cursorGlow');
-    if (cursorGlow) {
+    if (cursorGlow && !_isMobile) {
         let gx = 0, gy = 0, cx = 0, cy = 0;
         document.addEventListener('mousemove', (e) => {
             gx = e.clientX;
@@ -19,6 +23,8 @@
             cursorGlow.style.top = cy + 'px';
             requestAnimationFrame(animateGlow);
         })();
+    } else if (cursorGlow) {
+        cursorGlow.style.display = 'none';
     }
 
     /* ── 2. Stagger reveal on scroll ── */
@@ -80,14 +86,17 @@
         }, { passive: true });
     }
 
-    /* ── 3b. Lazy video loading — play only when visible ── */
+    /* ── 3b. Lazy video loading — play only when visible (max 2 at once) ── */
     const lazyVideos = document.querySelectorAll('video[data-lazy]');
     if (lazyVideos.length) {
+        const playingVideos = new Set();
+        const MAX_PLAYING = _isMobile ? 1 : 2;
+
         const videoObs = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 const video = entry.target;
                 if (entry.isIntersecting) {
-                    // Start loading & playing
+                    // Start loading
                     if (!video.src && video.querySelector('source')) {
                         const source = video.querySelector('source');
                         if (source.dataset.src) {
@@ -95,13 +104,18 @@
                             video.load();
                         }
                     }
-                    video.play().catch(() => {});
+                    // Limit simultaneous playback
+                    if (playingVideos.size < MAX_PLAYING) {
+                        video.play().catch(() => {});
+                        playingVideos.add(video);
+                    }
                 } else {
                     // Pause when off-screen to save resources
                     video.pause();
+                    playingVideos.delete(video);
                 }
             });
-        }, { rootMargin: '200px' }); // start loading 200px before visible
+        }, { rootMargin: _isMobile ? '50px' : '200px' });
 
         lazyVideos.forEach(v => videoObs.observe(v));
     }

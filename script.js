@@ -4286,25 +4286,33 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Wait for preloader to complete before initializing other components
     window.addEventListener('preloaderComplete', () => {
-        safeInit('GridCanvas',          () => new GridCanvas());
+        const isMobile = window.matchMedia('(max-width: 768px)').matches
+                      || 'ontouchstart' in window
+                      || navigator.maxTouchPoints > 0;
+
+        // Desktop-only effects (useless on mobile — no cursor)
+        if (!isMobile) {
+            safeInit('GridCanvas',          () => new GridCanvas());
+            safeInit('WebNetwork',          () => new WebNetwork());
+            safeInit('MagneticElements',    () => new MagneticElements());
+            safeInit('CardTilt',            () => new CardTilt());
+            safeInit('ParallaxEffect',      () => new ParallaxEffect());
+            safeInit('SoundEffects',        () => new SoundEffects());
+        }
+
         safeInit('TechMeta',            () => new TechMeta());
         safeInit('CounterAnimation',    () => new CounterAnimation());
         safeInit('ScrollReveal',        () => new ScrollReveal());
         safeInit('ManifestoReveal',     () => new ManifestoReveal());
         safeInit('MetricProgress',      () => new MetricProgress());
-        safeInit('MagneticElements',    () => new MagneticElements());
         safeInit('SmoothScroll',        () => new SmoothScroll());
-        safeInit('CardTilt',            () => new CardTilt());
         safeInit('GlitchEffect',        () => new GlitchEffect());
-        safeInit('ParallaxEffect',      () => new ParallaxEffect());
         safeInit('TypeWriter',          () => new TypeWriter());
         safeInit('FormEffects',         () => new FormEffects());
         safeInit('ScrollProgress',      () => new ScrollProgress());
         safeInit('FloatingCTA',         () => new FloatingCTA());
         safeInit('ThemeToggle',         () => new ThemeToggle());
         safeInit('LeadMagnetPopup',     () => new LeadMagnetPopup());
-        safeInit('SoundEffects',        () => new SoundEffects());
-        safeInit('WebNetwork',          () => new WebNetwork());
         safeInit('TestimonialsSlider',  () => new TestimonialsSlider());
         safeInit('CostCalculator',      () => new CostCalculator());
         safeInit('FAQAccordion',        () => new FAQAccordion());
