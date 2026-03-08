@@ -94,7 +94,6 @@
 
             const btn = form.querySelector('.cb-submit');
             const textEl = btn.querySelector('.cb-submit-text');
-            const arrowEl = btn.querySelector('.cb-submit-arrow');
 
             // Collect form data
             const orderData = {
@@ -109,7 +108,6 @@
             // Phase 1: Sending
             btn.classList.add('sending');
             textEl.textContent = 'Отправка...';
-            arrowEl.innerHTML = '<svg class="cb-spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-dasharray="40 60" stroke-linecap="round"/></svg>';
             btn.style.pointerEvents = 'none';
 
             // Send to Telegram
@@ -118,13 +116,11 @@
                 btn.classList.remove('sending');
                 btn.classList.add('success');
                 textEl.textContent = '✓ Заявка отправлена!';
-                arrowEl.innerHTML = '';
 
                 // Phase 3: Reset after 3.5 sec
                 setTimeout(() => {
                     btn.classList.remove('success');
                     textEl.textContent = 'Отправить заявку';
-                    arrowEl.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
                     btn.style.pointerEvents = '';
                     form.reset();
                 }, 3500);
@@ -133,11 +129,9 @@
                 btn.classList.remove('sending');
                 btn.classList.add('success');
                 textEl.textContent = '✓ Заявка отправлена!';
-                arrowEl.innerHTML = '';
                 setTimeout(() => {
                     btn.classList.remove('success');
                     textEl.textContent = 'Отправить заявку';
-                    arrowEl.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
                     btn.style.pointerEvents = '';
                     form.reset();
                 }, 3500);
