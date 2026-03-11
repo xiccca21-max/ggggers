@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════
-// GERS — Telegram Integration (via secure proxy)
+// GERS - Telegram Integration (via secure proxy)
 // Tokens are hidden on the server (Cloudflare Worker)
 // ═══════════════════════════════════════════════════════════════════
 
@@ -15,7 +15,7 @@ function sendToTelegram(type, message) {
 }
 
 // ═══════════════════════════════════════════════════════════════════
-// 1. ORDERS — Send form data to Telegram
+// 1. ORDERS - Send form data to Telegram
 // ═══════════════════════════════════════════════════════════════════
 
 function sendOrderToTelegram(data) {
@@ -44,12 +44,12 @@ function sendOrderToTelegram(data) {
 
     const msg = `📩 <b>Новая заявка с сайта!</b>
 
-👤 <b>Имя:</b> ${data.name || '—'}
-📧 <b>Email:</b> ${data.email || '—'}
-💬 <b>Telegram:</b> ${data.telegram || '—'}
-📁 <b>Тип проекта:</b> ${projectMap[data.projectType] || data.projectType || '—'}
-💰 <b>Бюджет:</b> ${budgetMap[data.budget] || data.budget || '—'}
-📝 <b>Описание:</b> ${data.description || '—'}
+👤 <b>Имя:</b> ${data.name || '-'}
+📧 <b>Email:</b> ${data.email || '-'}
+💬 <b>Telegram:</b> ${data.telegram || '-'}
+📁 <b>Тип проекта:</b> ${projectMap[data.projectType] || data.projectType || '-'}
+💰 <b>Бюджет:</b> ${budgetMap[data.budget] || data.budget || '-'}
+📝 <b>Описание:</b> ${data.description || '-'}
 
 🕐 ${dateStr}, ${timeStr}
 🌐 Страница: ${location.pathname}`;
@@ -58,7 +58,7 @@ function sendOrderToTelegram(data) {
 }
 
 // ═══════════════════════════════════════════════════════════════════
-// 2. ANALYTICS — Track page visits
+// 2. ANALYTICS - Track page visits
 // ═══════════════════════════════════════════════════════════════════
 
 (function trackVisit() {

@@ -86,7 +86,7 @@
         }, { passive: true });
     }
 
-    /* ── 3b. Lazy video loading — play only when visible (max 2 at once) ── */
+    /* ── 3b. Lazy video loading - play only when visible (max 2 at once) ── */
     const lazyVideos = document.querySelectorAll('video[data-lazy]');
     if (lazyVideos.length) {
         const playingVideos = new Set();

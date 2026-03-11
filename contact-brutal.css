@@ -477,11 +477,11 @@
         font-size: clamp(1.8rem, 8vw, 2.8rem);
         margin-bottom: 0.8rem;
     }
-    /* Hide description on mobile — heading speaks for itself */
+    /* Hide description on mobile - heading speaks for itself */
     .cb-subtext {
         display: none;
     }
-    /* Trust stats — horizontal row, compact */
+    /* Trust stats - horizontal row, compact */
     .cb-trust {
         flex-direction: row;
         gap: 0;
@@ -555,7 +555,7 @@
     .cb-textarea {
         min-height: 80px;
     }
-    /* Submit button — rounded, keep black */
+    /* Submit button - rounded, keep black */
     .cb-submit {
         padding: 1rem 1.5rem;
         border-radius: 14px;

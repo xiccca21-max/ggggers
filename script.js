@@ -4290,7 +4290,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       || 'ontouchstart' in window
                       || navigator.maxTouchPoints > 0;
 
-        // Desktop-only effects (useless on mobile — no cursor)
+        // Desktop-only effects (useless on mobile - no cursor)
         if (!isMobile) {
             safeInit('GridCanvas',          () => new GridCanvas());
             safeInit('WebNetwork',          () => new WebNetwork());

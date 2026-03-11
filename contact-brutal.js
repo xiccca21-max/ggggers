@@ -90,7 +90,7 @@
 
             // Honeypot anti-spam check
             const honeypot = document.getElementById('honeypot');
-            if (honeypot && honeypot.value) return; // Bot detected — silently reject
+            if (honeypot && honeypot.value) return; // Bot detected - silently reject
 
             const btn = form.querySelector('.cb-submit');
             const textEl = btn.querySelector('.cb-submit-text');
