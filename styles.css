@@ -170,6 +170,21 @@ em { font-family: var(--font-serif); font-style: italic; }
     transition: opacity 0.3s;
     position: relative;
 }
+.nav-link--blog {
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+}
+.nav-link--blog::after {
+    display: none;
+}
+.nav-link--blog:hover {
+    opacity: 1;
+    background: #000;
+    color: #fff;
+}
 .nav-link::after {
     content: '';
     position: absolute; bottom: -4px; left: 0;
@@ -250,6 +265,22 @@ em { font-family: var(--font-serif); font-style: italic; }
 /* Hide mobile-only nav elements on desktop */
 .mob-nav-logo, .mob-nav-bottom, .mob-nav-overlay { display: none; }
 
+.nav-burger-wrap {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+
+.nav-burger-label {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
 .nav-burger {
     display: none;
     flex-direction: column; gap: 5px;
@@ -260,7 +291,6 @@ em { font-family: var(--font-serif); font-style: italic; }
     z-index: 1003;
     justify-content: center;
     align-items: center;
-    margin-left: auto;
     animation: burgerPulse 2.5s ease-in-out infinite;
 }
 @keyframes burgerPulse {
@@ -310,6 +340,15 @@ body.page-dark .nav-burger span,
 .header--projects .nav-burger span,
 .header--dark .nav-burger span {
     background: #fff;
+}
+.header--dark .nav-burger-label,
+.header--projects .nav-burger-label,
+body.page-dark .nav-burger-label,
+body.page-bots .nav-burger-label,
+body.page-mobile .nav-burger-label,
+body.page-projects .nav-burger-label,
+body.page-sites .nav-burger-label {
+    color: #fff;
 }
 
 /* ── HERO (HOMEPAGE) ────────────────────────────────────── */
@@ -1704,6 +1743,13 @@ body.page-dark .scroll-progress { background: #ff2d78; }
 .header--dark .nav-link::after {
     background: #fff;
 }
+.header--dark .nav-link--blog {
+    border-color: rgba(255,255,255,0.4);
+}
+.header--dark .nav-link--blog:hover {
+    background: #fff;
+    color: #000;
+}
 .header--dark .header-title-text {
     color: rgba(255,255,255,0.1);
 }
@@ -2129,7 +2175,7 @@ body.page-auto .bento-video-badge {
     .bento-card:hover {
         box-shadow: 0 0 15px rgba(232, 67, 147, 0.15);
     }
-    .bento-card-glow { display: none !important; }
+    /* glow остаётся всегда видимым */
     body.page-auto .bento-card:hover {
         transform: none;
         box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -3216,13 +3262,12 @@ body.page-mobile .footer-new {
     inset: 0;
     z-index: 2;
     border-radius: 18px;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.4s;
     pointer-events: none;
     background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
         rgba(255,255,255,0.06), transparent 40%);
 }
-.bento-card:hover .bento-card-glow { opacity: 1; }
 
 /* ── Content ── */
 .bento-card-content {
@@ -3812,7 +3857,7 @@ body.page-mobile .footer-new {
 .metric { text-align: center; margin-bottom: 2rem; }
 .metric-visual { position: relative; display: inline-block; overflow: visible; }
 .metric-visual svg { width: 120px; height: 120px; transform: rotate(-90deg); overflow: visible; }
-.metric-bg { fill: none; stroke: rgba(255,255,255,0.08); stroke-width: 4; }
+.metric-bg { fill: none; stroke: rgba(255,255,255,0.22); stroke-width: 4; }
 .metric-progress {
     fill: none;
     stroke: #ff2d78;
@@ -6299,6 +6344,7 @@ a.info-value:hover { color: var(--text); }
     .mob-nav-tg:hover svg {
         transform: scale(1.15);
     }
+    .nav-burger-wrap { display: flex; }
     .nav-burger { display: flex; }
     .mob-nav-logo { display: block; }
     .mob-nav-bottom { display: flex; }
@@ -7024,8 +7070,8 @@ a.info-value:hover { color: var(--text); }
 .svc-slide-icon svg {
     width: 32px;
     height: 32px;
-    stroke: rgba(232, 67, 147, 0.7);
-    stroke-width: 1.5;
+    stroke: rgba(232, 67, 147, 0.85);
+    stroke-width: 2;
     transition: stroke 0.5s;
 }
 .svc-slide.active .svc-slide-icon svg {
@@ -7136,8 +7182,9 @@ a.info-value:hover { color: var(--text); }
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(10,10,10,0.8);
+    border: 1px solid rgba(0,0,0,0.15);
+    background: rgba(0,0,0,0.85);
+    color: #fff;
     backdrop-filter: blur(10px);
     cursor: pointer;
     display: flex;
@@ -7153,7 +7200,9 @@ a.info-value:hover { color: var(--text); }
 .svc-carousel-btn svg {
     width: 22px;
     height: 22px;
-    stroke: rgba(255,255,255,0.6);
+    stroke: #fff;
+    stroke-width: 2.5;
+    fill: none;
     transition: stroke 0.3s;
 }
 .svc-carousel-btn:hover svg {

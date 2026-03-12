@@ -46,7 +46,10 @@
             <a href="../calculator" class="nav-link" data-text="Узнать стоимость">Узнать стоимость</a>
             <a href="../contact" class="nav-link" data-text="Контакты">Контакты</a>
         </nav>
-        <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span><span></span></button>
+        <div class="nav-burger-wrap">
+            <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span><span></span></button>
+            <span class="nav-burger-label">меню</span>
+        </div>
     </header>
 
     <!-- Bento Grid Section -->
@@ -87,8 +90,8 @@
                     <div class="phone-card-frame">
                         <div class="phone-card-notch"></div>
                         <div class="phone-card-screen phone-card-screen--crop">
-                            <video class="phone-card-video" data-lazy muted loop playsinline preload="none">
-                                <source data-src="../assets/projects/ai-finance/demo.MP4" type="video/mp4">
+                            <video class="phone-card-video" muted loop playsinline preload="auto" autoplay>
+                                <source src="../assets/projects/ai-finance/demo.MP4" type="video/mp4">
                             </video>
                         </div>
                         <div class="phone-card-home"></div>

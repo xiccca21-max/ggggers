@@ -839,7 +839,7 @@ class MetricProgress {
                     this.animateCircle(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.2 });
         
         this.circles.forEach(circle => observer.observe(circle));
     }
@@ -4276,8 +4276,17 @@ class ProjectModal {
 // ═══════════════════════════════════════════════════════════════════
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Start preloader first
-    new Preloader();
+    const isMobile = window.matchMedia('(max-width: 768px)').matches
+                  || 'ontouchstart' in window
+                  || navigator.maxTouchPoints > 0;
+
+    // На мобильной — сразу показываем контент, без задержки прелоадера
+    if (isMobile) {
+        document.body.classList.remove('loading');
+        setTimeout(() => window.dispatchEvent(new Event('preloaderComplete')), 0);
+    } else {
+        new Preloader();
+    }
     
     // Safe init helper - prevents one broken module from crashing the rest
     function safeInit(name, factory) {

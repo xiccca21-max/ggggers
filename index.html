@@ -18,6 +18,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="GERS Agency">
     <link rel="stylesheet" href="styles.css?v=30">
+    <link rel="preload" href="assets/hero-logo.png" as="image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
@@ -63,18 +64,21 @@
         <div class="header-tagline">
             <span class="header-tagline-text">ТЕХНОЛОГИЧНЫЕ<br>ОНЛАЙН-ПРОДУКТЫ</span>
         </div>
-        <button class="nav-burger" id="navBurger" aria-label="Меню">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <div class="nav-burger-wrap">
+            <button class="nav-burger" id="navBurger" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <span class="nav-burger-label">меню</span>
+        </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <h1 class="visually-hidden">Разработка сайтов, Telegram-ботов и автоматизация бизнеса</h1>
         <div class="hero-visual">
-            <img src="assets/hero-logo.png" alt="GERS" class="hero-logo-img">
+            <img src="assets/hero-logo.png" alt="GERS" class="hero-logo-img" fetchpriority="high" decoding="async">
             <div class="marquee-container hero-marquee">
                 <div class="marquee-track">
                     <span class="marquee-item">WEB-РАЗРАБОТКА</span>
