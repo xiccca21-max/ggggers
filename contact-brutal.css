@@ -267,6 +267,33 @@
     box-shadow: 0 2px 12px rgba(255, 45, 120, 0.2);
 }
 
+.cb-form-legal {
+    font-family: var(--cb-font-sans);
+    font-size: 0.72rem;
+    line-height: 1.55;
+    color: var(--cb-gray);
+    margin: 0.25rem 0 0;
+    max-width: 36rem;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+                transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cb-form-legal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.cb-form-legal a {
+    color: var(--cb-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(0, 0, 0, 0.2);
+}
+.cb-form-legal a:hover {
+    color: var(--cb-pink);
+    text-decoration-color: rgba(255, 45, 120, 0.45);
+}
+
 /* Submit button */
 .cb-submit {
     position: relative;
@@ -349,7 +376,7 @@
 }
 .cb-channels-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.2rem;
     max-width: 1200px;
     margin: 0 auto;

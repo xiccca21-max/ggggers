@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://gers-api.masinxn21.workers.dev https://api.ipify.org; media-src 'self';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика конфиденциальности — GERS Agency</title>
+    <meta name="description" content="Политика в отношении обработки персональных данных на сайте gers.agency.">
+    <link rel="icon" href="../assets/favicon.png" type="image/png">
+    <link rel="canonical" href="https://gers.agency/privacy/" />
+    <meta property="og:title" content="Политика конфиденциальности — GERS Agency">
+    <meta property="og:description" content="Обработка персональных данных на сайте gers.agency.">
+    <meta property="og:image" content="https://gers.agency/assets/og-image.png">
+    <meta property="og:url" content="https://gers.agency/privacy/">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="../styles.css?v=32">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body class="page-privacy">
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="noise-overlay"></div>
+    <canvas id="webCanvas" class="web-bg"></canvas>
+    <div class="grid-bg">
+        <canvas id="gridCanvas"></canvas>
+    </div>
+    <div class="tech-overlay">
+        <div class="corner-bracket top-left"></div>
+        <div class="corner-bracket top-right"></div>
+        <div class="corner-bracket bottom-left"></div>
+        <div class="corner-bracket bottom-right"></div>
+        <div class="scan-line"></div>
+    </div>
+
+    <h1 class="visually-hidden">Политика конфиденциальности и обработка персональных данных</h1>
+    <header class="header header--subpage">
+        <a href="../" class="logo">
+            <img src="../assets/logo.png" alt="GERS" class="logo-img">
+        </a>
+        <div class="header-center-title privacy-header-center">
+            <span class="privacy-header-kicker">Юридическая информация</span>
+            <span class="privacy-header-main">Конфиденциальность</span>
+        </div>
+        <nav class="nav nav--right">
+            <a href="../projects" class="nav-link" data-text="Проекты">Проекты</a>
+            <a href="../services" class="nav-link" data-text="Услуги">Услуги</a>
+            <a href="../contact" class="nav-link" data-text="Контакты">Контакты</a>
+        </nav>
+        <div class="nav-burger-wrap">
+            <span class="nav-burger-label">меню</span>
+            <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <main class="privacy-main">
+        <p class="privacy-lead">Документ описывает, какие данные обрабатываются при использовании сайта <strong>gers.agency</strong> и формы обратной связи, в соответствии с требованиями законодательства Российской Федерации о персональных данных.</p>
+
+        <section class="privacy-block">
+            <h2 class="privacy-h2">1. Термины</h2>
+            <p><strong>Персональные данные (ПДн)</strong> — любая информация, относящаяся к прямо или косвенно определённому физическому лицу.</p>
+            <p><strong>Оператор</strong> — лицо, организующее и осуществляющее обработку ПДн при использовании настоящего сайта.</p>
+            <p><strong>Субъект данных</strong> — посетитель сайта или лицо, оставившее заявку через форму.</p>
+        </section>
+
+        <section class="privacy-block">
+            <h2 class="privacy-h2">2. Какие данные обрабатываются</h2>
+            <ul class="privacy-list">
+                <li>данные, которые вы указываете в форме на странице «Контакты»: имя, адрес электронной почты, ник в Telegram (при указании), описание задачи, выбранные параметры заявки;</li>
+                <li>при посещении страниц сайта — техническая информация: адрес страницы, заголовок, источник перехода (referrer), сведения об устройстве, операционной системе и браузере, сетевой адрес (IP-адрес), дата и время запроса;</li>
+                <li>данные, сохраняемые в браузере: настройка темы оформления (localStorage), факт показа служебных элементов интерфейса (sessionStorage) — только для работы сайта, без рекламных профилей.</li>
+            </ul>
+        </section>
+
+        <section class="privacy-block">
+            <h2 class="privacy-h2">3. Цели обработки</h2>
+            <ul class="privacy-list">
+                <li>обработка заявок и обращений, связь по проекту;</li>
+                <li>учёт посещаемости и диагностика работы сайта;</li>
+                <li>обеспечение безопасности и устойчивой работы веб-ресурса.</li>
+            </ul>
+        </section>
+
+        <section class="privacy-block">
+            <h2 class="privacy-h2">4. Правовые основания и сроки</h2>
+            <p>Обработка заявок осуществляется на основании вашего обращения и необходимости принятия мер по запросу субъекта данных. Технические данные посещений обрабатываются в рамках обеспечения функционирования сайта.</p>
+            <p>Данные из формы хранятся не дольше, чем это необходимо для ответа на заявку и ведения переписки по проекту, если иное не вытекает из соглашения сторон.</p>
+        </section>
+
+        <section class="privacy-block">
+            <h2 class="privacy-h2">5. Передача и обработка у третьих лиц</h2>
+            <p>Для работы сайта могут использоваться сервисы инфраструктуры (в том числе хостинг и защищённый канал передачи сообщений). Заявки с формы направляются оператору через защищённый серверный прокси в мессенджер Telegram. Для определения сетевого адреса при техническом учёте может запрашиваться внешний сервис определения IP.</p>
+            <p>Указанные получатели обрабатывают данные в объёме, необходимом для указанных целей, и на условиях их документов, если применимо.</p>
+        </section>
+
+        <section class="privacy-block">
+            <h2 class="privacy-h2">6. Cookies и локальное хранилище</h2>
+            <p>Сайт может использовать механизмы хранения в браузере (в том числе localStorage и sessionStorage) для сохранения предпочтений и работы интерфейса. Классические HTTP-cookie при этом могут не использоваться или использоваться в минимальном объёме — в зависимости от конфигурации сервера и браузера.</p>
+        </section>
+
+        <section class="privacy-block">
+            <h2 class="privacy-h2">7. Права субъекта данных</h2>
+            <p>Вы вправе запросить уточнение данных, сведения об обработке, ограничение или прекращение обработки — в пределах, предусмотренных законом. Для обращений по вопросам ПДн можно использовать контакты, указанные на странице <a href="../contact">«Контакты»</a>, в том же канале, который вы использовали при обращении.</p>
+        </section>
+
+        <section class="privacy-block">
+            <h2 class="privacy-h2">8. Изменения</h2>
+            <p>Оператор вправе обновлять настоящую политику. Актуальная версия публикуется на этой странице. Дата последнего обновления: <strong>11 апреля 2026 г.</strong></p>
+        </section>
+    </main>
+
+    <footer class="footer-new">
+        <div class="footer-new-top">
+            <div class="footer-brand">
+                <span class="footer-logo-text">GERS AGENCY</span>
+                <div class="footer-brand-social">
+                <a href="https://t.me/GERS_AGENCY" class="footer-tg" aria-label="Telegram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </a>
+                <a href="https://wa.me/79629990821" class="footer-wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <span class="footer-col-title">О нас</span>
+                    <a href="../">Главная</a>
+                    <a href="../projects">Проекты</a>
+                    <a href="../services">Услуги</a>
+                    <a href="../calculator">Стоимость</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Направления</span>
+                    <a href="../projects-sites">Веб-разработка</a>
+                    <a href="../projects-mobile">Мобильные приложения</a>
+                    <a href="../projects-auto">AI &amp; ML решения</a>
+                    <a href="../projects-bots-soft">Боты &amp; Автоматизация</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-title">Контакты</span>
+                    <a href="https://t.me/GERS_AGENCY">@gers_agency</a>
+                    <a href="https://wa.me/79629990821" target="_blank" rel="noopener noreferrer">WhatsApp +7 (962) 999-08-21</a>
+                    <a href="../contact">Оставить заявку</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-new-bottom">
+            <span>&copy; 2026 GERS agency. Все права защищены.</span>
+            <span class="footer-new-meta">
+                <span class="footer-here">Конфиденциальность</span>
+                <span class="footer-dot">·</span>
+                Работаем удалённо по всему миру
+            </span>
+        </div>
+    </footer>
+
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle" aria-label="Чат">
+            <svg class="chat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+            <span class="chat-badge">1</span>
+        </button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-status">
+                    <span class="status-indicator online"></span>
+                    <span class="status-text">Мы онлайн</span>
+                </div>
+                <span class="chat-title">Чат с GERS</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">G</div>
+                    <div class="message-content">
+                        <p>Привет! Я виртуальный ассистент GERS. Чем могу помочь?</p>
+                        <span class="message-time">Сейчас</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Введите сообщение...">
+                <button class="chat-send" id="chatSend" aria-label="Отправить">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../telegram.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

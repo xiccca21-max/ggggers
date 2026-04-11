@@ -4305,6 +4305,50 @@ class MediaProtection {
 }
 
 // ═══════════════════════════════════════════════════════════════════
+// PRIVACY — subtle first-visit notice (localStorage)
+// ═══════════════════════════════════════════════════════════════════
+
+const GERS_PRIVACY_KEY = 'gers_privacy_notice_v1';
+
+function privacyPolicyHref() {
+    const parts = location.pathname.split('/').filter((p) => p && p !== 'index.html');
+    if (parts.length === 0) return 'privacy/';
+    return '../privacy/';
+}
+
+function initPrivacyNotice() {
+    try {
+        if (localStorage.getItem(GERS_PRIVACY_KEY)) return;
+        const path = location.pathname || '';
+        if (path.includes('privacy')) return;
+
+        const strip = document.createElement('div');
+        strip.className = 'privacy-strip';
+        strip.setAttribute('role', 'region');
+        strip.setAttribute('aria-label', 'Уведомление о данных');
+        strip.innerHTML =
+            '<span class="privacy-strip-text">Мы обрабатываем данные посетителей и заявок, как описано в политике.</span>' +
+            '<a href="' +
+            privacyPolicyHref() +
+            '">Подробнее</a>' +
+            '<button type="button" class="privacy-strip-btn" aria-label="Закрыть уведомление">Понятно</button>';
+
+        document.body.classList.add('privacy-strip-on');
+        document.body.appendChild(strip);
+
+        const btn = strip.querySelector('.privacy-strip-btn');
+        const dismiss = () => {
+            try {
+                localStorage.setItem(GERS_PRIVACY_KEY, '1');
+            } catch (e) {}
+            strip.remove();
+            document.body.classList.remove('privacy-strip-on');
+        };
+        if (btn) btn.addEventListener('click', dismiss);
+    } catch (e) {}
+}
+
+// ═══════════════════════════════════════════════════════════════════
 // INITIALIZATION
 // ═══════════════════════════════════════════════════════════════════
 
@@ -4361,6 +4405,7 @@ document.addEventListener('DOMContentLoaded', () => {
         safeInit('LiveChat',            () => new LiveChat());
         safeInit('ProjectModal',        () => new ProjectModal());
         safeInit('MediaProtection',     () => new MediaProtection());
+        safeInit('PrivacyNotice',       () => initPrivacyNotice());
 
         /* ── Mobile nav burger toggle ── */
         const navBurger = document.getElementById('navBurger');
