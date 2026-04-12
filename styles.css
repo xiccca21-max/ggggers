@@ -2625,6 +2625,11 @@ body.page-bots .bento-card .bento-card-badge {
     right: 14px;
 }
 
+body.page-sites .bento-card--caffe .bento-card-badge {
+    left: 14px;
+    right: auto;
+}
+
 /* ── Hover text overlay ── */
 .bento-card-hover {
     position: absolute;
@@ -4490,7 +4495,15 @@ a.info-value:hover { color: var(--text); }
     width: 100%; height: 100%; object-fit: contain;
     transition: transform 0.5s cubic-bezier(.23,1,.32,1), filter 0.4s ease, opacity 0.3s;
 }
+.project-modal-main-image video.modal-main-video {
+    width: 100%; height: 100%; object-fit: contain; display: block;
+    transition: transform 0.5s cubic-bezier(.23,1,.32,1), filter 0.4s ease, opacity 0.3s;
+}
 .project-modal-main-image:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+.project-modal-main-image:hover video.modal-main-video {
     transform: scale(1.05);
     filter: brightness(1.1);
 }
@@ -4563,6 +4576,13 @@ a.info-value:hover { color: var(--text); }
     box-shadow: 0 0 12px rgba(255,47,139,0.3);
 }
 .project-modal-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.project-modal-thumb--video {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.85); background: rgba(0,0,0,0.45);
+    cursor: default;
+}
+.project-modal-thumb--video:hover { transform: none; opacity: 1; }
 
 /* ═══ Right: Info panel ═══ */
 

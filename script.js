@@ -982,9 +982,10 @@ class CardTilt {
         this.bindCat();
     }
 
-    /* ---------- legacy ---------- */
+    /* ---------- legacy (cards БЕЗ .tilt-wrap — иначе дублирует bindCat и ломает transform) ---------- */
     bind() {
-        this.cards.forEach(card => {
+        this.cards.forEach((card) => {
+            if (card.closest('.tilt-wrap')) return;
             card.addEventListener('mousemove', (e) => this.tilt(e, card));
             card.addEventListener('mouseleave', () => this.reset(card));
         });
@@ -1525,6 +1526,8 @@ class ProjectModal {
         this.modal = null;
         this.currentIndex = 0;
         this.screenshots = [];
+        /** @type {{ type: 'video' | 'image', src: string }[]} */
+        this.gallerySlides = [];
         this.isFullscreen = false;
         this.createModal();
         this.bindEvents();
@@ -1788,6 +1791,7 @@ class ProjectModal {
         const sphere = card.dataset.sphere || '-';
         const duration = card.dataset.duration || '2-4 мес.';
         const projectType = card.dataset.projectType || 'Сайт';
+        const projectUrl = card.dataset.projectUrl || '';
         
         // Get screenshots, bot preview, web preview, or video
         const botPreview = card.dataset.botPreview || '';
@@ -1798,6 +1802,12 @@ class ProjectModal {
         
         if (botPreview) {
             this.showBotPreview(botPreview, title);
+        } else if (
+            videoSrc &&
+            screenshots.length > 0 &&
+            document.body.classList.contains('page-sites')
+        ) {
+            this.updateGalleryWithVideo(videoSrc, screenshots);
         } else if (videoSrc) {
             this.showVideoPreview(videoSrc, title);
         } else if (webPreview) {
@@ -1869,7 +1879,10 @@ class ProjectModal {
                 <div class="project-modal-section">
                     <h3 class="project-modal-section-title">Что реализовано</h3>
                     <div class="project-modal-features">
-                        ${this.getProjectFeatures(title, desc, tags).map(f => `
+                        ${(card.dataset.features
+                            ? card.dataset.features.split('|').map((s) => s.trim()).filter(Boolean)
+                            : this.getProjectFeatures(title, desc, tags)
+                        ).map((f) => `
                         <div class="project-modal-feature">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20,6 9,17 4,12"/>
@@ -1881,6 +1894,7 @@ class ProjectModal {
             </div>
             
             <div class="project-modal-cta">
+                ${projectUrl ? `<a href="${projectUrl}" class="project-modal-cta-btn secondary" target="_blank" rel="noopener noreferrer">Открыть сайт проекта</a>` : ''}
                 <a href="/contact" class="project-modal-cta-btn">Хочу такой же проект</a>
                 <button class="project-modal-cta-btn secondary" onclick="document.getElementById('projectModal').classList.remove('visible'); document.body.style.overflow = '';">Закрыть</button>
             </div>
@@ -1893,11 +1907,18 @@ class ProjectModal {
         const desktopTab = document.querySelector('.gallery-device-tab[data-device="desktop"]');
         if (desktopTab) desktopTab.classList.add('active');
         const mainImg = document.getElementById('modalMainImage');
-        if (mainImg && !botPreview && !videoSrc && !webPreview) {
-            mainImg.style.aspectRatio = '16/10';
-            mainImg.style.maxHeight = 'none';
-            mainImg.style.margin = '';
-            mainImg.style.maxWidth = '100%';
+        if (mainImg && !botPreview && !webPreview) {
+            if (videoSrc && document.body.classList.contains('page-sites')) {
+                mainImg.style.aspectRatio = '16/10';
+                mainImg.style.maxHeight = 'none';
+                mainImg.style.margin = '';
+                mainImg.style.maxWidth = '100%';
+            } else if (!videoSrc) {
+                mainImg.style.aspectRatio = '16/10';
+                mainImg.style.maxHeight = 'none';
+                mainImg.style.margin = '';
+                mainImg.style.maxWidth = '100%';
+            }
         }
         
         this.modal.classList.add('visible');
@@ -1915,6 +1936,7 @@ class ProjectModal {
     
     showBotPreview(previewType, botName) {
         this.screenshots = [];
+        this.gallerySlides = [];
         const mainImage = document.getElementById('modalMainImage');
         const thumbnails = document.getElementById('modalThumbnails');
         const counter = document.getElementById('galleryCounter');
@@ -2892,22 +2914,28 @@ class ProjectModal {
         const thumbnails = document.getElementById('modalThumbnails');
         const counter = document.getElementById('galleryCounter');
         const modalContent = this.modal.querySelector('.project-modal-content');
-        
-        // Add mobile layout class
+        const isSitesPage = document.body.classList.contains('page-sites');
+
+        if (isSitesPage) {
+            this.updateGalleryWithVideo(videoSrc, []);
+            return;
+        }
+
+        this.gallerySlides = [];
+
+        // Mobile projects: phone-style frame
         modalContent.classList.add('modal-mobile-layout');
-        
-        // Hide gallery nav
+
         document.getElementById('galleryPrev').style.display = 'none';
         document.getElementById('galleryNext').style.display = 'none';
         document.getElementById('galleryFullscreen').style.display = 'none';
         thumbnails.innerHTML = '';
         counter.textContent = '';
-        
-        // Override aspect ratio for phone frame
+
         mainImage.style.aspectRatio = 'unset';
         mainImage.style.background = 'transparent';
         mainImage.style.maxHeight = 'none';
-        
+
         mainImage.innerHTML = `
             <div class="video-phone-frame">
                 <div class="video-phone-notch"></div>
@@ -2920,16 +2948,14 @@ class ProjectModal {
                 <div class="video-phone-home"></div>
             </div>
         `;
-        
-        // Auto-play the video
+
         const video = mainImage.querySelector('.video-phone-player');
-        if (video) {
-            video.play().catch(() => {});
-        }
+        if (video) video.play().catch(() => {});
     }
     
     showWebPreview(previewType, projectName) {
         this.screenshots = [];
+        this.gallerySlides = [];
         const mainImage = document.getElementById('modalMainImage');
         const thumbnails = document.getElementById('modalThumbnails');
         const counter = document.getElementById('galleryCounter');
@@ -4123,39 +4149,93 @@ class ProjectModal {
         document.getElementById('galleryFullscreen').style.display = 'none';
     }
     
-    updateGallery(screenshots) {
-        this.screenshots = screenshots;
+    _modalVideoMime(url) {
+        const base = (url.split('?')[0] || '').split(/[/\\]/).pop() || '';
+        const ext = (base.includes('.') ? base.split('.').pop() : '').toLowerCase();
+        if (ext === 'webm') return 'video/webm';
+        return 'video/mp4';
+    }
+
+    updateGalleryWithVideo(videoSrc, imageScreenshots) {
+        const imgs = (imageScreenshots || []).map((s) => String(s).trim()).filter(Boolean);
+        this.gallerySlides = [
+            { type: 'video', src: videoSrc },
+            ...imgs.map((src) => ({ type: 'image', src })),
+        ];
         this.currentIndex = 0;
-        
+
+        const mainImage = document.getElementById('modalMainImage');
+        const thumbnails = document.getElementById('modalThumbnails');
+        const modalContent = this.modal.querySelector('.project-modal-content');
+
+        modalContent.classList.remove('modal-mobile-layout');
+
+        mainImage.style.aspectRatio = '';
+        mainImage.style.maxHeight = '';
+        mainImage.style.background = '';
+
+        const multi = this.gallerySlides.length > 1;
+        document.getElementById('galleryPrev').style.display = multi ? '' : 'none';
+        document.getElementById('galleryNext').style.display = multi ? '' : 'none';
+        document.getElementById('galleryFullscreen').style.display = multi ? '' : 'none';
+
+        thumbnails.innerHTML = this.gallerySlides
+            .map((slide, i) => {
+                if (slide.type === 'video') {
+                    return `<div class="project-modal-thumb project-modal-thumb--video ${i === 0 ? 'active' : ''}" data-index="${i}">Видео</div>`;
+                }
+                return `<div class="project-modal-thumb ${i === 0 ? 'active' : ''}" data-index="${i}"><img src="${slide.src}" alt=""></div>`;
+            })
+            .join('');
+
+        thumbnails.querySelectorAll('.project-modal-thumb').forEach((thumb) => {
+            thumb.addEventListener('click', () => {
+                const index = parseInt(thumb.dataset.index, 10);
+                this.goToImage(index);
+            });
+        });
+
+        this.showGallerySlide(0);
+    }
+
+    updateGallery(screenshots) {
+        const paths = (screenshots || []).map((s) => String(s).trim()).filter(Boolean);
+        this.screenshots = paths;
+        this.gallerySlides = paths.map((src) => ({ type: 'image', src }));
+        this.currentIndex = 0;
+
         const mainImage = document.getElementById('modalMainImage');
         const thumbnails = document.getElementById('modalThumbnails');
         const counter = document.getElementById('galleryCounter');
-        
-        // Restore gallery nav and styles (might be changed by bot preview)
+
         document.getElementById('galleryPrev').style.display = '';
         document.getElementById('galleryNext').style.display = '';
         document.getElementById('galleryFullscreen').style.display = '';
         mainImage.style.aspectRatio = '';
         mainImage.style.maxHeight = '';
         mainImage.style.background = '';
-        
-        if (screenshots.length > 0) {
-            this.showImage(0);
-            counter.textContent = `1 / ${screenshots.length}`;
-            
-            thumbnails.innerHTML = screenshots.map((src, i) => `
+
+        if (this.gallerySlides.length > 0) {
+            thumbnails.innerHTML = this.gallerySlides
+                .map(
+                    (slide, i) => `
                 <div class="project-modal-thumb ${i === 0 ? 'active' : ''}" data-index="${i}">
-                    <img src="${src}" alt="Экран ${i + 1}">
+                    <img src="${slide.src}" alt="Экран ${i + 1}">
                 </div>
-            `).join('');
-            
-            thumbnails.querySelectorAll('.project-modal-thumb').forEach(thumb => {
+            `
+                )
+                .join('');
+
+            thumbnails.querySelectorAll('.project-modal-thumb').forEach((thumb) => {
                 thumb.addEventListener('click', () => {
-                    const index = parseInt(thumb.dataset.index);
+                    const index = parseInt(thumb.dataset.index, 10);
                     this.goToImage(index);
                 });
             });
+
+            this.showGallerySlide(0);
         } else {
+            this.gallerySlides = [];
             mainImage.innerHTML = `
                 <div class="project-modal-main-image-placeholder">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -4175,58 +4255,87 @@ class ProjectModal {
             counter.textContent = '1 / 4';
         }
     }
-    
-    showImage(index) {
+
+    showGallerySlide(index) {
         const mainImage = document.getElementById('modalMainImage');
-        const img = mainImage.querySelector('.modal-main-img');
-        
-        if (img) {
-            img.classList.add('fade-out');
-            setTimeout(() => {
-                img.src = this.screenshots[index];
-                img.classList.remove('fade-out');
-            }, 150);
+        const slide = this.gallerySlides[index];
+        if (!slide) return;
+
+        const prevVideo = mainImage.querySelector('video');
+        if (prevVideo) {
+            try {
+                prevVideo.pause();
+            } catch (e) {}
+        }
+
+        if (slide.type === 'video') {
+            const mime = this._modalVideoMime(slide.src);
+            mainImage.innerHTML = `
+                <video class="modal-main-video" autoplay muted loop playsinline>
+                    <source src="${slide.src}" type="${mime}">
+                    Ваш браузер не поддерживает видео.
+                </video>`;
+            mainImage.querySelector('video')?.play().catch(() => {});
         } else {
-            mainImage.innerHTML = `<img src="${this.screenshots[index]}" alt="Скриншот проекта" class="modal-main-img">`;
+            const img = mainImage.querySelector('.modal-main-img');
+            const hasVideo = mainImage.querySelector('video');
+            if (img && !hasVideo) {
+                img.classList.add('fade-out');
+                setTimeout(() => {
+                    img.src = slide.src;
+                    img.classList.remove('fade-out');
+                }, 150);
+            } else {
+                mainImage.innerHTML = `<img src="${slide.src}" alt="Скриншот проекта" class="modal-main-img">`;
+            }
         }
-        
-        // Update counter
-        document.getElementById('galleryCounter').textContent = `${index + 1} / ${this.screenshots.length}`;
+
+        document.getElementById('galleryCounter').textContent = `${index + 1} / ${this.gallerySlides.length}`;
         if (this.isFullscreen) {
-            document.getElementById('fullscreenCounter').textContent = `${index + 1} / ${this.screenshots.length}`;
-            document.getElementById('fullscreenImage').innerHTML = `<img src="${this.screenshots[index]}" alt="Скриншот">`;
+            this._syncFullscreenSlide(index);
         }
-        
-        // Update thumbnails
+
         document.querySelectorAll('.project-modal-thumb').forEach((thumb, i) => {
             thumb.classList.toggle('active', i === index);
         });
     }
-    
+
+    _syncFullscreenSlide(index) {
+        const slide = this.gallerySlides[index];
+        document.getElementById('fullscreenCounter').textContent = `${index + 1} / ${this.gallerySlides.length}`;
+        if (!slide) return;
+        if (slide.type === 'video') {
+            const mime = this._modalVideoMime(slide.src);
+            document.getElementById('fullscreenImage').innerHTML = `<video class="modal-main-video" autoplay muted loop playsinline><source src="${slide.src}" type="${mime}"></video>`;
+            document.getElementById('fullscreenImage').querySelector('video')?.play().catch(() => {});
+        } else {
+            document.getElementById('fullscreenImage').innerHTML = `<img src="${slide.src}" alt="Скриншот">`;
+        }
+    }
+
     goToImage(index) {
-        if (index < 0 || index >= this.screenshots.length) return;
+        if (index < 0 || index >= this.gallerySlides.length) return;
         this.currentIndex = index;
-        this.showImage(index);
+        this.showGallerySlide(index);
     }
-    
+
     prevImage() {
-        if (this.screenshots.length === 0) return;
-        this.currentIndex = (this.currentIndex - 1 + this.screenshots.length) % this.screenshots.length;
-        this.showImage(this.currentIndex);
+        if (this.gallerySlides.length === 0) return;
+        this.currentIndex = (this.currentIndex - 1 + this.gallerySlides.length) % this.gallerySlides.length;
+        this.showGallerySlide(this.currentIndex);
     }
-    
+
     nextImage() {
-        if (this.screenshots.length === 0) return;
-        this.currentIndex = (this.currentIndex + 1) % this.screenshots.length;
-        this.showImage(this.currentIndex);
+        if (this.gallerySlides.length === 0) return;
+        this.currentIndex = (this.currentIndex + 1) % this.gallerySlides.length;
+        this.showGallerySlide(this.currentIndex);
     }
-    
+
     openFullscreen() {
-        if (this.screenshots.length === 0) return;
+        if (this.gallerySlides.length === 0) return;
         this.isFullscreen = true;
         this.fullscreenViewer.classList.add('visible');
-        document.getElementById('fullscreenImage').innerHTML = `<img src="${this.screenshots[this.currentIndex]}" alt="Скриншот">`;
-        document.getElementById('fullscreenCounter').textContent = `${this.currentIndex + 1} / ${this.screenshots.length}`;
+        this._syncFullscreenSlide(this.currentIndex);
     }
     
     closeFullscreen() {
